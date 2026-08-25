@@ -190,27 +190,41 @@ export function buildMountImageUrl(
   return `/api/outfit-sprite?${params.toString()}`;
 }
 
-/** Mount-only GIF candidates from TibiaWiki (no rider). */
-export function buildTibiaWikiMountImageCandidates(name: string): string[] {
+function stripMountSuffix(name: string) {
+  return name
+    .trim()
+    .replace(/\s*\((mount|montaria)\)\s*/gi, "")
+    .trim();
+}
+
+/** GIF file name candidates — PT wiki uses (Montaria), EN uses (Mount). */
+function mountGifFileNames(name: string): string[] {
   const trimmed = name.trim();
-  const compact = trimmed.replace(/\s+/g, "");
-  const underscored = trimmed.replace(/ /g, "_");
-  const hasMount = /\(mount\)/i.test(trimmed);
+  const base = stripMountSuffix(trimmed);
+  const compact = base.replace(/\s+/g, "");
+  const underscored = base.replace(/ /g, "_");
 
-  const files: string[] = [];
-  if (hasMount) {
-    files.push(trimmed.endsWith(".gif") ? trimmed : `${trimmed}.gif`);
-    files.push(`${underscored}.gif`);
-  } else {
-    files.push(`${compact} (Mount).gif`);
-    files.push(`${underscored}.gif`);
-    files.push(`${underscored} (Mount).gif`);
-  }
+  return [
+    ...new Set([
+      `${base} (Montaria).gif`,
+      `${underscored}_(Montaria).gif`,
+      `${base} (Mount).gif`,
+      `${underscored}_(Mount).gif`,
+      `${compact}(Montaria).gif`,
+      `${compact}(Mount).gif`,
+      `${underscored}.gif`,
+      trimmed.endsWith(".gif") ? trimmed : `${trimmed}.gif`,
+    ]),
+  ];
+}
 
-  return [...new Set(files)].map(
-    (file) =>
-      `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(file)}`,
-  );
+function tibiaWikiFilePathUrl(file: string) {
+  return `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(file)}`;
+}
+
+/** Mount-only GIF candidates from TibiaWiki BR (no rider). */
+export function buildTibiaWikiMountImageCandidates(name: string): string[] {
+  return mountGifFileNames(name).map(tibiaWikiFilePathUrl);
 }
 
 /** Primary TibiaWiki mount GIF URL (first naming candidate). */
@@ -222,7 +236,19 @@ export function isRubinotOutfitApiUrl(url: string) {
   return /rubinot\.com\.br\/api\/outfit/i.test(url);
 }
 
-/** Prefer TibiaWiki / wiki.rubinot mount GIFs over outfit API (rider on mount). */
+function expandCatalogMountImageUrls(url: string): string[] {
+  const out = [url];
+  if (/\(Mount\)/i.test(url)) {
+    out.push(
+      url
+        .replace(/\(Mount\)/g, "(Montaria)")
+        .replace(/\(mount\)/g, "(Montaria)"),
+    );
+  }
+  return out;
+}
+
+/** Prefer TibiaWiki mount-only GIFs (Montaria) over RubinOT outfit API (rider). */
 export function resolveMountOnlyImageUrls(
   imageUrl: string | null | undefined,
   mountName: string | null | undefined,
@@ -231,7 +257,9 @@ export function resolveMountOnlyImageUrls(
     ? buildTibiaWikiMountImageCandidates(mountName)
     : [];
   const catalog =
-    imageUrl && !isRubinotOutfitApiUrl(imageUrl) ? [imageUrl] : [];
+    imageUrl && !isRubinotOutfitApiUrl(imageUrl)
+      ? expandCatalogMountImageUrls(imageUrl)
+      : [];
   return [...new Set([...wiki, ...catalog])];
 }
 

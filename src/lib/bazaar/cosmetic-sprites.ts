@@ -1,5 +1,4 @@
 import {
-  buildMountImageFallbackUrl,
   buildMountImageUrl,
   buildOutfitImageFallbackUrl,
   buildOutfitImageUrl,
@@ -44,7 +43,7 @@ export function outfitSpriteSources(
   };
 }
 
-/** TibiaPlace cache first, TibiaWiki / RubinOT as browser fallbacks. */
+/** TibiaPlace cache first, TibiaWiki mount-only GIFs as browser fallbacks. */
 export function mountSpriteSources(
   clientId: number | null,
   imageUrl?: string | null,
@@ -54,8 +53,8 @@ export function mountSpriteSources(
 
   if (clientId != null) {
     const cached = buildMountImageUrl(clientId, mountName);
-    const rubin = buildMountImageFallbackUrl(clientId);
-    const urls = dedupeUrls([cached, ...wikiUrls, rubin, imageUrl]);
+    // Avoid RubinOT in browser — mount API often renders a rider outfit, not mount-only art.
+    const urls = dedupeUrls([cached, ...wikiUrls, imageUrl]);
     return {
       src: urls[0]!,
       fallbackSrc: urls[1],

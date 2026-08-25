@@ -6,10 +6,13 @@ function attr(attrs, key) {
 }
 
 function wikiMountImageUrl(name) {
-  const trimmed = name.trim();
-  const compact = trimmed.replace(/\s+/g, "");
-  const hasMount = /\(mount\)/i.test(trimmed);
-  const file = hasMount ? `${trimmed}.gif` : `${compact} (Mount).gif`;
+  const base = String(name)
+    .trim()
+    .replace(/\s*\((mount|montaria)\)\s*/gi, "")
+    .trim();
+  const underscored = base.replace(/ /g, "_");
+  const file = `${base} (Montaria).gif`;
+  const alt = `${underscored}_(Montaria).gif`;
   return `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(file)}`;
 }
 
