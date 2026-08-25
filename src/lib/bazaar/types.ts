@@ -116,11 +116,19 @@ export function assertBazaarData(data: unknown): asserts data is BazaarData {
   if (!data || typeof data !== "object") {
     throw new Error("JSON do bazaar inválido");
   }
-  const record = data as Partial<BazaarData>;
-  if (!record.player?.name) {
+  const record = data as Record<string, unknown>;
+  if (typeof record.error === "string") {
+    throw new Error(
+      record.error === "Access denied"
+        ? "RubinOT exige login. Abra a página do bazaar logado e copie o JSON pelo DevTools (F12 → Rede)."
+        : `RubinOT: ${record.error}`,
+    );
+  }
+  const bazaar = data as Partial<BazaarData>;
+  if (!bazaar.player?.name) {
     throw new Error("JSON do bazaar incompleto (falta player)");
   }
-  if (!record.auction?.id) {
+  if (!bazaar.auction?.id) {
     throw new Error("JSON do bazaar incompleto (falta auction.id)");
   }
 }

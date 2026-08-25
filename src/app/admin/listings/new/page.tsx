@@ -15,7 +15,10 @@ import {
 } from "@/components/import-progress-panel";
 import { Button, Card, Input, Label } from "@/components/ui";
 import { consumeImportStream } from "@/lib/bazaar/import-progress";
-import { bazaarApiUrlFromInput } from "@/lib/bazaar/rubinot-fetch";
+import {
+  bazaarApiUrlFromInput,
+  bazaarPageUrlFromInput,
+} from "@/lib/bazaar/rubinot-fetch";
 import { cn } from "@/lib/utils";
 
 type NewListingTab = "character" | "items";
@@ -52,6 +55,7 @@ export default function NewListingPage() {
   const [detail, setDetail] = useState<string>();
 
   const bazaarApiUrl = bazaarApiUrlFromInput(bazaarUrl.trim());
+  const bazaarPageUrl = bazaarPageUrlFromInput(bazaarUrl.trim());
 
   async function runImport(payload: {
     bazaarUrl: string;
@@ -193,24 +197,28 @@ export default function NewListingPage() {
                 className="mt-1.5"
               />
               <p className="mt-2 text-xs leading-relaxed text-zinc-500">
-                A página do bazaar é HTML. Os dados do personagem ficam na API:{" "}
-                <span className="text-zinc-400">/api/bazaar/ID</span> (com{" "}
-                <span className="text-zinc-400">api</span> no caminho).
+                A URL da página é HTML (
+                <code className="text-zinc-400">/bazaar/ID</code>). Os dados
+                vêm da API interna (
+                <code className="text-zinc-400">/api/bazaar/ID</code>), que só
+                responde com você logado no RubinOT.
               </p>
-              {bazaarApiUrl && (
+              {bazaarPageUrl && (
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   <a
-                    href={bazaarApiUrl}
+                    href={bazaarPageUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-card-border)] px-3 py-1.5 text-xs text-[var(--color-primary)] transition hover:border-[var(--color-primary)]/50"
                   >
                     <ExternalLink className="h-3.5 w-3.5" />
-                    Abrir JSON no RubinOT
+                    Abrir página do bazaar
                   </a>
-                  <code className="break-all text-[11px] text-zinc-500">
-                    {bazaarApiUrl}
-                  </code>
+                  {bazaarApiUrl && (
+                    <code className="break-all text-[11px] text-zinc-600">
+                      API: {bazaarApiUrl}
+                    </code>
+                  )}
                 </div>
               )}
             </div>
@@ -240,22 +248,45 @@ export default function NewListingPage() {
 
           <details className="mt-6 rounded-lg border border-[var(--color-card-border)] p-4">
             <summary className="cursor-pointer text-sm font-medium text-zinc-300">
-              Importar via JSON (se der erro 403)
+              Importar via JSON (403 ou Access denied)
             </summary>
+            <p className="mt-3 text-xs leading-relaxed text-zinc-500">
+              Abrir <code className="text-zinc-400">/api/bazaar/ID</code> direto
+              no navegador costuma retornar{" "}
+              <code className="text-zinc-400">Access denied</code> — o RubinOT
+              exige sessão. Copie o JSON pelo DevTools:
+            </p>
             <ol className="mt-3 list-decimal space-y-2 pl-4 text-xs leading-relaxed text-zinc-500">
               <li>
-                Preencha a URL do bazaar acima (ex.{" "}
-                <code className="text-zinc-400">…/bazaar/270870</code>).
+                Faça login em{" "}
+                <a
+                  href="https://rubinot.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--color-primary)] hover:underline"
+                >
+                  rubinot.com.br
+                </a>
+                .
               </li>
               <li>
-                Clique em <strong className="text-zinc-400">Abrir JSON no RubinOT</strong>{" "}
-                — abre{" "}
-                <code className="text-zinc-400">…/api/bazaar/270870</code>, que é
-                JSON puro (não a página HTML).
+                Abra a página do char (botão{" "}
+                <strong className="text-zinc-400">Abrir página do bazaar</strong>{" "}
+                acima).
               </li>
               <li>
-                Na aba nova: <kbd className="rounded bg-zinc-800 px-1">Ctrl+A</kbd>{" "}
-                → <kbd className="rounded bg-zinc-800 px-1">Ctrl+C</kbd>.
+                Pressione <kbd className="rounded bg-zinc-800 px-1">F12</kbd> →
+                aba <strong className="text-zinc-400">Rede</strong> (Network) →
+                recarregue a página (
+                <kbd className="rounded bg-zinc-800 px-1">F5</kbd>).
+              </li>
+              <li>
+                Clique na requisição{" "}
+                <code className="text-zinc-400">bazaar/270870</code> (tipo fetch
+                ou xhr) → aba <strong className="text-zinc-400">Resposta</strong>{" "}
+                → copie todo o JSON (
+                <kbd className="rounded bg-zinc-800 px-1">Ctrl+A</kbd>,{" "}
+                <kbd className="rounded bg-zinc-800 px-1">Ctrl+C</kbd>).
               </li>
               <li>Cole abaixo e clique em Importar via JSON.</li>
             </ol>

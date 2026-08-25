@@ -26,17 +26,26 @@ export function bazaarApiUrl(bazaarId: number) {
   return `https://rubinot.com.br/api/bazaar/${bazaarId}`;
 }
 
-/** Page URL (/bazaar/ID) → API URL (/api/bazaar/ID) for manual JSON copy. */
+/** Public bazaar page (HTML) for the same listing ID. */
+export function bazaarPageUrl(bazaarId: number) {
+  return `https://rubinot.com.br/bazaar/${bazaarId}`;
+}
+
+export function bazaarPageUrlFromInput(url: string): string | null {
+  const match = url.match(/bazaar\/(\d+)/);
+  if (!match) return null;
+  return bazaarPageUrl(Number.parseInt(match[1]!, 10));
+}
 export function bazaarApiUrlFromInput(url: string): string | null {
   const match = url.match(/bazaar\/(\d+)/);
   if (!match) return null;
   return bazaarApiUrl(Number.parseInt(match[1]!, 10));
 }
 
-export function bazaarFetchBlockedMessage(bazaarId: number) {
+export function bazaarFetchBlockedMessage(_bazaarId: number) {
   return (
-    `RubinOT bloqueou o servidor (403 / Cloudflare). ` +
-    `Use "Abrir JSON no RubinOT" abaixo, copie o conteúdo e importe via JSON.`
+    "RubinOT bloqueou o servidor (403). Importe pelo JSON copiado no DevTools " +
+    "(logado no RubinOT) — veja instruções abaixo."
   );
 }
 
