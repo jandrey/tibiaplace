@@ -1,6 +1,7 @@
 export * from "./auth";
 export * from "./catalog";
 export * from "./listings";
+export * from "./sprites";
 
 import {
   account,
@@ -26,6 +27,8 @@ import {
   catalogVocations,
   catalogWorlds,
 } from "./catalog";
+
+import { outfitSpriteCache } from "./sprites";
 
 import {
   listingAchievements,
@@ -78,4 +81,5 @@ export const schema = {
   catalogGems,
   catalogVocations,
   catalogWorlds,
+  outfitSpriteCache,
 };

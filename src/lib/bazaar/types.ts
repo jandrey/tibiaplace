@@ -133,6 +133,25 @@ export function assertBazaarData(data: unknown): asserts data is BazaarData {
   }
 }
 
+function outfitSpriteQuery(
+  lookType: number,
+  addons = 0,
+  head = 0,
+  body = 0,
+  legs = 0,
+  feet = 0,
+) {
+  return new URLSearchParams({
+    type: String(lookType),
+    addons: String(addons),
+    head: String(head),
+    body: String(body),
+    legs: String(legs),
+    feet: String(feet),
+  });
+}
+
+/** Cached sprite on TibiaPlace (Cloudinary + DB); fetches RubinOT on first miss. */
 export function buildOutfitImageUrl(
   lookType: number,
   addons = 0,
@@ -141,23 +160,10 @@ export function buildOutfitImageUrl(
   legs = 0,
   feet = 0,
 ) {
-  const params = new URLSearchParams({
-    type: String(lookType),
-    head: String(head),
-    body: String(body),
-    legs: String(legs),
-    feet: String(feet),
-    addons: String(addons),
-    direction: "3",
-    animated: "1",
-    walk: "1",
-    size: "0",
-  });
-  // Direct RubinOT CDN in the browser (HD walk sheets). Proxy is a fallback only.
-  return `https://rubinot.com.br/api/outfit?${params.toString()}`;
+  return `/api/outfit-sprite?${outfitSpriteQuery(lookType, addons, head, body, legs, feet).toString()}`;
 }
 
-/** Lower-res ots.me fallback via same-origin proxy (when RubinOT blocks / 404). */
+/** Direct RubinOT API — browser fallback when cache/proxy fails. */
 export function buildOutfitImageFallbackUrl(
   lookType: number,
   addons = 0,
@@ -166,26 +172,17 @@ export function buildOutfitImageFallbackUrl(
   legs = 0,
   feet = 0,
 ) {
-  const params = new URLSearchParams({
-    type: String(lookType),
-    addons: String(addons),
-    head: String(head),
-    body: String(body),
-    legs: String(legs),
-    feet: String(feet),
-  });
-  return `/api/outfit-sprite?${params.toString()}`;
+  const params = outfitSpriteQuery(lookType, addons, head, body, legs, feet);
+  params.set("direction", "3");
+  params.set("animated", "1");
+  params.set("walk", "1");
+  params.set("size", "0");
+  return `https://rubinot.com.br/api/outfit?${params.toString()}`;
 }
 
-export function buildMountImageUrl(clientId: number, direction = 3) {
-  const params = new URLSearchParams({
-    mount: String(clientId),
-    direction: String(direction),
-    animated: "1",
-    walk: "1",
-    size: "0",
-  });
-  return `https://rubinot.com.br/api/outfit?${params.toString()}`;
+/** Cached mount sprite on TibiaPlace. */
+export function buildMountImageUrl(clientId: number, _direction = 3) {
+  return `/api/outfit-sprite?${new URLSearchParams({ mount: String(clientId) }).toString()}`;
 }
 
 /** Mount-only GIF candidates from TibiaWiki (no rider). */
@@ -241,11 +238,16 @@ export function resolveMountOnlyImageUrl(
   return resolveMountOnlyImageUrls(imageUrl, mountName)[0] ?? imageUrl ?? null;
 }
 
-export function buildMountImageFallbackUrl(clientId: number) {
+/** Direct RubinOT mount API — browser fallback. */
+export function buildMountImageFallbackUrl(clientId: number, direction = 3) {
   const params = new URLSearchParams({
     mount: String(clientId),
+    direction: String(direction),
+    animated: "1",
+    walk: "1",
+    size: "0",
   });
-  return `/api/outfit-sprite?${params.toString()}`;
+  return `https://rubinot.com.br/api/outfit?${params.toString()}`;
 }
 
 /** Canary/OTBR item sprites (server itemId). */

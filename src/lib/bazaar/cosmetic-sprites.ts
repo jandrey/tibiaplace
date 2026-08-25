@@ -18,35 +18,25 @@ function dedupeUrls(urls: Array<string | null | undefined>) {
   );
 }
 
-/** Ordered outfit sprite URLs — proxy (ots) first for vanilla, RubinOT for custom. */
+/** TibiaPlace cache first, RubinOT direct as browser fallback. */
 export function outfitSpriteSources(
   looktype: number,
   addons: number,
   opts?: { imageUrl?: string | null; isCustom?: boolean },
 ): CosmeticSpriteSources {
-  const rubin = buildOutfitImageUrl(looktype, addons);
-  const proxy = buildOutfitImageFallbackUrl(looktype, addons);
+  const cached = buildOutfitImageUrl(looktype, addons);
+  const rubin = buildOutfitImageFallbackUrl(looktype, addons);
   const catalogUrl = opts?.imageUrl ?? null;
-  const isCustom = opts?.isCustom ?? looktype >= 2500;
 
   const reduced =
     addons > 0
       ? [
-          buildOutfitImageFallbackUrl(looktype, 0),
           buildOutfitImageUrl(looktype, 0),
+          buildOutfitImageFallbackUrl(looktype, 0),
         ]
       : [];
 
-  if (isCustom) {
-    const urls = dedupeUrls([rubin, catalogUrl, proxy, ...reduced]);
-    return {
-      src: urls[0]!,
-      fallbackSrc: urls[1],
-      fallbackSrcs: urls.slice(2),
-    };
-  }
-
-  const urls = dedupeUrls([proxy, rubin, catalogUrl, ...reduced]);
+  const urls = dedupeUrls([cached, catalogUrl, rubin, ...reduced]);
   return {
     src: urls[0]!,
     fallbackSrc: urls[1],
@@ -54,7 +44,7 @@ export function outfitSpriteSources(
   };
 }
 
-/** Mount-only sprites — TibiaWiki / wiki.rubinot first (no rider on mount). */
+/** Mount-only sprites — TibiaWiki first, then cached mount, RubinOT fallback. */
 export function mountSpriteSources(
   clientId: number | null,
   imageUrl?: string | null,
