@@ -151,6 +151,24 @@ function outfitSpriteQuery(
   });
 }
 
+function catalogOutfitSpriteQuery(
+  lookType: number,
+  addons = 0,
+  head = 0,
+  body = 0,
+  legs = 0,
+  feet = 0,
+) {
+  return new URLSearchParams({
+    catalogOutfit: String(lookType),
+    addons: String(addons),
+    head: String(head),
+    body: String(body),
+    legs: String(legs),
+    feet: String(feet),
+  });
+}
+
 /** Cached sprite on TibiaPlace (Cloudinary + DB); fetches RubinOT on first miss. */
 export function buildOutfitImageUrl(
   lookType: number,
@@ -161,6 +179,18 @@ export function buildOutfitImageUrl(
   feet = 0,
 ) {
   return `/api/outfit-sprite?${outfitSpriteQuery(lookType, addons, head, body, legs, feet).toString()}`;
+}
+
+/** Custom RubinOT outfit — same cache pipeline, explicit catalogOutfit param. */
+export function buildCatalogOutfitImageUrl(
+  lookType: number,
+  addons = 0,
+  head = 0,
+  body = 0,
+  legs = 0,
+  feet = 0,
+) {
+  return `/api/outfit-sprite?${catalogOutfitSpriteQuery(lookType, addons, head, body, legs, feet).toString()}`;
 }
 
 /** Direct RubinOT API — browser fallback when cache/proxy fails. */
@@ -190,6 +220,11 @@ export function buildMountImageUrl(
   return `/api/outfit-sprite?${params.toString()}`;
 }
 
+/** Custom RubinOT mount by catalog id — fetches wiki.rubinot.com and persists to Cloudinary. */
+export function buildCatalogMountImageUrl(catalogMountId: number) {
+  return `/api/outfit-sprite?catalogMount=${catalogMountId}`;
+}
+
 function stripMountSuffix(name: string) {
   return name
     .trim()
@@ -197,22 +232,39 @@ function stripMountSuffix(name: string) {
     .trim();
 }
 
-/** GIF file name candidates — wiki BR uses plain name, (Montaria), or (Mount). */
+/** "Lady Bug" → Ladybug.gif (TibiaWiki BR file naming). */
+function compactMountGifBase(name: string) {
+  const base = stripMountSuffix(name.trim());
+  const words = base.split(/\s+/).filter(Boolean);
+  if (words.length <= 1) return base.replace(/\s+/g, "");
+  return (
+    words[0] +
+    words
+      .slice(1)
+      .map((w) => w.charAt(0).toLowerCase() + w.slice(1))
+      .join("")
+  );
+}
+
+/** GIF file name candidates — plain name first; (Mount) often includes a rider. */
 function mountGifFileNames(name: string): string[] {
   const trimmed = name.trim();
   const base = stripMountSuffix(trimmed);
   const compact = base.replace(/\s+/g, "");
+  const compactWiki = compactMountGifBase(trimmed);
   const underscored = base.replace(/ /g, "_");
 
   return [
     ...new Set([
+      `${compactWiki}.gif`,
       `${underscored}.gif`,
       `${base}.gif`,
+      `${compact}.gif`,
       `${base} (Montaria).gif`,
       `${underscored}_(Montaria).gif`,
+      `${compact}(Montaria).gif`,
       `${base} (Mount).gif`,
       `${underscored}_(Mount).gif`,
-      `${compact}(Montaria).gif`,
       `${compact}(Mount).gif`,
       trimmed.endsWith(".gif") ? trimmed : `${trimmed}.gif`,
     ]),
@@ -235,6 +287,15 @@ export function buildTibiaWikiMountImageUrl(name: string) {
 
 export function isRubinotOutfitApiUrl(url: string) {
   return /rubinot\.com\.br\/api\/outfit/i.test(url);
+}
+
+/** Custom RubinOT mount art hosted on their wiki CDN. */
+export function isRubinotWikiMountUrl(url: string) {
+  return /wiki\.rubinot\.com\/mounts\//i.test(url);
+}
+
+export function buildExternalSpriteUrl(sourceUrl: string) {
+  return `/api/outfit-sprite?src=${encodeURIComponent(sourceUrl)}`;
 }
 
 function expandCatalogMountImageUrls(url: string): string[] {
@@ -262,6 +323,18 @@ export function resolveMountOnlyImageUrls(
     imageUrl && !isRubinotOutfitApiUrl(imageUrl)
       ? expandCatalogMountImageUrls(imageUrl)
       : [];
+
+  // Custom RubinOT mounts (e.g. Rudolph) — wiki.rubinot.com art is authoritative.
+  if (imageUrl && isRubinotWikiMountUrl(imageUrl)) {
+    return [
+      ...new Set([
+        imageUrl,
+        ...catalog.filter((u) => u !== imageUrl),
+        ...wiki,
+      ]),
+    ];
+  }
+
   return [...new Set([...wiki, ...catalog])];
 }
 

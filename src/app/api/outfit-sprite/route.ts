@@ -1,4 +1,8 @@
+import { isRubinotWikiMountUrl } from "@/lib/bazaar/types";
+import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
 import {
+  buildCatalogMountCacheKey,
+  buildExternalSpriteCacheKey,
   buildSpriteCacheKey,
   cachedSpritePublicUrl,
   findCachedSprite,
@@ -8,7 +12,7 @@ import {
   fetchImage,
   upstreamSpriteCandidates,
 } from "@/lib/sprites/upstream";
-import { catalogMounts } from "@/lib/db/schema/catalog";
+import { catalogMounts, catalogOutfits } from "@/lib/db/schema/catalog";
 import { db } from "@/lib/db";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
@@ -55,13 +59,128 @@ function imageResponse(
   });
 }
 
+function isAllowedExternalSpriteUrl(url: string) {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:") return false;
+    if (isRubinotWikiMountUrl(url)) return true;
+    return /^(www\.)?tibiawiki\.com\.br$/i.test(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
+async function serveExternalSprite(sourceUrl: string, cacheKey?: string) {
+  const key = cacheKey ?? buildExternalSpriteCacheKey(sourceUrl);
+
+  const mem = memoryGet(key);
+  if (mem) {
+    return imageResponse(mem.body, mem.contentType, "memory");
+  }
+
+  try {
+    const stored = await findCachedSprite(key);
+    if (stored) {
+      return NextResponse.redirect(cachedSpritePublicUrl(stored), {
+        status: 302,
+        headers: {
+          "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+          "X-Outfit-Cache": "cloudinary",
+        },
+      });
+    }
+  } catch {
+    /* DB unavailable */
+  }
+
+  const image = await fetchImage(sourceUrl);
+  if (!image) {
+    return NextResponse.json({ error: "Sprite não encontrado" }, { status: 404 });
+  }
+
+  memorySet(key, image.body, image.contentType);
+
+  try {
+    const saved = await persistSprite(
+      key,
+      Buffer.from(image.body),
+      image.contentType,
+      sourceUrl,
+    );
+    if (saved?.url) {
+      return NextResponse.redirect(saved.url, {
+        status: 302,
+        headers: {
+          "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+          "X-Outfit-Cache": "cloudinary",
+          "X-Outfit-Persist": "ok",
+        },
+      });
+    }
+  } catch (error) {
+    console.error("[outfit-sprite] Cloudinary persist failed:", error);
+  }
+
+  return imageResponse(image.body, image.contentType, "miss");
+}
+
 /**
  * Same-origin outfit/mount sprite endpoint.
  * L1: memory → L2: Postgres + Cloudinary → L3: RubinOT / ots.me (persist on fetch).
  */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const externalSrc = searchParams.get("src");
+  if (externalSrc) {
+    if (!isAllowedExternalSpriteUrl(externalSrc)) {
+      return NextResponse.json({ error: "URL não permitida" }, { status: 400 });
+    }
+    return serveExternalSprite(externalSrc);
+  }
+
+  const catalogMountParam = searchParams.get("catalogMount");
+  if (catalogMountParam) {
+    const catalogId = Number(catalogMountParam);
+    if (!Number.isFinite(catalogId) || catalogId < 90000) {
+      return NextResponse.json({ error: "Montaria inválida" }, { status: 400 });
+    }
+
+    try {
+      const rows = await db
+        .select({
+          imageUrl: catalogMounts.imageUrl,
+          name: catalogMounts.name,
+        })
+        .from(catalogMounts)
+        .where(eq(catalogMounts.id, catalogId))
+        .limit(1);
+      const mount = rows[0];
+      if (!mount?.imageUrl) {
+        return NextResponse.json({ error: "Sprite não encontrado" }, { status: 404 });
+      }
+      if (!isAllowedExternalSpriteUrl(mount.imageUrl)) {
+        return NextResponse.json({ error: "URL não permitida" }, { status: 400 });
+      }
+      return serveExternalSprite(
+        mount.imageUrl,
+        buildCatalogMountCacheKey(catalogId),
+      );
+    } catch {
+      return NextResponse.json({ error: "Erro ao carregar montaria" }, { status: 500 });
+    }
+  }
+
   const type = Number(searchParams.get("type") ?? "128");
+  const catalogOutfitParam = searchParams.get("catalogOutfit");
+  const outfitType = catalogOutfitParam
+    ? Number(catalogOutfitParam)
+    : type;
+  if (catalogOutfitParam) {
+    if (!Number.isFinite(outfitType) || !isCustomRubinotOutfit(outfitType)) {
+      return NextResponse.json({ error: "Outfit custom inválido" }, { status: 400 });
+    }
+  }
+
   const mount = searchParams.get("mount");
   const mountId = mount != null && mount !== "" ? Number(mount) : null;
   const addons = Number(searchParams.get("addons") ?? "0");
@@ -94,7 +213,7 @@ export async function GET(request: Request) {
   }
 
   const cacheKey = buildSpriteCacheKey({
-    type,
+    type: outfitType,
     mountId,
     addons,
     head,
@@ -124,11 +243,26 @@ export async function GET(request: Request) {
     /* DB unavailable — continue to upstream */
   }
 
+  let catalogOutfitImageUrl: string | null = null;
+  if (catalogOutfitParam && isCustomRubinotOutfit(outfitType)) {
+    try {
+      const rows = await db
+        .select({ imageUrl: catalogOutfits.imageUrl })
+        .from(catalogOutfits)
+        .where(eq(catalogOutfits.looktype, outfitType))
+        .limit(1);
+      catalogOutfitImageUrl = rows[0]?.imageUrl ?? null;
+    } catch {
+      /* optional */
+    }
+  }
+
   const candidates = upstreamSpriteCandidates({
-    type,
+    type: outfitType,
     mountId,
     mountName,
     mountImageUrl,
+    catalogOutfitImageUrl,
     addons,
     head,
     body: bodyColor,

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { mountSpriteSources } from "@/lib/bazaar/cosmetic-sprites";
-import { buildOutfitImageUrl } from "@/lib/bazaar/types";
+import { mountSpriteSources, outfitSpriteSources } from "@/lib/bazaar/cosmetic-sprites";
 import { OutfitSprite } from "@/components/outfit-sprite";
 import { cn } from "@/lib/utils";
 
@@ -11,10 +10,13 @@ type Outfit = {
   looktype: number;
   addons: number;
   outfitName: string | null;
+  imageUrl?: string | null;
+  isCustom?: boolean;
 };
 
 type Mount = {
   id: string;
+  mountId: number;
   mountName: string | null;
   clientId: number | null;
   imageUrl?: string | null;
@@ -80,14 +82,23 @@ export function CosmeticsPanel({
           {outfits.length === 0 ? (
             <Empty label="Nenhum outfit" />
           ) : (
-            outfits.map((outfit) => (
-              <CosmeticCard
-                key={outfit.id}
-                title={outfit.outfitName ?? "Outfit"}
-                imageUrl={buildOutfitImageUrl(outfit.looktype, outfit.addons)}
-                footer={<AddonDots addons={outfit.addons} />}
-              />
-            ))
+            outfits.map((outfit) => {
+              const sprite = outfitSpriteSources(outfit.looktype, outfit.addons, {
+                imageUrl: outfit.imageUrl,
+                isCustom: outfit.isCustom ?? outfit.looktype >= 2501,
+              });
+              return (
+                <CosmeticCard
+                  key={outfit.id}
+                  title={outfit.outfitName ?? "Outfit"}
+                  imageUrl={sprite.src}
+                  fallbackSrc={sprite.fallbackSrc}
+                  fallbackSrcs={sprite.fallbackSrcs}
+                  footer={<AddonDots addons={outfit.addons} />}
+                  useSprite
+                />
+              );
+            })
           )}
         </div>
       )}
@@ -98,14 +109,12 @@ export function CosmeticsPanel({
             <Empty label="Nenhuma montaria" />
           ) : (
             mounts.map((mount) => {
-              const sprite =
-                mount.clientId != null
-                  ? mountSpriteSources(
-                      mount.clientId,
-                      mount.imageUrl,
-                      mount.mountName,
-                    )
-                  : null;
+              const sprite = mountSpriteSources(
+                mount.clientId,
+                mount.imageUrl,
+                mount.mountName,
+                mount.mountId,
+              );
               return (
                 <CosmeticCard
                   key={mount.id}

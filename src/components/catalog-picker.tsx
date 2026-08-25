@@ -6,12 +6,8 @@ import { OutfitSprite, preloadOutfitUrl } from "@/components/outfit-sprite";
 import { Input, Badge } from "@/components/ui";
 import {
   mountSpriteSources,
+  outfitSpriteSources,
 } from "@/lib/bazaar/cosmetic-sprites";
-import {
-  buildMountImageUrl,
-  buildOutfitImageFallbackUrl,
-  buildOutfitImageUrl,
-} from "@/lib/bazaar/types";
 import {
   buildOutfitGenderIndex,
   outfitMatchesSex,
@@ -62,14 +58,6 @@ type CatalogCacheEntry = {
 
 /** Module-level catalog cache — survives tab switches inside the picker. */
 const catalogMemoryCache = new Map<string, CatalogCacheEntry>();
-
-function outfitImageUrl(looktype: number, addons = 0) {
-  return buildOutfitImageUrl(looktype, addons);
-}
-
-function outfitFallbackUrl(looktype: number, addons = 0) {
-  return buildOutfitImageFallbackUrl(looktype, addons);
-}
 
 function dedupeOutfits(list: CatalogOutfit[]) {
   const seen = new Set<number>();
@@ -226,13 +214,20 @@ export function CatalogPicker({
   useEffect(() => {
     for (const outfit of selectedOutfits) {
       for (const addons of [0, 1, 2, 3]) {
-        void preloadOutfitUrl(outfitImageUrl(outfit.looktype, addons));
+        const sprite = outfitSpriteSources(outfit.looktype, addons, {
+          isCustom: outfit.looktype >= 2501,
+        });
+        void preloadOutfitUrl(sprite.src);
       }
     }
     for (const mount of selectedMounts) {
-      if (mount.clientId != null) {
-        void preloadOutfitUrl(buildMountImageUrl(mount.clientId, mount.mountName));
-      }
+      const sprite = mountSpriteSources(
+        mount.clientId,
+        mount.imageUrl,
+        mount.mountName,
+        mount.mountId,
+      );
+      if (sprite?.src) void preloadOutfitUrl(sprite.src);
     }
   }, [selectedOutfits, selectedMounts]);
 
@@ -619,7 +614,10 @@ function CatalogOutfitCard({
   onToggleAddon: (bit: 1 | 2) => void;
 }) {
   const addons = selected?.addons ?? 0;
-  const src = outfitImageUrl(outfit.looktype, addons);
+  const sprite = outfitSpriteSources(outfit.looktype, addons, {
+    isCustom: outfit.isCustom,
+    imageUrl: outfit.imageUrl,
+  });
 
   return (
     <div
@@ -640,8 +638,9 @@ function CatalogOutfitCard({
           onSetPrimary={selected ? onSetPrimary : undefined}
         >
           <OutfitSprite
-            src={src}
-            fallbackSrc={outfitFallbackUrl(outfit.looktype, addons)}
+            src={sprite.src}
+            fallbackSrc={sprite.fallbackSrc}
+            fallbackSrcs={sprite.fallbackSrcs}
             alt={outfit.name}
             size={CATALOG_SPRITE_SIZE}
             lazy
@@ -677,6 +676,7 @@ function CatalogMountCard({
     mount.clientId,
     mount.imageUrl,
     mount.name,
+    mount.id,
   );
 
   return (

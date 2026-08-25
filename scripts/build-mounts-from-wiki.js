@@ -10,8 +10,15 @@ function wikiMountImageUrl(name) {
     .trim()
     .replace(/\s*\((mount|montaria)\)\s*/gi, "")
     .trim();
-  const underscored = base.replace(/ /g, "_");
-  return `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(`${underscored}.gif`)}`;
+  const words = base.split(/\s+/).filter(Boolean);
+  const file =
+    words.length > 1
+      ? `${words[0]}${words
+          .slice(1)
+          .map((w) => w.charAt(0).toLowerCase() + w.slice(1))
+          .join("")}.gif`
+      : `${base.replace(/ /g, "_")}.gif`;
+  return `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(file)}`;
 }
 
 function rubinotMountImageUrl(clientId) {
@@ -131,10 +138,15 @@ async function main() {
     byName.set(normalizeName(m.name), m);
   }
 
+  const customMounts = buildCustomRubinotMounts();
+  const customNames = new Set(customMounts.map((m) => normalizeName(m.name)));
+
   const byId = new Map();
 
   // Primary: Canary IDs (used by bazaar) + TibiaWiki images
   for (const m of canary) {
+    if (customNames.has(normalizeName(m.name))) continue;
+
     const wikiHit =
       (m.clientId ? wiki.find((w) => {
         const ids = String(w.mount_id ?? "")
@@ -159,6 +171,8 @@ async function main() {
   // Wiki-only mounts (not in canary) — synthesize ids from clientId
   let synthetic = 80000;
   for (const w of wiki) {
+    if (customNames.has(normalizeName(w.name))) continue;
+
     const ids = String(w.mount_id ?? "")
       .split(",")
       .map((x) => Number(x.trim()))
@@ -187,7 +201,15 @@ async function main() {
     }
   }
 
-  for (const m of buildCustomRubinotMounts()) {
+  for (const m of customMounts) {
+    for (const [id, entry] of [...byId.entries()]) {
+      if (
+        id !== m.id &&
+        normalizeName(entry.name) === normalizeName(m.name)
+      ) {
+        byId.delete(id);
+      }
+    }
     byId.set(m.id, m);
   }
 

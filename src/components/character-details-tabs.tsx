@@ -72,6 +72,7 @@ type Outfit = {
 
 type Mount = {
   id: string;
+  mountId: number;
   mountName: string | null;
   clientId: number | null;
   imageUrl?: string | null;
@@ -781,6 +782,7 @@ function CosmeticsTab({
                 m.clientId,
                 m.imageUrl,
                 m.mountName,
+                m.mountId,
               );
               return (
                 <CosmeticSpriteTile

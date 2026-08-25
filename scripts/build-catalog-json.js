@@ -158,10 +158,16 @@ async function main() {
   const byMid = new Map();
   for (const m of vanillaMounts) byMid.set(m.id, m);
   for (const m of [...customMounts, ...wikiMounts]) {
-    const existing = [...byMid.values()].find(
-      (x) => x.name.toLowerCase() === m.name.toLowerCase(),
+    const existingEntry = [...byMid.entries()].find(
+      ([, x]) => x.name.toLowerCase() === m.name.toLowerCase(),
     );
-    if (existing) {
+    if (existingEntry) {
+      const [existingId, existing] = existingEntry;
+      if (m.isCustom && existingId !== m.id) {
+        byMid.delete(existingId);
+        byMid.set(m.id, m);
+        continue;
+      }
       existing.imageUrl = m.imageUrl || existing.imageUrl;
       if (m.clientId) existing.clientId = m.clientId;
       existing.isCustom = existing.isCustom || m.isCustom;

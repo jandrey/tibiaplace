@@ -1,13 +1,14 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { neon } from "@neondatabase/serverless";
-import { sql } from "drizzle-orm";
+import { eq, sql as dsql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/neon-http";
 import {
   catalogMounts,
   catalogOutfits,
   catalogWorlds,
 } from "../src/lib/db/schema/catalog";
+import { listingMounts } from "../src/lib/db/schema/listings";
 
 type SeedOutfit = {
   looktype: number;
@@ -63,9 +64,9 @@ async function main() {
     .onConflictDoUpdate({
       target: catalogWorlds.name,
       set: {
-        pvpType: sql`excluded.pvp_type`,
-        sortOrder: sql`excluded.sort_order`,
-        active: sql`excluded.active`,
+        pvpType: dsql`excluded.pvp_type`,
+        sortOrder: dsql`excluded.sort_order`,
+        active: dsql`excluded.active`,
       },
     });
 
@@ -87,12 +88,12 @@ async function main() {
       .onConflictDoUpdate({
         target: catalogOutfits.looktype,
         set: {
-          name: sql`excluded.name`,
-          gender: sql`excluded.gender`,
-          premium: sql`excluded.premium`,
-          source: sql`excluded.source`,
-          isCustom: sql`excluded.is_custom`,
-          imageUrl: sql`excluded.image_url`,
+          name: dsql`excluded.name`,
+          gender: dsql`excluded.gender`,
+          premium: dsql`excluded.premium`,
+          source: dsql`excluded.source`,
+          isCustom: dsql`excluded.is_custom`,
+          imageUrl: dsql`excluded.image_url`,
         },
       });
   }
@@ -112,11 +113,29 @@ async function main() {
       .onConflictDoUpdate({
         target: catalogMounts.id,
         set: {
-          name: sql`excluded.name`,
-          clientId: sql`excluded.client_id`,
-          imageUrl: sql`excluded.image_url`,
+          name: dsql`excluded.name`,
+          clientId: dsql`excluded.client_id`,
+          imageUrl: dsql`excluded.image_url`,
         },
       });
+  }
+
+  console.log("Removing vanilla mounts that duplicate custom RubinOT entries…");
+  const duplicates = await db.execute<{ vanilla_id: number; custom_id: number; name: string }>(dsql`
+    SELECT vanilla.id AS vanilla_id, custom.id AS custom_id, custom.name
+    FROM catalog_mounts vanilla
+    JOIN catalog_mounts custom
+      ON lower(trim(vanilla.name)) = lower(trim(custom.name))
+     AND custom.id >= 90000
+    WHERE vanilla.id < 90000
+  `);
+  for (const row of duplicates.rows) {
+    await db
+      .update(listingMounts)
+      .set({ mountId: row.custom_id })
+      .where(eq(listingMounts.mountId, row.vanilla_id));
+    await db.delete(catalogMounts).where(eq(catalogMounts.id, row.vanilla_id));
+    console.log(`  ${row.name}: removed catalog id ${row.vanilla_id} → ${row.custom_id}`);
   }
 
   console.log("Catalog seed complete.");

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
-import { buildOutfitImageUrl } from "@/lib/bazaar/types";
+import { buildCatalogOutfitImageUrl, buildOutfitImageUrl } from "@/lib/bazaar/types";
+import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
 import {
   getListingBadges,
   getListingLevelPercent,
@@ -55,14 +56,23 @@ export function ListingCard({
   }
 
   const outfitUrl = listing.lookType
-    ? buildOutfitImageUrl(
-        listing.lookType,
-        listing.lookAddons ?? 0,
-        listing.lookHead ?? 0,
-        listing.lookBody ?? 0,
-        listing.lookLegs ?? 0,
-        listing.lookFeet ?? 0,
-      )
+    ? isCustomRubinotOutfit(listing.lookType)
+      ? buildCatalogOutfitImageUrl(
+          listing.lookType,
+          listing.lookAddons ?? 0,
+          listing.lookHead ?? 0,
+          listing.lookBody ?? 0,
+          listing.lookLegs ?? 0,
+          listing.lookFeet ?? 0,
+        )
+      : buildOutfitImageUrl(
+          listing.lookType,
+          listing.lookAddons ?? 0,
+          listing.lookHead ?? 0,
+          listing.lookBody ?? 0,
+          listing.lookLegs ?? 0,
+          listing.lookFeet ?? 0,
+        )
     : null;
 
   const snapshot = listing.snapshotData as Record<string, unknown> | null;

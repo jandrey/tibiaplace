@@ -3,6 +3,7 @@ import {
   isPlausibleOutfitImageBytes,
 } from "@/lib/sprites/image-validation";
 import { resolveMountOnlyImageUrls } from "@/lib/bazaar/types";
+import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
 
 function dedupeUrls(urls: string[]) {
   return urls.filter((u, i, arr) => Boolean(u) && arr.indexOf(u) === i);
@@ -26,11 +27,11 @@ export function readGifSize(bytes: Uint8Array): { w: number; h: number } | null 
 }
 
 export function isUsableImage(contentType: string | null, body: ArrayBuffer) {
-  if (!contentType?.startsWith("image/")) return false;
   if (body.byteLength < 200) return false;
   const bytes = new Uint8Array(body);
   const gif = readGifSize(bytes);
   if (gif) {
+    if (contentType && !contentType.startsWith("image/")) return false;
     return isPlausibleOutfitImageBytes(body, gif.w, gif.h);
   }
   if (
@@ -41,7 +42,7 @@ export function isUsableImage(contentType: string | null, body: ArrayBuffer) {
   ) {
     return body.byteLength > 200;
   }
-  return false;
+  return contentType?.startsWith("image/") ?? false;
 }
 
 export async function fetchImage(url: string): Promise<{
@@ -51,7 +52,9 @@ export async function fetchImage(url: string): Promise<{
   try {
     const referer = /tibiawiki\.com\.br/i.test(url)
       ? "https://www.tibiawiki.com.br/"
-      : "https://rubinot.com.br/";
+      : /wiki\.rubinot\.com/i.test(url)
+        ? "https://wiki.rubinot.com/"
+        : "https://rubinot.com.br/";
 
     const res = await fetch(url, {
       headers: {
@@ -131,14 +134,25 @@ export function upstreamSpriteCandidates(params: {
   mountId: number | null;
   mountName?: string | null;
   mountImageUrl?: string | null;
+  catalogOutfitImageUrl?: string | null;
   addons: number;
   head: number;
   body: number;
   legs: number;
   feet: number;
 }) {
-  const { type, mountId, mountName, mountImageUrl, addons, head, body, legs, feet } =
-    params;
+  const {
+    type,
+    mountId,
+    mountName,
+    mountImageUrl,
+    catalogOutfitImageUrl,
+    addons,
+    head,
+    body,
+    legs,
+    feet,
+  } = params;
   const candidates: string[] = [];
 
   if (mountId != null) {
@@ -174,6 +188,18 @@ export function upstreamSpriteCandidates(params: {
         walk: false,
       }),
     ]);
+  }
+
+  if (isCustomRubinotOutfit(type)) {
+    const rubinUrls = [
+      rubinOutfitUrl({ type, addons, head, body, legs, feet }),
+      ...(addons !== 0
+        ? [rubinOutfitUrl({ type, addons: 0, head, body, legs, feet })]
+        : []),
+    ];
+    return dedupeUrls(
+      catalogOutfitImageUrl ? [rubinUrls[0]!, catalogOutfitImageUrl, ...rubinUrls.slice(1)] : rubinUrls,
+    );
   }
 
   candidates.push(

@@ -211,7 +211,7 @@
     "id": 27,
     "name": "Lady Bug",
     "clientId": 447,
-    "imageUrl": "https://www.tibiawiki.com.br/wiki/Especial:FilePath/Ladybug%20(Mount).gif",
+    "imageUrl": "https://www.tibiawiki.com.br/wiki/Especial:FilePath/Ladybug.gif",
     "isCustom": false,
     "source": "tibiawiki"
   },
@@ -1475,7 +1475,7 @@
     "id": 185,
     "name": "Hyacinth (Mount)",
     "clientId": 1439,
-    "imageUrl": "https://www.tibiawiki.com.br/wiki/Especial:FilePath/Hyacinth_(Mount).gif",
+    "imageUrl": "https://www.tibiawiki.com.br/wiki/Especial:FilePath/Hyacinth.gif",
     "isCustom": false,
     "source": "tibiawiki"
   },

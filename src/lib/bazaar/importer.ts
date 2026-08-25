@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import type { Db } from "@/lib/db";
 import { getDb } from "@/lib/db";
 import {
@@ -30,12 +30,30 @@ import {
 } from "@/lib/db/schema";
 import type { BazaarData } from "./types";
 import { buildSlug } from "./types";
+import { isCustomRubinotMountName } from "./custom-mounts";
 import type { ImportProgressReporter } from "./import-progress";
 import { enrichBazaarSnapshot } from "./progress";
 import { titleName } from "./titles";
 
 function isRune(name: string) {
   return /rune/i.test(name);
+}
+
+async function resolveCatalogMountId(
+  db: Db,
+  mount: { id: number; name: string },
+) {
+  if (!isCustomRubinotMountName(mount.name)) return mount.id;
+
+  const rows = await db
+    .select({ id: catalogMounts.id })
+    .from(catalogMounts)
+    .where(
+      sql`lower(trim(${catalogMounts.name})) = lower(trim(${mount.name})) AND ${catalogMounts.id} >= 90000`,
+    )
+    .limit(1);
+
+  return rows[0]?.id ?? mount.id;
 }
 
 async function upsertCatalogFromBazaar(
@@ -81,6 +99,8 @@ async function upsertCatalogFromBazaar(
       label: `${data.mounts.length} montarias`,
       run: async () => {
         for (const mount of data.mounts ?? []) {
+          if (isCustomRubinotMountName(mount.name)) continue;
+
           await db
             .insert(catalogMounts)
             .values({
@@ -299,15 +319,16 @@ async function insertListingRelations(
     sections.push({
       label: `${data.mounts.length} montarias`,
       run: async () => {
-        await db.insert(listingMounts).values(
-          data.mounts!.map((mount) => ({
+        for (const mount of data.mounts ?? []) {
+          const mountId = await resolveCatalogMountId(db, mount);
+          await db.insert(listingMounts).values({
             id: nanoid(),
             listingId,
-            mountId: mount.id,
+            mountId,
             mountName: mount.name,
             clientId: mount.clientId,
-          })),
-        );
+          });
+        }
       },
     });
   }

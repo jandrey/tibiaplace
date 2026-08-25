@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import { outfitSpriteCache } from "@/lib/db/schema/sprites";
 import { db } from "@/lib/db";
 import {
@@ -27,6 +28,15 @@ export function buildSpriteCacheKey(params: SpriteCacheParams) {
     legs,
     feet,
   ].join(":");
+}
+
+export function buildExternalSpriteCacheKey(sourceUrl: string) {
+  const hash = createHash("sha256").update(sourceUrl).digest("hex").slice(0, 20);
+  return `ext:${hash}`;
+}
+
+export function buildCatalogMountCacheKey(catalogMountId: number) {
+  return `cm${catalogMountId}`;
 }
 
 export function storageKeyForCacheKey(cacheKey: string) {

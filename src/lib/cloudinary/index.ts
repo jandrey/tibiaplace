@@ -39,9 +39,11 @@ export function isCloudinaryConfigured() {
 
 export function cloudinaryPublicIdForCacheKey(cacheKey: string) {
   const safe = cacheKey.replace(/:/g, "_");
-  const folder = cacheKey.startsWith("m")
-    ? "tibiaplace/mounts"
-    : "tibiaplace/outfits";
+  const isMount =
+    cacheKey.startsWith("cm") ||
+    cacheKey.startsWith("ext:") ||
+    /^m\d/.test(cacheKey);
+  const folder = isMount ? "tibiaplace/mounts" : "tibiaplace/outfits";
   return `${folder}/${safe}`;
 }
 
@@ -54,7 +56,8 @@ export async function uploadSpriteToCloudinary(
     throw new Error("Cloudinary não configurado. Verifique as variáveis de ambiente.");
   }
 
-  const format = contentType.includes("png") ? "png" : "gif";
+  const format =
+    contentType.includes("png") || contentType.includes("apng") ? "png" : "gif";
 
   return new Promise((resolve, reject) => {
     const stream = cloudinary.uploader.upload_stream(

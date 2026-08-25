@@ -25,9 +25,11 @@ import {
   triesFromPercent,
 } from "@/lib/bazaar/skills";
 import {
+  buildCatalogOutfitImageUrl,
   buildOutfitImageFallbackUrl,
   buildOutfitImageUrl,
 } from "@/lib/bazaar/types";
+import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
 import { OUTFIT_COLOR_PARTS, type OutfitColorPart } from "@/lib/bazaar/outfit-colors";
 import { PLAYER_SEX_OPTIONS } from "@/lib/bazaar/player-sex";
 import { cn, formatNumber } from "@/lib/utils";
@@ -542,8 +544,11 @@ export function CharacterEditorForm({
     const legs = parseNum(values.lookLegs) ?? 0;
     const feet = parseNum(values.lookFeet) ?? 0;
     const addons = primaryOutfit.addons;
+    const buildCached = isCustomRubinotOutfit(primaryOutfit.looktype)
+      ? buildCatalogOutfitImageUrl
+      : buildOutfitImageUrl;
     return {
-      src: buildOutfitImageUrl(
+      src: buildCached(
         primaryOutfit.looktype,
         addons,
         head,

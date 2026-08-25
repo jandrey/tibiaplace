@@ -1,9 +1,14 @@
 import {
+  buildCatalogOutfitImageUrl,
+  buildCatalogMountImageUrl,
+  buildExternalSpriteUrl,
   buildMountImageUrl,
   buildOutfitImageFallbackUrl,
   buildOutfitImageUrl,
+  isRubinotWikiMountUrl,
   resolveMountOnlyImageUrls,
 } from "@/lib/bazaar/types";
+import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
 
 export type CosmeticSpriteSources = {
   src: string;
@@ -23,14 +28,19 @@ export function outfitSpriteSources(
   addons: number,
   opts?: { imageUrl?: string | null; isCustom?: boolean },
 ): CosmeticSpriteSources {
-  const cached = buildOutfitImageUrl(looktype, addons);
+  const isCustom = opts?.isCustom ?? isCustomRubinotOutfit(looktype);
+  const cached = isCustom
+    ? buildCatalogOutfitImageUrl(looktype, addons)
+    : buildOutfitImageUrl(looktype, addons);
   const rubin = buildOutfitImageFallbackUrl(looktype, addons);
   const catalogUrl = opts?.imageUrl ?? null;
 
   const reduced =
     addons > 0
       ? [
-          buildOutfitImageUrl(looktype, 0),
+          isCustom
+            ? buildCatalogOutfitImageUrl(looktype, 0)
+            : buildOutfitImageUrl(looktype, 0),
           buildOutfitImageFallbackUrl(looktype, 0),
         ]
       : [];
@@ -48,8 +58,25 @@ export function mountSpriteSources(
   clientId: number | null,
   imageUrl?: string | null,
   mountName?: string | null,
+  catalogMountId?: number | null,
 ): CosmeticSpriteSources | null {
   const wikiUrls = resolveMountOnlyImageUrls(imageUrl, mountName);
+
+  if (imageUrl && isRubinotWikiMountUrl(imageUrl)) {
+    const cached =
+      catalogMountId != null && catalogMountId >= 90000
+        ? buildCatalogMountImageUrl(catalogMountId)
+        : buildExternalSpriteUrl(imageUrl);
+    const fallbacks = dedupeUrls([
+      imageUrl,
+      ...wikiUrls.filter((u) => u !== imageUrl),
+    ]);
+    return {
+      src: cached,
+      fallbackSrc: fallbacks[0],
+      fallbackSrcs: fallbacks.slice(1),
+    };
+  }
 
   if (clientId != null) {
     const cached = buildMountImageUrl(clientId, mountName);
