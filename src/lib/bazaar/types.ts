@@ -181,8 +181,13 @@ export function buildOutfitImageFallbackUrl(
 }
 
 /** Cached mount sprite on TibiaPlace (Cloudinary + DB). */
-export function buildMountImageUrl(clientId: number, _direction = 3) {
-  return `/api/outfit-sprite?${new URLSearchParams({ mount: String(clientId) }).toString()}`;
+export function buildMountImageUrl(
+  clientId: number,
+  mountName?: string | null,
+) {
+  const params = new URLSearchParams({ mount: String(clientId) });
+  if (mountName?.trim()) params.set("name", mountName.trim());
+  return `/api/outfit-sprite?${params.toString()}`;
 }
 
 /** Mount-only GIF candidates from TibiaWiki (no rider). */

@@ -231,7 +231,7 @@ export function CatalogPicker({
     }
     for (const mount of selectedMounts) {
       if (mount.clientId != null) {
-        void preloadOutfitUrl(buildMountImageUrl(mount.clientId));
+        void preloadOutfitUrl(buildMountImageUrl(mount.clientId, mount.mountName));
       }
     }
   }, [selectedOutfits, selectedMounts]);

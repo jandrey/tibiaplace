@@ -8,6 +8,9 @@ import {
   fetchImage,
   upstreamSpriteCandidates,
 } from "@/lib/sprites/upstream";
+import { catalogMounts } from "@/lib/db/schema/catalog";
+import { db } from "@/lib/db";
+import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
@@ -66,6 +69,29 @@ export async function GET(request: Request) {
   const bodyColor = Number(searchParams.get("body") ?? "0");
   const legs = Number(searchParams.get("legs") ?? "0");
   const feet = Number(searchParams.get("feet") ?? "0");
+  const mountNameParam = searchParams.get("name");
+
+  let mountName = mountNameParam;
+  let mountImageUrl: string | null = null;
+  if (mountId != null) {
+    try {
+      const rows = await db
+        .select({
+          name: catalogMounts.name,
+          imageUrl: catalogMounts.imageUrl,
+        })
+        .from(catalogMounts)
+        .where(eq(catalogMounts.clientId, mountId))
+        .limit(1);
+      const catalog = rows[0];
+      if (catalog) {
+        mountName = mountName ?? catalog.name;
+        mountImageUrl = catalog.imageUrl;
+      }
+    } catch {
+      /* catalog lookup optional */
+    }
+  }
 
   const cacheKey = buildSpriteCacheKey({
     type,
@@ -101,6 +127,8 @@ export async function GET(request: Request) {
   const candidates = upstreamSpriteCandidates({
     type,
     mountId,
+    mountName,
+    mountImageUrl,
     addons,
     head,
     body: bodyColor,

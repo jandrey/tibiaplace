@@ -2,6 +2,11 @@ import {
   analyzeOutfitImage,
   isPlausibleOutfitImageBytes,
 } from "@/lib/sprites/image-validation";
+import { resolveMountOnlyImageUrls } from "@/lib/bazaar/types";
+
+function dedupeUrls(urls: string[]) {
+  return urls.filter((u, i, arr) => Boolean(u) && arr.indexOf(u) === i);
+}
 
 export function readGifSize(bytes: Uint8Array): { w: number; h: number } | null {
   if (bytes.length < 10) return null;
@@ -44,12 +49,16 @@ export async function fetchImage(url: string): Promise<{
   contentType: string;
 } | null> {
   try {
+    const referer = /tibiawiki\.com\.br/i.test(url)
+      ? "https://www.tibiawiki.com.br/"
+      : "https://rubinot.com.br/";
+
     const res = await fetch(url, {
       headers: {
         "user-agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         accept: "image/gif,image/png,image/*,*/*",
-        referer: "https://rubinot.com.br/",
+        referer,
       },
       signal: AbortSignal.timeout(12_000),
       cache: "force-cache",
@@ -116,21 +125,26 @@ export function rubinOutfitUrl(params: {
   return `https://rubinot.com.br/api/outfit?${q}`;
 }
 
-/** RubinOT first (mirror source), ots.me as secondary when fetching to persist. */
+/** Outfits: RubinOT → ots.me. Mounts: TibiaWiki/catalog → RubinOT → ots.me. */
 export function upstreamSpriteCandidates(params: {
   type: number;
   mountId: number | null;
+  mountName?: string | null;
+  mountImageUrl?: string | null;
   addons: number;
   head: number;
   body: number;
   legs: number;
   feet: number;
 }) {
-  const { type, mountId, addons, head, body, legs, feet } = params;
+  const { type, mountId, mountName, mountImageUrl, addons, head, body, legs, feet } =
+    params;
   const candidates: string[] = [];
 
   if (mountId != null) {
-    candidates.push(
+    const wikiUrls = resolveMountOnlyImageUrls(mountImageUrl, mountName);
+    return dedupeUrls([
+      ...wikiUrls,
       rubinOutfitUrl({
         addons: 0,
         head: 0,
@@ -159,8 +173,7 @@ export function upstreamSpriteCandidates(params: {
         mount: mountId,
         walk: false,
       }),
-    );
-    return candidates;
+    ]);
   }
 
   candidates.push(

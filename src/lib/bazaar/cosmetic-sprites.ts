@@ -53,7 +53,7 @@ export function mountSpriteSources(
   const wikiUrls = resolveMountOnlyImageUrls(imageUrl, mountName);
 
   if (clientId != null) {
-    const cached = buildMountImageUrl(clientId);
+    const cached = buildMountImageUrl(clientId, mountName);
     const rubin = buildMountImageFallbackUrl(clientId);
     const urls = dedupeUrls([cached, ...wikiUrls, rubin, imageUrl]);
     return {
