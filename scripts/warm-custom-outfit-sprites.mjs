@@ -37,24 +37,24 @@ function storageKey(key) {
   return `tibiaplace/outfits/${key.replace(/:/g, "_")}`;
 }
 
-function rubinUrl(looktype, addons) {
-  return `https://rubinot.com.br/api/outfit?type=${looktype}&addons=${addons}&head=0&body=0&legs=0&feet=0&direction=3&animated=1&walk=1&size=0`;
+function wikiOutfitProxyUrl(looktype, addons) {
+  return `https://wiki.rubinot.com/api/outfit-proxy?type=${looktype}&addons=${addons}&head=0&body=0&legs=0&feet=0&direction=3&animated=1&walk=1&size=0`;
 }
 
-async function fetchRubin(url) {
+async function fetchOutfitSprite(url) {
   const res = await fetch(url, {
     headers: {
       "user-agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       accept: "image/gif,image/png,image/*,*/*",
-      referer: "https://rubinot.com.br/",
+      referer: "https://wiki.rubinot.com/",
     },
     signal: AbortSignal.timeout(15_000),
   });
   if (!res.ok) return null;
   const body = Buffer.from(await res.arrayBuffer());
   if (body.byteLength < 200) return null;
-  const ct = (res.headers.get("content-type") ?? "image/gif").split(";")[0].trim();
+  const ct = (res.headers.get("content-type") ?? "image/png").split(";")[0].trim();
   if (body[0] === 0x3c) return null;
   return { body, contentType: ct };
 }
@@ -143,11 +143,11 @@ for (const outfit of outfits) {
         continue;
       }
 
-      const sourceUrl = rubinUrl(outfit.looktype, addons);
-      const image = await fetchRubin(sourceUrl);
+      const sourceUrl = wikiOutfitProxyUrl(outfit.looktype, addons);
+      const image = await fetchOutfitSprite(sourceUrl);
       if (!image) {
         fail += 1;
-        console.log(`  ✗ ${label} (RubinOT fetch failed)`);
+        console.log(`  ✗ ${label} (wiki outfit-proxy fetch failed)`);
         continue;
       }
 

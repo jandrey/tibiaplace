@@ -1,5 +1,5 @@
 import { isRubinotWikiMountUrl } from "@/lib/bazaar/types";
-import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
+import { isCustomRubinotOutfit, isRubinotWikiOutfitProxyUrl } from "@/lib/bazaar/custom-outfits";
 import {
   buildCatalogMountCacheKey,
   buildExternalSpriteCacheKey,
@@ -64,6 +64,7 @@ function isAllowedExternalSpriteUrl(url: string) {
     const parsed = new URL(url);
     if (parsed.protocol !== "https:") return false;
     if (isRubinotWikiMountUrl(url)) return true;
+    if (isRubinotWikiOutfitProxyUrl(url)) return true;
     return /^(www\.)?tibiawiki\.com\.br$/i.test(parsed.hostname);
   } catch {
     return false;

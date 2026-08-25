@@ -1,3 +1,8 @@
+import {
+  buildRubinotWikiOutfitProxyUrl,
+  isCustomRubinotOutfit,
+} from "./custom-outfits";
+
 export type BazaarAuction = {
   id: number;
   state: number;
@@ -202,6 +207,17 @@ export function buildOutfitImageFallbackUrl(
   legs = 0,
   feet = 0,
 ) {
+  if (isCustomRubinotOutfit(lookType)) {
+    return buildRubinotWikiOutfitProxyUrl(
+      lookType,
+      addons,
+      head,
+      body,
+      legs,
+      feet,
+    );
+  }
+
   const params = outfitSpriteQuery(lookType, addons, head, body, legs, feet);
   params.set("direction", "3");
   params.set("animated", "1");

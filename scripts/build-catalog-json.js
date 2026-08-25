@@ -5,7 +5,10 @@ function attr(attrs, key) {
   return m ? m[1] : null;
 }
 
-function outfitImageUrl(looktype) {
+function outfitImageUrl(looktype, custom = false) {
+  if (custom) {
+    return `https://wiki.rubinot.com/api/outfit-proxy?type=${looktype}&head=0&body=0&legs=0&feet=0&addons=3&direction=3&animated=1&walk=1&size=0`;
+  }
   const params = new URLSearchParams({
     type: String(looktype),
     addons: "3",
@@ -94,7 +97,7 @@ async function main() {
     premium: true,
     source: "wiki-custom",
     isCustom: true,
-    imageUrl: outfitImageUrl(o.looktype),
+    imageUrl: outfitImageUrl(o.looktype, true),
   }));
 
   const byLt = new Map();

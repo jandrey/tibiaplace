@@ -3,7 +3,11 @@ import {
   isPlausibleOutfitImageBytes,
 } from "@/lib/sprites/image-validation";
 import { resolveMountOnlyImageUrls } from "@/lib/bazaar/types";
-import { isCustomRubinotOutfit } from "@/lib/bazaar/custom-outfits";
+import {
+  buildRubinotWikiOutfitProxyUrl,
+  isCustomRubinotOutfit,
+  isRubinotWikiOutfitProxyUrl,
+} from "@/lib/bazaar/custom-outfits";
 
 function dedupeUrls(urls: string[]) {
   return urls.filter((u, i, arr) => Boolean(u) && arr.indexOf(u) === i);
@@ -191,15 +195,21 @@ export function upstreamSpriteCandidates(params: {
   }
 
   if (isCustomRubinotOutfit(type)) {
-    const rubinUrls = [
-      rubinOutfitUrl({ type, addons, head, body, legs, feet }),
+    const urls = [
+      buildRubinotWikiOutfitProxyUrl(type, addons, head, body, legs, feet),
       ...(addons !== 0
-        ? [rubinOutfitUrl({ type, addons: 0, head, body, legs, feet })]
+        ? [
+            buildRubinotWikiOutfitProxyUrl(type, 0, head, body, legs, feet),
+          ]
         : []),
+      buildRubinotWikiOutfitProxyUrl(type, addons, head, body, legs, feet, {
+        walk: false,
+      }),
     ];
-    return dedupeUrls(
-      catalogOutfitImageUrl ? [rubinUrls[0]!, catalogOutfitImageUrl, ...rubinUrls.slice(1)] : rubinUrls,
-    );
+    if (catalogOutfitImageUrl && isRubinotWikiOutfitProxyUrl(catalogOutfitImageUrl)) {
+      urls.unshift(catalogOutfitImageUrl);
+    }
+    return dedupeUrls(urls);
   }
 
   candidates.push(
