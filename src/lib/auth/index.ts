@@ -8,12 +8,47 @@ const devOrigins = Array.from({ length: 11 }, (_, i) => {
   return [`http://localhost:${port}`, `http://127.0.0.1:${port}`];
 }).flat();
 
+function normalizeOrigin(url: string): string {
+  return url.replace(/\/$/, "");
+}
+
+/** Resolves the public app URL (Better Auth cookies, callbacks). */
+function resolveAppBaseUrl(): string | undefined {
+  const candidates = [
+    process.env.BETTER_AUTH_URL,
+    process.env.NEXT_PUBLIC_APP_URL,
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : undefined,
+  ];
+  for (const url of candidates) {
+    if (url?.trim()) return normalizeOrigin(url.trim());
+  }
+  return undefined;
+}
+
+function resolveTrustedOrigins(baseURL: string | undefined): string[] {
+  if (process.env.NODE_ENV === "development") return devOrigins;
+
+  const origins = new Set<string>();
+  for (const url of [
+    process.env.NEXT_PUBLIC_APP_URL,
+    process.env.BETTER_AUTH_URL,
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : undefined,
+    baseURL,
+  ]) {
+    if (url?.trim()) origins.add(normalizeOrigin(url.trim()));
+  }
+  return [...origins];
+}
+
+const appBaseUrl = resolveAppBaseUrl();
+
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL,
-  trustedOrigins:
-    process.env.NODE_ENV === "development"
-      ? devOrigins
-      : [process.env.NEXT_PUBLIC_APP_URL!].filter(Boolean),
+  baseURL: appBaseUrl,
+  trustedOrigins: resolveTrustedOrigins(appBaseUrl),
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {

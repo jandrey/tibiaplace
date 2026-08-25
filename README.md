@@ -388,11 +388,19 @@ WhatsApp: mensagem com URL do anúncio, nome, mundo e preço (`buildInterestMess
 ## Deploy (Vercel)
 
 1. Conecte o repo GitHub à Vercel
-2. Configure **todas** as env vars (mesmas do `.env.example`)
-3. Deploy → rode `npm run admin:ensure-master` localmente apontando para o Neon de produção **ou** configure as vars e rode via CI one-off
-4. `npm run db:push` contra o Neon de produção (uma vez por mudança de schema)
+2. Configure as env vars (mesmas do `.env.example`). **Em produção, use a URL real:**
 
-Build command: `npm run build`  
+   | Variável | Valor em produção |
+   |----------|-------------------|
+   | `BETTER_AUTH_URL` | `https://tibiaplace.vercel.app` |
+   | `NEXT_PUBLIC_APP_URL` | `https://tibiaplace.vercel.app` |
+
+   Se essas URLs apontarem para `localhost`, o login no browser falha com **Invalid origin** (403).
+
+3. Rode `pnpm run admin:ensure-master` localmente com `.env.local` apontando para o Neon de produção (cria/sincroniza a conta admin)
+4. Migrations: `pnpm run db:generate` → commit → `pnpm run db:migrate` (não use `db:push` em produção)
+
+Build command: `pnpm run build`  
 Output: Next.js default
 
 ---
