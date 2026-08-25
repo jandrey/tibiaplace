@@ -157,3 +157,248 @@ html {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ── Interest CTA ────────────────────────────────────────────── */
+@keyframes interest-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes interest-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes interest-shimmer {
+  0%,
+  18% {
+    transform: translateX(-160%) skewX(-16deg);
+    opacity: 0;
+  }
+  28% {
+    opacity: 1;
+  }
+  48%,
+  100% {
+    transform: translateX(260%) skewX(-16deg);
+    opacity: 0;
+  }
+}
+
+@keyframes interest-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.interest-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.875rem;
+  padding: 0.6875rem 1.375rem;
+  border: none;
+  border-radius: 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
+  color: var(--color-primary-foreground);
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #fde68a 0%,
+    #fbbf24 18%,
+    #f59e0b 52%,
+    #ea580c 100%
+  );
+  background-size: 220% 220%;
+  animation: interest-gradient-shift 9s ease-in-out infinite;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 -1px 0 rgba(120, 53, 15, 0.22) inset,
+    0 0 0 1px rgba(245, 158, 11, 0.35),
+    0 6px 20px rgba(245, 158, 11, 0.32),
+    0 14px 36px rgba(0, 0, 0, 0.38);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.3s ease;
+}
+
+.interest-btn__ambient {
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 50%,
+    rgba(251, 191, 36, 0.55),
+    rgba(245, 158, 11, 0.15) 45%,
+    transparent 72%
+  );
+  filter: blur(10px);
+  animation: interest-glow-pulse 3.2s ease-in-out infinite;
+}
+
+.interest-btn__ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.55) 70deg,
+    transparent 140deg,
+    rgba(255, 237, 213, 0.35) 220deg,
+    transparent 360deg
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0.55;
+  animation: interest-ring-spin 6s linear infinite;
+}
+
+.interest-btn__shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.interest-btn__shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 255, 255, 0.08) 65%,
+    transparent 100%
+  );
+  animation: interest-shimmer 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.interest-btn__label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.interest-btn__text {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.interest-btn__arrow {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  opacity: 0.88;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.interest-btn:hover:not(.interest-btn--disabled) {
+  transform: translateY(-2px) scale(1.015);
+  filter: brightness(1.04);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.34) inset,
+    0 -1px 0 rgba(120, 53, 15, 0.18) inset,
+    0 0 0 1px rgba(253, 224, 71, 0.55),
+    0 10px 28px rgba(245, 158, 11, 0.42),
+    0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+.interest-btn:hover:not(.interest-btn--disabled) .interest-btn__text {
+  transform: translateX(-1px);
+}
+
+.interest-btn:hover:not(.interest-btn--disabled) .interest-btn__arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+.interest-btn:hover:not(.interest-btn--disabled) .interest-btn__shimmer::after {
+  animation-duration: 3.2s;
+}
+
+.interest-btn:active:not(.interest-btn--disabled) {
+  transform: translateY(0) scale(0.985);
+  transition-duration: 0.12s;
+  filter: brightness(0.98);
+}
+
+.interest-btn:focus-visible {
+  outline: 2px solid rgba(253, 224, 71, 0.85);
+  outline-offset: 3px;
+}
+
+.interest-btn--disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  filter: grayscale(0.25) saturate(0.6);
+  animation: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.interest-btn--disabled .interest-btn__ambient,
+.interest-btn--disabled .interest-btn__ring,
+.interest-btn--disabled .interest-btn__shimmer::after {
+  animation: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interest-btn {
+    animation: none;
+  }
+
+  .interest-btn__ambient,
+  .interest-btn__ring,
+  .interest-btn__shimmer::after {
+    animation: none !important;
+  }
+
+  .interest-btn:hover:not(.interest-btn--disabled) {
+    transform: none;
+  }
+
+  .interest-btn:hover:not(.interest-btn--disabled) .interest-btn__text,
+  .interest-btn:hover:not(.interest-btn--disabled) .interest-btn__arrow {
+    transform: none;
+  }
+}

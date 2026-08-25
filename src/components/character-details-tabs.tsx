@@ -58,6 +58,7 @@ import {
 } from "@/lib/bazaar/cosmetic-sprites";
 import { resolveTitles } from "@/lib/bazaar/titles";
 import { readLevelPercent } from "@/lib/bazaar/progress";
+import { deriveQuestsFromStorages } from "@/lib/bazaar/quests";
 import { normalizeSkillRecord } from "@/lib/bazaar/skills";
 import { cn, formatNumber } from "@/lib/utils";
 
@@ -1340,7 +1341,7 @@ function QuestsTab({
   const rows = expanded ? quests : quests.slice(0, PREVIEW_ROWS);
   if (quests.length === 0) {
     return (
-      <EmptyState label="Quests não disponíveis neste bazaar" />
+      <EmptyState label="Sem dados de quests para este personagem" />
     );
   }
   return (
@@ -1600,7 +1601,15 @@ function parseSnapshot(snapshot: Record<string, unknown> | null) {
     hirelingWardrobe: asArray<unknown>(snapshot?.hirelingWardrobe),
     auras: asArray<{ name?: string } | string>(snapshot?.auras),
     loginScreens: asArray<{ name?: string } | string>(snapshot?.loginScreens),
-    quests: asArray<{ name: string; completed: boolean }>(snapshot?.quests),
+    quests: (() => {
+      const stored = asArray<{ name: string; completed: boolean }>(
+        snapshot?.quests,
+      );
+      if (stored.length > 0) return stored;
+      return deriveQuestsFromStorages(
+        asArray<[number, string]>(snapshot?.storages),
+      );
+    })(),
     storeItems: asArray<{
       name: string;
       count: number;

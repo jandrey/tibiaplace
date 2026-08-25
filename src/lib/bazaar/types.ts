@@ -107,6 +107,8 @@ export type BazaarData = {
     activePerks: Array<{ lane: number; index: number }>;
   }>;
   storages: Array<[number, string]>;
+  /** Computed on import from storages + quest catalog (not in raw RubinOT API). */
+  quests?: Array<{ name: string; completed: boolean }>;
   bestiaryTotal: number;
   bosstiariosTotal: number;
   itemsTotal: number;

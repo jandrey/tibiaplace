@@ -7,7 +7,7 @@ import {
   listingPublicPath,
   type ListingType,
 } from "@/lib/listings/types";
-import { Button } from "@/components/ui";
+import { InterestButton } from "@/components/interest-button";
 
 export async function WhatsAppButton({
   listingTitle,
@@ -27,20 +27,20 @@ export async function WhatsAppButton({
 
   if (!phone) {
     return (
-      <Button disabled className="w-full">
+      <InterestButton disabled className="w-full">
         WhatsApp não configurado
-      </Button>
+      </InterestButton>
     );
   }
 
   return (
-    <a
+    <InterestButton
       href={getWhatsAppUrl(phone, message)}
       target="_blank"
       rel="noopener noreferrer"
-      className="block w-full"
+      className="w-full"
     >
-      <Button className="w-full">Tenho interesse</Button>
-    </a>
+      Tenho interesse
+    </InterestButton>
   );
 }

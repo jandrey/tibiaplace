@@ -491,7 +491,10 @@ export default function EditListingPage({
             const body = await res.json();
             throw new Error(body.error ?? "Erro ao salvar");
           }
-          await reloadListing(listing.id, { silent: true });
+          await reloadListing(listing.id, {
+            silent: true,
+            remountForm: true,
+          });
         }}
         sidebar={
           <>

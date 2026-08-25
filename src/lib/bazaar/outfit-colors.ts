@@ -132,8 +132,8 @@ export const OUTFIT_COLOR_PARTS: Array<{
   label: string;
   field: "lookHead" | "lookBody" | "lookLegs" | "lookFeet";
 }> = [
-  { id: "head", label: "Cabeça", field: "lookHead" },
-  { id: "body", label: "Corpo", field: "lookBody" },
-  { id: "legs", label: "Pernas", field: "lookLegs" },
-  { id: "feet", label: "Pés", field: "lookFeet" },
+  { id: "head", label: "Head", field: "lookHead" },
+  { id: "body", label: "Primary", field: "lookBody" },
+  { id: "legs", label: "Secondary", field: "lookLegs" },
+  { id: "feet", label: "Detail", field: "lookFeet" },
 ];

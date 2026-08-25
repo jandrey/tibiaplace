@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Button, Input, Label, Textarea } from "@/components/ui";
+import { InterestButton } from "@/components/interest-button";
 import { buildInterestMessage, getWhatsAppUrl } from "@/lib/utils";
 import {
   LISTING_TYPE_LABELS,
@@ -112,7 +113,7 @@ export function ListingBuyButton({
 
   return (
     <>
-      <Button
+      <InterestButton
         type="button"
         className="w-full"
         disabled={!whatsappPhone}
@@ -123,7 +124,7 @@ export function ListingBuyButton({
             ? "Tenho interesse"
             : "Comprar"
           : "WhatsApp indisponível"}
-      </Button>
+      </InterestButton>
 
       {open && (
         <div
@@ -184,9 +185,9 @@ export function ListingBuyButton({
               >
                 Cancelar
               </Button>
-              <Button type="button" onClick={handleConfirm} disabled={!canSubmit}>
+              <InterestButton type="button" onClick={handleConfirm} disabled={!canSubmit}>
                 Enviar no WhatsApp
-              </Button>
+              </InterestButton>
             </div>
           </div>
         </div>

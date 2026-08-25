@@ -1,13 +1,13 @@
 "use client";
 
 import { ImagePlus, Star, Trash2 } from "lucide-react";
+import { ListingStatusPicker } from "@/components/listing-status-picker";
 import { Card, Input, Label, SwitchField } from "@/components/ui";
 import {
   DEFAULT_PRIVACY_TOGGLES,
   type PrivacyToggles,
 } from "@/lib/db/schema/listings";
 import { EXTRA_PHOTOS_ENABLED } from "@/lib/listings/features";
-import { LISTING_STATUS_LABELS } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
 type ListingPublication = {
@@ -36,7 +36,7 @@ function PanelSection({
   className?: string;
 }) {
   return (
-    <Card className={cn("overflow-hidden p-0", className)}>
+    <Card className={cn("p-0", className)}>
       <div className="border-b border-[var(--color-card-border)] px-4 py-3">
         <h2 className="text-sm font-semibold text-zinc-100">{title}</h2>
         {description && (
@@ -71,9 +71,14 @@ export function ListingPublicationPanel({
     <div className="space-y-4">
       <PanelSection
         title="Publicação"
-        description="URL, status e destaque na vitrine."
+        description="Status, URL e destaque na vitrine."
       >
-        <div>
+        <ListingStatusPicker
+          value={listing.status}
+          onChange={(status) => onListingChange({ ...listing, status })}
+        />
+
+        <div className="rounded-lg border border-[var(--color-card-border)] bg-[var(--color-accent)]/20 p-3">
           <Label htmlFor="listing-slug">Slug da URL</Label>
           <Input
             id="listing-slug"
@@ -83,24 +88,9 @@ export function ListingPublicationPanel({
             }
             className="mt-1.5 font-mono text-sm"
           />
-        </div>
-
-        <div>
-          <Label htmlFor="listing-status">Status</Label>
-          <select
-            id="listing-status"
-            value={listing.status}
-            onChange={(e) =>
-              onListingChange({ ...listing, status: e.target.value })
-            }
-            className="mt-1.5 h-10 w-full rounded-lg border border-[var(--color-card-border)] bg-[var(--color-accent)] px-3 text-sm outline-none focus:border-[var(--color-primary)]/60"
-          >
-            {Object.entries(LISTING_STATUS_LABELS).map(([value, label]) => (
-              <option key={value} value={value}>
-                {label}
-              </option>
-            ))}
-          </select>
+          <p className="mt-2 text-[11px] text-zinc-500">
+            Endereço público do anúncio — use letras minúsculas e hífens.
+          </p>
         </div>
 
         <SwitchField

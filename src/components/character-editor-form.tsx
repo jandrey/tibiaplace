@@ -12,7 +12,7 @@ import { CatalogPicker } from "@/components/catalog-picker";
 import { OutfitAppearanceModal } from "@/components/outfit-appearance-modal";
 import { PrimaryOutfitPreviewCard } from "@/components/primary-outfit-preview-card";
 import { useToast } from "@/components/toast-provider";
-import { Button, Card, Input, Label, Select, Textarea } from "@/components/ui";
+import { Button, Card, Input, Label, Select, SwitchField, Textarea } from "@/components/ui";
 import {
   VOCATION_OPTIONS,
   derivedStatsFor,
@@ -1035,23 +1035,31 @@ export function CharacterEditorForm({
               />
             ))}
           </div>
-          <div className="flex flex-wrap gap-4 border-t border-zinc-800 pt-4 text-sm">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
+          <div className="space-y-3 border-t border-zinc-800 pt-4">
+            <div>
+              <p className="text-sm font-medium text-zinc-300">
+                Slots & expansões
+              </p>
+              <p className="mt-0.5 text-xs text-zinc-500">
+                Flags do personagem — conferidas na importação do bazaar.
+              </p>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <SwitchField
                 checked={values.charmExpansion}
-                onChange={(e) => patch("charmExpansion", e.target.checked)}
+                onChange={(v) => patch("charmExpansion", v)}
+                label="Charm expansion"
+                description="Expansion de charms desbloqueada."
+                className="bg-[var(--color-accent)]/40 py-2.5"
               />
-              Charm expansion
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
+              <SwitchField
                 checked={values.thirdPrey}
-                onChange={(e) => patch("thirdPrey", e.target.checked)}
+                onChange={(v) => patch("thirdPrey", v)}
+                label="Third prey slot"
+                description="Terceiro slot de prey ativo."
+                className="bg-[var(--color-accent)]/40 py-2.5"
               />
-              Third prey slot
-            </label>
+            </div>
           </div>
         </EditorCard>
       )}

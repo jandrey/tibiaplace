@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { createPortal } from "react-dom";
 import { AlertCircle, CheckCircle2, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -43,26 +44,38 @@ const VARIANT_STYLES: Record<
   success: {
     icon: CheckCircle2,
     className:
-      "border-emerald-500/30 bg-emerald-950/90 text-emerald-100 shadow-emerald-950/40",
+      "border-emerald-500/40 bg-emerald-950/95 text-emerald-50 shadow-lg shadow-emerald-950/50",
   },
   error: {
     icon: AlertCircle,
     className:
-      "border-red-500/30 bg-red-950/90 text-red-100 shadow-red-950/40",
+      "border-red-500/40 bg-red-950/95 text-red-50 shadow-lg shadow-red-950/50",
   },
   info: {
     icon: Info,
     className:
-      "border-sky-500/30 bg-sky-950/90 text-sky-100 shadow-sky-950/40",
+      "border-sky-500/40 bg-sky-950/95 text-sky-50 shadow-lg shadow-sky-950/50",
   },
 };
 
-function ToastViewport({ items, onDismiss }: { items: ToastItem[]; onDismiss: (id: string) => void }) {
-  if (items.length === 0) return null;
+function ToastViewport({
+  items,
+  onDismiss,
+}: {
+  items: ToastItem[];
+  onDismiss: (id: string) => void;
+}) {
+  const [mounted, setMounted] = useState(false);
 
-  return (
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || items.length === 0) return null;
+
+  return createPortal(
     <div
-      className="pointer-events-none fixed inset-x-4 bottom-20 z-[100] flex flex-col items-end gap-2 sm:inset-x-auto sm:right-4 sm:bottom-6"
+      className="pointer-events-none fixed inset-x-4 top-16 z-[200] flex flex-col items-stretch gap-2 sm:inset-x-auto sm:right-4 sm:items-end"
       aria-live="polite"
       aria-relevant="additions"
     >
@@ -74,7 +87,7 @@ function ToastViewport({ items, onDismiss }: { items: ToastItem[]; onDismiss: (i
             key={item.id}
             role="status"
             className={cn(
-              "pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-xl border px-4 py-3 text-sm shadow-lg backdrop-blur-md",
+              "pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-xl border px-4 py-3 text-sm backdrop-blur-md",
               style.className,
             )}
           >
@@ -91,7 +104,8 @@ function ToastViewport({ items, onDismiss }: { items: ToastItem[]; onDismiss: (i
           </div>
         );
       })}
-    </div>
+    </div>,
+    document.body,
   );
 }
 
@@ -129,8 +143,10 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<ToastContextValue>(
     () => ({
       toast: push,
-      success: (message, duration) => push({ message, variant: "success", duration }),
-      error: (message, duration) => push({ message, variant: "error", duration: duration ?? 6000 }),
+      success: (message, duration) =>
+        push({ message, variant: "success", duration: duration ?? 5000 }),
+      error: (message, duration) =>
+        push({ message, variant: "error", duration: duration ?? 6000 }),
       info: (message, duration) => push({ message, variant: "info", duration }),
     }),
     [push],

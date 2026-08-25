@@ -34,12 +34,13 @@ export function TibiaOutfitColorPicker({
   };
 
   const activeColorId = values[activePart];
+  const activeLabel =
+    OUTFIT_COLOR_PARTS.find((part) => part.id === activePart)?.label ?? "Head";
 
   return (
-    <div className="space-y-3">
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+    <div className="space-y-0">
+      <div className="flex border border-[var(--color-primary)]/35">
         {OUTFIT_COLOR_PARTS.map((part) => {
-          const colorId = values[part.id];
           const selected = activePart === part.id;
           return (
             <button
@@ -47,28 +48,20 @@ export function TibiaOutfitColorPicker({
               type="button"
               onClick={() => setActivePart(part.id)}
               className={cn(
-                "flex items-center gap-2 rounded-lg border px-3 py-2 text-left text-sm transition",
+                "min-w-0 flex-1 border-r border-[var(--color-primary)]/35 px-2 py-2.5 text-sm font-semibold transition last:border-r-0 sm:px-3",
                 selected
-                  ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-white"
-                  : "border-[var(--color-card-border)] bg-[var(--color-accent)]/50 text-zinc-300 hover:border-zinc-600",
+                  ? "bg-[var(--color-primary)]/10 text-[var(--color-primary)] ring-1 ring-inset ring-[var(--color-primary)]/50"
+                  : "bg-[var(--color-accent)]/30 text-zinc-500 hover:bg-[var(--color-accent)]/50 hover:text-zinc-300",
               )}
             >
-              <span
-                className="h-5 w-5 shrink-0 rounded border border-black/30 shadow-inner"
-                style={{ backgroundColor: outfitColorToCss(colorId) }}
-                aria-hidden
-              />
-              <span className="font-medium">{part.label}</span>
+              {part.label}
             </button>
           );
         })}
       </div>
 
-      <div className="rounded-xl border border-[var(--color-card-border)] bg-[var(--color-accent)]/40 p-3">
-        <p className="mb-2 text-xs text-zinc-500">
-          Paleta Tibia ·{" "}
-          {OUTFIT_COLOR_PARTS.find((part) => part.id === activePart)?.label}
-        </p>
+      <div className="border border-t-0 border-[var(--color-primary)]/35 bg-[var(--color-accent)]/40 p-3">
+        <p className="mb-2 text-xs text-zinc-500">Paleta Tibia · {activeLabel}</p>
 
         <div
           className="grid gap-0.5"
@@ -76,7 +69,7 @@ export function TibiaOutfitColorPicker({
             gridTemplateColumns: `repeat(${OUTFIT_COLOR_GRID.columns}, minmax(0, 1fr))`,
           }}
           role="listbox"
-          aria-label={`Cor da ${OUTFIT_COLOR_PARTS.find((part) => part.id === activePart)?.label}`}
+          aria-label={`Cor ${activeLabel}`}
         >
           {Array.from({ length: OUTFIT_COLOR_COUNT }, (_, colorId) => {
             const selected = activeColorId === colorId;

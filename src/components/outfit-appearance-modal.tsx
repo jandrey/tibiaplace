@@ -64,7 +64,7 @@ export function OutfitAppearanceModal({
             Cores do outfit
           </h2>
           <p className="mt-1 text-sm text-zinc-400">
-            Ajuste cabeça, corpo, pernas e pés com a paleta do Tibia.
+            Head, Primary, Secondary e Detail — mesma paleta do cliente Tibia.
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import { levelProgressPercent } from "@/lib/bazaar/character-stats";
+import { deriveQuestsFromStorages } from "@/lib/bazaar/quests";
 import { normalizeSkillRecord, parseBazaarSkills } from "@/lib/bazaar/skills";
 import type { BazaarData } from "@/lib/bazaar/types";
 
@@ -35,6 +36,7 @@ export function enrichBazaarSnapshot(data: BazaarData): BazaarData {
   return {
     ...data,
     general: general as unknown as BazaarData["general"],
+    quests: deriveQuestsFromStorages(data.storages),
   };
 }
 
