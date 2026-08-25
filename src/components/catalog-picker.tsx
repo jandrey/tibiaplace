@@ -8,6 +8,7 @@ import {
   mountSpriteSources,
 } from "@/lib/bazaar/cosmetic-sprites";
 import {
+  buildMountImageUrl,
   buildOutfitImageFallbackUrl,
   buildOutfitImageUrl,
 } from "@/lib/bazaar/types";
@@ -221,14 +222,19 @@ export function CatalogPicker({
     [selectedMounts],
   );
 
-  // Warm addon variants for selected outfits (keeps toggle instant).
+  // Warm sprites for selected cosmetics (addon variants + mounts).
   useEffect(() => {
     for (const outfit of selectedOutfits) {
       for (const addons of [0, 1, 2, 3]) {
         void preloadOutfitUrl(outfitImageUrl(outfit.looktype, addons));
       }
     }
-  }, [selectedOutfits]);
+    for (const mount of selectedMounts) {
+      if (mount.clientId != null) {
+        void preloadOutfitUrl(buildMountImageUrl(mount.clientId));
+      }
+    }
+  }, [selectedOutfits, selectedMounts]);
 
   function toggleOutfit(outfit: CatalogOutfit) {
     if (selectedOutfitMap.has(outfit.looktype)) {

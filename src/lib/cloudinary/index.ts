@@ -39,7 +39,10 @@ export function isCloudinaryConfigured() {
 
 export function cloudinaryPublicIdForCacheKey(cacheKey: string) {
   const safe = cacheKey.replace(/:/g, "_");
-  return `tibiaplace/sprites/${safe}`;
+  const folder = cacheKey.startsWith("m")
+    ? "tibiaplace/mounts"
+    : "tibiaplace/outfits";
+  return `${folder}/${safe}`;
 }
 
 export async function uploadSpriteToCloudinary(

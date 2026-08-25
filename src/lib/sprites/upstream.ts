@@ -1,3 +1,8 @@
+import {
+  analyzeOutfitImage,
+  isPlausibleOutfitImageBytes,
+} from "@/lib/sprites/image-validation";
+
 export function readGifSize(bytes: Uint8Array): { w: number; h: number } | null {
   if (bytes.length < 10) return null;
   const header = String.fromCharCode(
@@ -19,7 +24,10 @@ export function isUsableImage(contentType: string | null, body: ArrayBuffer) {
   if (!contentType?.startsWith("image/")) return false;
   if (body.byteLength < 200) return false;
   const bytes = new Uint8Array(body);
-  if (readGifSize(bytes)) return true;
+  const gif = readGifSize(bytes);
+  if (gif) {
+    return isPlausibleOutfitImageBytes(body, gif.w, gif.h);
+  }
   if (
     bytes[0] === 0x89 &&
     bytes[1] === 0x50 &&

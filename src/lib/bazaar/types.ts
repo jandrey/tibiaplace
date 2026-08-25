@@ -180,7 +180,7 @@ export function buildOutfitImageFallbackUrl(
   return `https://rubinot.com.br/api/outfit?${params.toString()}`;
 }
 
-/** Cached mount sprite on TibiaPlace. */
+/** Cached mount sprite on TibiaPlace (Cloudinary + DB). */
 export function buildMountImageUrl(clientId: number, _direction = 3) {
   return `/api/outfit-sprite?${new URLSearchParams({ mount: String(clientId) }).toString()}`;
 }

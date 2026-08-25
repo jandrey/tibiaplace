@@ -1,6 +1,6 @@
 import { integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
-/** Persisted outfit/mount sprites (Cloudinary + metadata). Key mirrors /api/outfit-sprite cache. */
+/** Persisted outfit/mount sprites (Cloudinary + metadata). */
 export const outfitSpriteCache = pgTable("outfit_sprite_cache", {
   cacheKey: text("cache_key").primaryKey(),
   /** Cloudinary public_id (legacy column name: r2_key). */

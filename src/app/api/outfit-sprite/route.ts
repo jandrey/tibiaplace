@@ -139,5 +139,5 @@ export async function GET(request: Request) {
     return imageResponse(image.body, image.contentType, "miss");
   }
 
-  return NextResponse.json({ error: "Outfit não encontrado" }, { status: 404 });
+  return NextResponse.json({ error: "Sprite não encontrado" }, { status: 404 });
 }

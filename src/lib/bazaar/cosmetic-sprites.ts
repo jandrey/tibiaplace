@@ -44,21 +44,18 @@ export function outfitSpriteSources(
   };
 }
 
-/** Mount-only sprites — TibiaWiki first, then cached mount, RubinOT fallback. */
+/** TibiaPlace cache first, TibiaWiki / RubinOT as browser fallbacks. */
 export function mountSpriteSources(
   clientId: number | null,
   imageUrl?: string | null,
   mountName?: string | null,
 ): CosmeticSpriteSources | null {
-  const mountOnlyUrls = resolveMountOnlyImageUrls(imageUrl, mountName);
+  const wikiUrls = resolveMountOnlyImageUrls(imageUrl, mountName);
 
   if (clientId != null) {
-    const urls = dedupeUrls([
-      ...mountOnlyUrls,
-      buildMountImageUrl(clientId),
-      buildMountImageFallbackUrl(clientId),
-      imageUrl,
-    ]);
+    const cached = buildMountImageUrl(clientId);
+    const rubin = buildMountImageFallbackUrl(clientId);
+    const urls = dedupeUrls([cached, ...wikiUrls, rubin, imageUrl]);
     return {
       src: urls[0]!,
       fallbackSrc: urls[1],
@@ -66,11 +63,11 @@ export function mountSpriteSources(
     };
   }
 
-  if (mountOnlyUrls.length > 0) {
+  if (wikiUrls.length > 0) {
     return {
-      src: mountOnlyUrls[0]!,
-      fallbackSrc: mountOnlyUrls[1],
-      fallbackSrcs: mountOnlyUrls.slice(2),
+      src: wikiUrls[0]!,
+      fallbackSrc: wikiUrls[1],
+      fallbackSrcs: wikiUrls.slice(2),
     };
   }
 

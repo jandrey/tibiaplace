@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { buildMountImageUrl, buildOutfitImageUrl } from "@/lib/bazaar/types";
+import { mountSpriteSources } from "@/lib/bazaar/cosmetic-sprites";
+import { buildOutfitImageUrl } from "@/lib/bazaar/types";
 import { OutfitSprite } from "@/components/outfit-sprite";
 import { cn } from "@/lib/utils";
 
@@ -96,18 +97,26 @@ export function CosmeticsPanel({
           {mounts.length === 0 ? (
             <Empty label="Nenhuma montaria" />
           ) : (
-            mounts.map((mount) => (
-              <CosmeticCard
-                key={mount.id}
-                title={mount.mountName ?? "Montaria"}
-                imageUrl={
-                  mount.clientId != null
-                    ? buildMountImageUrl(mount.clientId)
-                    : (mount.imageUrl ?? null)
-                }
-                useSprite={mount.clientId != null}
-              />
-            ))
+            mounts.map((mount) => {
+              const sprite =
+                mount.clientId != null
+                  ? mountSpriteSources(
+                      mount.clientId,
+                      mount.imageUrl,
+                      mount.mountName,
+                    )
+                  : null;
+              return (
+                <CosmeticCard
+                  key={mount.id}
+                  title={mount.mountName ?? "Montaria"}
+                  imageUrl={sprite?.src ?? mount.imageUrl ?? null}
+                  fallbackSrc={sprite?.fallbackSrc}
+                  fallbackSrcs={sprite?.fallbackSrcs}
+                  useSprite={Boolean(sprite?.src ?? mount.imageUrl)}
+                />
+              );
+            })
           )}
         </div>
       )}
@@ -140,11 +149,15 @@ export function CosmeticsPanel({
 function CosmeticCard({
   title,
   imageUrl,
+  fallbackSrc = null,
+  fallbackSrcs = [],
   footer,
   useSprite = true,
 }: {
   title: string;
   imageUrl: string | null;
+  fallbackSrc?: string | null;
+  fallbackSrcs?: string[];
   footer?: React.ReactNode;
   useSprite?: boolean;
 }) {
@@ -153,7 +166,13 @@ function CosmeticCard({
       <div className="flex h-20 w-full items-end justify-center rounded-lg bg-[var(--color-accent)] pb-1">
         {imageUrl ? (
           useSprite ? (
-            <OutfitSprite src={imageUrl} alt={title} size={64} />
+            <OutfitSprite
+              src={imageUrl}
+              fallbackSrc={fallbackSrc}
+              fallbackSrcs={fallbackSrcs}
+              alt={title}
+              size={64}
+            />
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
             <img

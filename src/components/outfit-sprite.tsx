@@ -1,41 +1,49 @@
 "use client";
 
+import {
+  analyzeOutfitImage,
+  type OutfitImageLayout,
+} from "@/lib/sprites/image-validation";
 import { queuedImageProbe } from "@/lib/image-load-queue";
 import { cn } from "@/lib/utils";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-/** Successful loads stay forever; failures are not sticky. */
-const okUrlCache = new Set<string>();
+/** Validated layout per URL — avoids re-probing and bad preload cache. */
+const layoutCache = new Map<string, OutfitImageLayout>();
 
-/** Prefetch / warm cache — uses site-wide image queue. */
-export function preloadOutfitUrl(url: string): Promise<"ok" | "fail"> {
-  if (okUrlCache.has(url)) return Promise.resolve("ok");
-  return queuedImageProbe(url).then((status) => {
-    if (status === "ok") okUrlCache.add(url);
-    return status;
-  });
+function cacheLayout(url: string, layout: OutfitImageLayout) {
+  layoutCache.set(url, layout);
 }
 
 export function isOutfitUrlCached(url: string) {
-  return okUrlCache.has(url);
+  return layoutCache.has(url);
+}
+
+/** Prefetch through the global queue; only caches URLs with valid dimensions. */
+export function preloadOutfitUrl(url: string): Promise<"ok" | "fail"> {
+  if (layoutCache.has(url)) return Promise.resolve("ok");
+
+  return queuedImageProbe(url, (img) => {
+    const layout = analyzeOutfitImage(img.naturalWidth, img.naturalHeight);
+    if (!layout) return "fail";
+    cacheLayout(url, layout);
+    return "ok";
+  });
 }
 
 type OutfitSpriteProps = {
   src: string;
-  /** Tried when `src` fails (e.g. proxy / base without addons). */
   fallbackSrc?: string | null;
-  /** Extra fallbacks after fallbackSrc (tried in order). */
   fallbackSrcs?: string[];
   alt?: string;
   size?: number;
-  /** Vertical anchor inside the sprite box (default: bottom, like standing on ground). */
   anchor?: "bottom" | "center";
   className?: string;
   static?: boolean;
   lazy?: boolean;
 };
 
-type DisplayMode = "gif" | "sheet";
+type DisplayMode = "gif" | "sheet" | "loading";
 
 /**
  * HD RubinOT walk sheets (preferred) or animated GIFs.
@@ -62,20 +70,27 @@ export function OutfitSprite({
   );
   const candidatesKey = candidates.join("|");
 
-  const knownIndex = candidates.findIndex((u) => okUrlCache.has(u));
-  const [inView, setInView] = useState(!lazy || knownIndex >= 0);
-  const [index, setIndex] = useState(Math.max(0, knownIndex));
+  const cachedIndex = candidates.findIndex((u) => layoutCache.has(u));
+  const cachedLayout =
+    cachedIndex >= 0 ? layoutCache.get(candidates[cachedIndex]!) : undefined;
+
+  const [inView, setInView] = useState(!lazy || cachedIndex >= 0);
+  const [index, setIndex] = useState(Math.max(0, cachedIndex));
   const [failed, setFailed] = useState(false);
-  const [mode, setMode] = useState<DisplayMode>("sheet");
-  const [frames, setFrames] = useState(8);
+  const [mode, setMode] = useState<DisplayMode>(
+    cachedLayout?.mode ?? "loading",
+  );
+  const [frames, setFrames] = useState(cachedLayout?.frames ?? 8);
 
   useEffect(() => {
-    const nextIndex = candidates.findIndex((u) => okUrlCache.has(u));
+    const nextIndex = candidates.findIndex((u) => layoutCache.has(u));
+    const layout = nextIndex >= 0 ? layoutCache.get(candidates[nextIndex]!) : undefined;
     setIndex(nextIndex >= 0 ? nextIndex : 0);
     setFailed(false);
-    setMode("sheet");
+    setMode(layout?.mode ?? "loading");
+    setFrames(layout?.frames ?? 8);
     if (nextIndex >= 0) setInView(true);
-  }, [candidatesKey]);
+  }, [candidatesKey, candidates]);
 
   useEffect(() => {
     if (!lazy || inView) return;
@@ -101,26 +116,21 @@ export function OutfitSprite({
     const next = index + 1;
     if (next < candidates.length) {
       setIndex(next);
-      setMode("sheet");
+      setMode("loading");
       return;
     }
     setFailed(true);
   }
 
   function handleImgLoad(img: HTMLImageElement) {
-    const w = img.naturalWidth;
-    const h = img.naturalHeight;
-    if (w < 8 || h < 8) {
+    const layout = analyzeOutfitImage(img.naturalWidth, img.naturalHeight);
+    if (!layout) {
       advanceCandidate();
       return;
     }
-    if (activeSrc) okUrlCache.add(activeSrc);
-    if (w >= h * 2) {
-      setFrames(Math.max(2, Math.round(w / h)));
-      setMode("sheet");
-      return;
-    }
-    setMode("gif");
+    if (activeSrc) cacheLayout(activeSrc, layout);
+    setMode(layout.mode);
+    setFrames(layout.frames);
   }
 
   return (
@@ -143,13 +153,15 @@ export function OutfitSprite({
           className={cn(
             "bg-no-repeat [image-rendering:pixelated]",
             anchor === "center" ? "bg-[left_center]" : "bg-left-bottom",
-            !isStatic && "animate-outfit-walk",
           )}
           style={{
             width: size,
             height: size,
             backgroundImage: `url(${activeSrc})`,
             backgroundSize: `${size * frames}px ${size}px`,
+            animation: isStatic
+              ? undefined
+              : `outfit-walk 0.8s steps(${frames}) infinite`,
             // @ts-expect-error CSS custom property for walk keyframes
             "--outfit-sheet-width": `${size * frames}px`,
           }}
@@ -169,7 +181,7 @@ export function OutfitSprite({
           onLoad={(e) => handleImgLoad(e.currentTarget)}
           onError={advanceCandidate}
           className={cn(
-            mode === "sheet"
+            mode === "sheet" || mode === "loading"
               ? "pointer-events-none absolute opacity-0"
               : cn(
                   "max-h-full max-w-full object-contain [image-rendering:pixelated]",

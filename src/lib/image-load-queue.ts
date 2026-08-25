@@ -34,16 +34,15 @@ export function releaseImageSlot() {
 
 export type ImageProbeResult = "ok" | "fail";
 
-export function probeImageUrl(url: string): Promise<ImageProbeResult> {
+export function probeImageUrl(
+  url: string,
+  validate?: (img: HTMLImageElement) => ImageProbeResult,
+): Promise<ImageProbeResult> {
   return new Promise((resolve) => {
     const img = new Image();
     img.decoding = "async";
     img.onload = () => {
-      if (img.naturalWidth < 8 || img.naturalHeight < 8) {
-        resolve("fail");
-        return;
-      }
-      resolve("ok");
+      resolve(validate ? validate(img) : img.naturalWidth >= 8 && img.naturalHeight >= 8 ? "ok" : "fail");
     };
     img.onerror = () => resolve("fail");
     img.src = url;
@@ -53,14 +52,17 @@ export function probeImageUrl(url: string): Promise<ImageProbeResult> {
 const inflight = new Map<string, Promise<ImageProbeResult>>();
 
 /** Probe a URL through the global queue (deduped per URL). */
-export function queuedImageProbe(url: string): Promise<ImageProbeResult> {
+export function queuedImageProbe(
+  url: string,
+  validate?: (img: HTMLImageElement) => ImageProbeResult,
+): Promise<ImageProbeResult> {
   const pending = inflight.get(url);
   if (pending) return pending;
 
   const job = (async () => {
     await acquireImageSlot();
     try {
-      return await probeImageUrl(url);
+      return await probeImageUrl(url, validate);
     } finally {
       inflight.delete(url);
       releaseImageSlot();
