@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Banker",
+    "iconLooktype": 1110
+  },
+  {
+    "id": 2,
+    "name": "Cook",
+    "iconLooktype": 1114
+  },
+  {
+    "id": 3,
+    "name": "Steward",
+    "iconLooktype": 1116
+  },
+  {
+    "id": 4,
+    "name": "Trader",
+    "iconLooktype": 1112
+  }
+]

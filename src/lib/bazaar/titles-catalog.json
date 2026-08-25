@@ -1,0 +1,746 @@
+[
+  {
+    "id": 1,
+    "name": "Gold Hoarder",
+    "femaleName": null,
+    "category": "GOLD",
+    "description": "Earned at least 1,000,000 gold.",
+    "permanent": false
+  },
+  {
+    "id": 2,
+    "name": "Platinum Hoarder",
+    "femaleName": null,
+    "category": "GOLD",
+    "description": "Earned at least 10,000,000 gold.",
+    "permanent": false
+  },
+  {
+    "id": 3,
+    "name": "Crystal Hoarder",
+    "femaleName": null,
+    "category": "GOLD",
+    "description": "Earned at least 100,000,000 gold.",
+    "permanent": false
+  },
+  {
+    "id": 4,
+    "name": "Beaststrider (Grade 1)",
+    "femaleName": null,
+    "category": "MOUNTS",
+    "description": "Unlocked 10 or more Mounts.",
+    "permanent": true
+  },
+  {
+    "id": 5,
+    "name": "Beaststrider (Grade 2)",
+    "femaleName": null,
+    "category": "MOUNTS",
+    "description": "Unlocked 20 or more Mounts.",
+    "permanent": true
+  },
+  {
+    "id": 6,
+    "name": "Beaststrider (Grade 3)",
+    "femaleName": null,
+    "category": "MOUNTS",
+    "description": "Unlocked 30 or more Mounts.",
+    "permanent": true
+  },
+  {
+    "id": 7,
+    "name": "Beaststrider (Grade 4)",
+    "femaleName": null,
+    "category": "MOUNTS",
+    "description": "Unlocked 40 or more Mounts.",
+    "permanent": true
+  },
+  {
+    "id": 8,
+    "name": "Beaststrider (Grade 5)",
+    "femaleName": null,
+    "category": "MOUNTS",
+    "description": "Unlocked 50 or more Mounts.",
+    "permanent": true
+  },
+  {
+    "id": 9,
+    "name": "Tibia's Topmodel (Grade 1)",
+    "femaleName": null,
+    "category": "OUTFITS",
+    "description": "Unlocked 10 or more Outfits.",
+    "permanent": true
+  },
+  {
+    "id": 10,
+    "name": "Tibia's Topmodel (Grade 2)",
+    "femaleName": null,
+    "category": "OUTFITS",
+    "description": "Unlocked 20 or more Outfits.",
+    "permanent": true
+  },
+  {
+    "id": 11,
+    "name": "Tibia's Topmodel (Grade 3)",
+    "femaleName": null,
+    "category": "OUTFITS",
+    "description": "Unlocked 30 or more Outfits.",
+    "permanent": true
+  },
+  {
+    "id": 12,
+    "name": "Tibia's Topmodel (Grade 4)",
+    "femaleName": null,
+    "category": "OUTFITS",
+    "description": "Unlocked 40 or more Outfits.",
+    "permanent": true
+  },
+  {
+    "id": 13,
+    "name": "Tibia's Topmodel (Grade 5)",
+    "femaleName": null,
+    "category": "OUTFITS",
+    "description": "Unlocked 50 or more Outfits.",
+    "permanent": true
+  },
+  {
+    "id": 14,
+    "name": "Trolltrasher",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 50.",
+    "permanent": false
+  },
+  {
+    "id": 15,
+    "name": "Cyclopscamper",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 100.",
+    "permanent": false
+  },
+  {
+    "id": 16,
+    "name": "Dragondouser",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 200.",
+    "permanent": false
+  },
+  {
+    "id": 17,
+    "name": "Demondoom",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 300.",
+    "permanent": false
+  },
+  {
+    "id": 18,
+    "name": "Drakenbane",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 400.",
+    "permanent": false
+  },
+  {
+    "id": 19,
+    "name": "Silencer",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 500.",
+    "permanent": false
+  },
+  {
+    "id": 20,
+    "name": "Exalted",
+    "femaleName": null,
+    "category": "LEVEL",
+    "description": "Reached level 1000.",
+    "permanent": false
+  },
+  {
+    "id": 21,
+    "name": "Apex Predator",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 22,
+    "name": "Big Boss",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 23,
+    "name": "Jack of all Taints",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 24,
+    "name": "Legend of Fishing",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 25,
+    "name": "Legend of Magic",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 26,
+    "name": "Legend of Marksmanship",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 27,
+    "name": "Legend of the Axe",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 28,
+    "name": "Legend of the Club",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 29,
+    "name": "Legend of the Fist",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 30,
+    "name": "Legend of the Shield",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 31,
+    "name": "Legend of the Sword",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 32,
+    "name": "Prince Charming",
+    "femaleName": "Princess Charming",
+    "category": "HIGHSCORES",
+    "description": "Highest score of accumulated charm points on character's world.",
+    "permanent": false
+  },
+  {
+    "id": 33,
+    "name": "Reigning Drome Champion",
+    "femaleName": null,
+    "category": "HIGHSCORES",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 34,
+    "name": "Bipedantic",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 35,
+    "name": "Blood Moon Hunter",
+    "femaleName": "Blood Moon Huntress",
+    "category": "BESTIARY",
+    "description": "Unlocked All Lycanthrope Bestiary entries.",
+    "permanent": false
+  },
+  {
+    "id": 36,
+    "name": "Coldblooded",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 37,
+    "name": "Death from Below",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 38,
+    "name": "Demonator",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 39,
+    "name": "Dragonslayer",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 40,
+    "name": "Elementalist",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 41,
+    "name": "Exterminator",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 42,
+    "name": "Fey Swatter",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 43,
+    "name": "Ghosthunter",
+    "femaleName": "Ghosthuntress",
+    "category": "BESTIARY",
+    "description": "Unlocked all Undead Bestiary entries.",
+    "permanent": false
+  },
+  {
+    "id": 44,
+    "name": "Handyman",
+    "femaleName": "Handywoman",
+    "category": "BESTIARY",
+    "description": "Unlocked all Construct Bestiary entries.",
+    "permanent": false
+  },
+  {
+    "id": 45,
+    "name": "Huntsman",
+    "femaleName": "Huntress",
+    "category": "BESTIARY",
+    "description": "Unlocked all Mammal Bestiary entries.",
+    "permanent": false
+  },
+  {
+    "id": 46,
+    "name": "Interdimensional Destroyer",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 47,
+    "name": "Manhunter",
+    "femaleName": "Manhuntress",
+    "category": "BESTIARY",
+    "description": "Unlocked all Human Bestiary entries.",
+    "permanent": false
+  },
+  {
+    "id": 48,
+    "name": "Master of Illusion",
+    "femaleName": "Mistress of Illusion",
+    "category": "BESTIARY",
+    "description": "Unlocked all Magical Bestiary entries.",
+    "permanent": false
+  },
+  {
+    "id": 49,
+    "name": "Ooze Blues",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 50,
+    "name": "Sea Bane",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 51,
+    "name": "Snake Charmer",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 52,
+    "name": "Tumbler",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 53,
+    "name": "Weedkiller",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 54,
+    "name": "Executioner",
+    "femaleName": null,
+    "category": "BESTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 55,
+    "name": "Boss Annihilator",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 56,
+    "name": "Boss Destroyer",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 57,
+    "name": "Boss Devastator",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 58,
+    "name": "Boss Eraser",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 59,
+    "name": "Boss Executioner",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 60,
+    "name": "Boss Hunter",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 61,
+    "name": "Boss Obliterator",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 62,
+    "name": "Boss Slayer",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": false
+  },
+  {
+    "id": 63,
+    "name": "Boss Smiter",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 64,
+    "name": "Boss Veteran",
+    "femaleName": null,
+    "category": "BOSSTIARY",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 65,
+    "name": "Creature of Habit (Grade 1)",
+    "femaleName": "Reward Streak of at least 7 days of consecutive logins.",
+    "category": "DAILY_REWARD",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 66,
+    "name": "Creature of Habit (Grade 2)",
+    "femaleName": "Reward Streak of at least 30 days of consecutive logins.",
+    "category": "DAILY_REWARD",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 67,
+    "name": "Creature of Habit (Grade 3)",
+    "femaleName": "Reward Streak of at least 90 days of consecutive logins.",
+    "category": "DAILY_REWARD",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 68,
+    "name": "Creature of Habit (Grade 4)",
+    "femaleName": "Reward Streak of at least 180 days of consecutive logins.",
+    "category": "DAILY_REWARD",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 69,
+    "name": "Creature of Habit (Grade 5)",
+    "femaleName": "Reward Streak of at least 365 days of consecutive logins.",
+    "category": "DAILY_REWARD",
+    "description": "",
+    "permanent": true
+  },
+  {
+    "id": 70,
+    "name": "Aspiring Huntsman",
+    "femaleName": null,
+    "category": "TASK",
+    "description": "Invested 160,000 tasks points.",
+    "permanent": false
+  },
+  {
+    "id": 71,
+    "name": "Competent Beastslayer",
+    "femaleName": null,
+    "category": "TASK",
+    "description": "Invested 320,000 tasks points.",
+    "permanent": true
+  },
+  {
+    "id": 72,
+    "name": "Feared Bountyhunter",
+    "femaleName": null,
+    "category": "TASK",
+    "description": "Invested 430,000 tasks points.",
+    "permanent": true
+  },
+  {
+    "id": 73,
+    "name": "Dedicated Entrepreneur",
+    "femaleName": null,
+    "category": "MAP",
+    "description": "Explored 50% of all the map areas.",
+    "permanent": false
+  },
+  {
+    "id": 74,
+    "name": "Globetrotter",
+    "femaleName": null,
+    "category": "MAP",
+    "description": "Explored all map areas.",
+    "permanent": false
+  },
+  {
+    "id": 75,
+    "name": "Guild Leader",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Leading a Guild.",
+    "permanent": false
+  },
+  {
+    "id": 76,
+    "name": "Proconsul of Iksupan",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Only a true devotee to the cause of the ancient Iks and their lost legacy may step up to the rank of proconsul.",
+    "permanent": true
+  },
+  {
+    "id": 77,
+    "name": "Admirer of the Crown",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Adjust your crown and handle it.",
+    "permanent": true
+  },
+  {
+    "id": 78,
+    "name": "Big Spender",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Unlocked the full Golden Outfit.",
+    "permanent": true
+  },
+  {
+    "id": 79,
+    "name": "Challenger of the Iks",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Challenged Ahau, guardian of Iksupan, in traditional Iks warrior attire.",
+    "permanent": true
+  },
+  {
+    "id": 80,
+    "name": "Royal Bounacean Advisor",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Called to the court of Bounac by Kesar the Younger himself.",
+    "permanent": true
+  },
+  {
+    "id": 81,
+    "name": "Aeternal",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Awarded exclusively to stalwart heroes keeping the faith under all circumstances.",
+    "permanent": true
+  },
+  {
+    "id": 82,
+    "name": "Robinson Crusoe",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Some discoveries are reserved to only the most experienced adventurers. Until the next frontier opens on the horizon.",
+    "permanent": true
+  },
+  {
+    "id": 83,
+    "name": "Chompmeister",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Awarded only to true connoisseurs undertaking even the most exotic culinary escapades.",
+    "permanent": true
+  },
+  {
+    "id": 84,
+    "name": "Bringer of Rain",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Forging through battle after battle like a true gladiator.",
+    "permanent": true
+  },
+  {
+    "id": 85,
+    "name": "Beastly",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Reached 2000 charm points. Quite beastly!",
+    "permanent": true
+  },
+  {
+    "id": 86,
+    "name": "Midnight Hunter",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "When the hunter becomes the hunted, perseverance decides the game.",
+    "permanent": true
+  },
+  {
+    "id": 87,
+    "name": "Ratinator",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Killing some snarky cave rats is helpful, killing over ten thousand of them is a statement.",
+    "permanent": true
+  },
+  {
+    "id": 88,
+    "name": "Doomsday Nemesis",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Awarded for great help in the battle against Gaz'haragoth.",
+    "permanent": true
+  },
+  {
+    "id": 89,
+    "name": "Hero of Bounac",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "You prevailed during the battle of Bounac and broke the siege that held Bounac's people in its firm grasp.",
+    "permanent": true
+  },
+  {
+    "id": 90,
+    "name": "King of Demon",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Defeat Morshabaal 5 times.",
+    "permanent": false
+  },
+  {
+    "id": 91,
+    "name": "Planegazer",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Followed the trail of the Planestrider to the end.",
+    "permanent": true
+  },
+  {
+    "id": 92,
+    "name": "Time Traveller",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Anywhere in time or space.",
+    "permanent": true
+  },
+  {
+    "id": 93,
+    "name": "Truly Boss",
+    "femaleName": null,
+    "category": "OTHERS",
+    "description": "Reach 15,000 boss points.",
+    "permanent": true
+  }
+]

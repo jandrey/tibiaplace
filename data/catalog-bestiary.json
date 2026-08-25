@@ -1,0 +1,5582 @@
+[
+  {
+    "id": 1,
+    "name": "Human (Creature)"
+  },
+  {
+    "id": 2,
+    "name": "Orc Warlord"
+  },
+  {
+    "id": 3,
+    "name": "War Wolf"
+  },
+  {
+    "id": 4,
+    "name": "Orc Rider"
+  },
+  {
+    "id": 5,
+    "name": "Orc"
+  },
+  {
+    "id": 6,
+    "name": "Orc Shaman"
+  },
+  {
+    "id": 7,
+    "name": "Orc Warrior"
+  },
+  {
+    "id": 8,
+    "name": "Orc Berserker"
+  },
+  {
+    "id": 9,
+    "name": "Necromancer"
+  },
+  {
+    "id": 10,
+    "name": "Warlock"
+  },
+  {
+    "id": 11,
+    "name": "Hunter"
+  },
+  {
+    "id": 12,
+    "name": "Valkyrie"
+  },
+  {
+    "id": 13,
+    "name": "Black Sheep"
+  },
+  {
+    "id": 14,
+    "name": "Sheep"
+  },
+  {
+    "id": 15,
+    "name": "Troll"
+  },
+  {
+    "id": 16,
+    "name": "Bear"
+  },
+  {
+    "id": 17,
+    "name": "Bonelord"
+  },
+  {
+    "id": 18,
+    "name": "Ghoul"
+  },
+  {
+    "id": 19,
+    "name": "Slime"
+  },
+  {
+    "id": 20,
+    "name": "Squidgy Slime"
+  },
+  {
+    "id": 21,
+    "name": "Rat"
+  },
+  {
+    "id": 22,
+    "name": "Cyclops"
+  },
+  {
+    "id": 23,
+    "name": "Minotaur Mage"
+  },
+  {
+    "id": 24,
+    "name": "Minotaur Archer"
+  },
+  {
+    "id": 25,
+    "name": "Minotaur"
+  },
+  {
+    "id": 26,
+    "name": "Rotworm"
+  },
+  {
+    "id": 27,
+    "name": "Wolf"
+  },
+  {
+    "id": 28,
+    "name": "Snake"
+  },
+  {
+    "id": 29,
+    "name": "Minotaur Guard"
+  },
+  {
+    "id": 30,
+    "name": "Spider"
+  },
+  {
+    "id": 31,
+    "name": "Deer"
+  },
+  {
+    "id": 32,
+    "name": "Dog"
+  },
+  {
+    "id": 33,
+    "name": "Skeleton"
+  },
+  {
+    "id": 34,
+    "name": "Dragon"
+  },
+  {
+    "id": 35,
+    "name": "Demon"
+  },
+  {
+    "id": 36,
+    "name": "Poison Spider"
+  },
+  {
+    "id": 37,
+    "name": "Demon Skeleton"
+  },
+  {
+    "id": 38,
+    "name": "Giant Spider"
+  },
+  {
+    "id": 39,
+    "name": "Dragon Lord"
+  },
+  {
+    "id": 40,
+    "name": "Fire Devil"
+  },
+  {
+    "id": 41,
+    "name": "Lion"
+  },
+  {
+    "id": 42,
+    "name": "Polar Bear"
+  },
+  {
+    "id": 43,
+    "name": "Scorpion"
+  },
+  {
+    "id": 44,
+    "name": "Wasp"
+  },
+  {
+    "id": 45,
+    "name": "Bug"
+  },
+  {
+    "id": 46,
+    "name": "Black Knight"
+  },
+  {
+    "id": 47,
+    "name": "Wild Warrior"
+  },
+  {
+    "id": 48,
+    "name": "Ghost"
+  },
+  {
+    "id": 49,
+    "name": "Fire Elemental"
+  },
+  {
+    "id": 50,
+    "name": "Orc Spearman"
+  },
+  {
+    "id": 51,
+    "name": "Green Djinn"
+  },
+  {
+    "id": 52,
+    "name": "Winter Wolf"
+  },
+  {
+    "id": 53,
+    "name": "Frost Troll"
+  },
+  {
+    "id": 54,
+    "name": "Witch"
+  },
+  {
+    "id": 55,
+    "name": "Behemoth"
+  },
+  {
+    "id": 56,
+    "name": "Cave Rat"
+  },
+  {
+    "id": 57,
+    "name": "Monk"
+  },
+  {
+    "id": 58,
+    "name": "Priestess"
+  },
+  {
+    "id": 59,
+    "name": "Orc Leader"
+  },
+  {
+    "id": 60,
+    "name": "Pig"
+  },
+  {
+    "id": 61,
+    "name": "Goblin"
+  },
+  {
+    "id": 62,
+    "name": "Elf"
+  },
+  {
+    "id": 63,
+    "name": "Elf Arcanist"
+  },
+  {
+    "id": 64,
+    "name": "Elf Scout"
+  },
+  {
+    "id": 65,
+    "name": "Mummy"
+  },
+  {
+    "id": 66,
+    "name": "Dwarf Geomancer"
+  },
+  {
+    "id": 67,
+    "name": "Stone Golem"
+  },
+  {
+    "id": 68,
+    "name": "Vampire"
+  },
+  {
+    "id": 69,
+    "name": "Dwarf"
+  },
+  {
+    "id": 70,
+    "name": "Dwarf Guard"
+  },
+  {
+    "id": 71,
+    "name": "Dwarf Soldier"
+  },
+  {
+    "id": 72,
+    "name": "Stalker"
+  },
+  {
+    "id": 73,
+    "name": "Hero"
+  },
+  {
+    "id": 74,
+    "name": "Rabbit"
+  },
+  {
+    "id": 75,
+    "name": "Gamemaster (Creature)"
+  },
+  {
+    "id": 76,
+    "name": "Swamp Troll"
+  },
+  {
+    "id": 77,
+    "name": "Amazon"
+  },
+  {
+    "id": 78,
+    "name": "Banshee"
+  },
+  {
+    "id": 79,
+    "name": "Ancient Scarab"
+  },
+  {
+    "id": 80,
+    "name": "Blue Djinn"
+  },
+  {
+    "id": 81,
+    "name": "Cobra"
+  },
+  {
+    "id": 82,
+    "name": "Larva"
+  },
+  {
+    "id": 83,
+    "name": "Scarab"
+  },
+  {
+    "id": 84,
+    "name": "Morguthis"
+  },
+  {
+    "id": 85,
+    "name": "Vashresamun"
+  },
+  {
+    "id": 86,
+    "name": "Mahrdis"
+  },
+  {
+    "id": 87,
+    "name": "Dipthrah"
+  },
+  {
+    "id": 88,
+    "name": "Rahemos"
+  },
+  {
+    "id": 89,
+    "name": "Thalas"
+  },
+  {
+    "id": 90,
+    "name": "Omruc"
+  },
+  {
+    "id": 91,
+    "name": "Ashmunrah"
+  },
+  {
+    "id": 92,
+    "name": "Mimic"
+  },
+  {
+    "id": 93,
+    "name": "Flamethrower"
+  },
+  {
+    "id": 94,
+    "name": "Hyaena"
+  },
+  {
+    "id": 95,
+    "name": "Gargoyle"
+  },
+  {
+    "id": 96,
+    "name": "Plaguethrower"
+  },
+  {
+    "id": 97,
+    "name": "Shredderthrower"
+  },
+  {
+    "id": 98,
+    "name": "Magicthrower"
+  },
+  {
+    "id": 99,
+    "name": "Lich"
+  },
+  {
+    "id": 100,
+    "name": "Crypt Shambler"
+  },
+  {
+    "id": 101,
+    "name": "Bonebeast"
+  },
+  {
+    "id": 102,
+    "name": "Deathslicer"
+  },
+  {
+    "id": 103,
+    "name": "Efreet"
+  },
+  {
+    "id": 104,
+    "name": "Marid"
+  },
+  {
+    "id": 105,
+    "name": "Badger"
+  },
+  {
+    "id": 106,
+    "name": "Skunk"
+  },
+  {
+    "id": 107,
+    "name": "Demon (Goblin)"
+  },
+  {
+    "id": 108,
+    "name": "Elder Bonelord"
+  },
+  {
+    "id": 109,
+    "name": "Gazer"
+  },
+  {
+    "id": 110,
+    "name": "Yeti"
+  },
+  {
+    "id": 111,
+    "name": "Chicken"
+  },
+  {
+    "id": 112,
+    "name": "Crab"
+  },
+  {
+    "id": 113,
+    "name": "Lizard Templar"
+  },
+  {
+    "id": 114,
+    "name": "Lizard Sentinel"
+  },
+  {
+    "id": 115,
+    "name": "Lizard Snakecharmer"
+  },
+  {
+    "id": 116,
+    "name": "Kongra"
+  },
+  {
+    "id": 117,
+    "name": "Merlkin"
+  },
+  {
+    "id": 118,
+    "name": "Sibang"
+  },
+  {
+    "id": 119,
+    "name": "Crocodile"
+  },
+  {
+    "id": 120,
+    "name": "Carniphila"
+  },
+  {
+    "id": 121,
+    "name": "Hydra"
+  },
+  {
+    "id": 122,
+    "name": "Bat"
+  },
+  {
+    "id": 123,
+    "name": "Panda"
+  },
+  {
+    "id": 124,
+    "name": "Centipede"
+  },
+  {
+    "id": 125,
+    "name": "Tiger"
+  },
+  {
+    "id": 201,
+    "name": "Orshabaal"
+  },
+  {
+    "id": 202,
+    "name": "The Horned Fox"
+  },
+  {
+    "id": 203,
+    "name": "Dharalion"
+  },
+  {
+    "id": 204,
+    "name": "Demodras"
+  },
+  {
+    "id": 205,
+    "name": "Grorlam"
+  },
+  {
+    "id": 206,
+    "name": "Fernfang"
+  },
+  {
+    "id": 207,
+    "name": "General Murius"
+  },
+  {
+    "id": 208,
+    "name": "The Old Widow"
+  },
+  {
+    "id": 209,
+    "name": "Necropharus"
+  },
+  {
+    "id": 210,
+    "name": "The Evil Eye"
+  },
+  {
+    "id": 211,
+    "name": "Elephant"
+  },
+  {
+    "id": 212,
+    "name": "Flamingo"
+  },
+  {
+    "id": 213,
+    "name": "Pink Butterfly"
+  },
+  {
+    "id": 214,
+    "name": "Dworc Voodoomaster"
+  },
+  {
+    "id": 215,
+    "name": "Dworc Fleshhunter"
+  },
+  {
+    "id": 216,
+    "name": "Dworc Venomsniper"
+  },
+  {
+    "id": 217,
+    "name": "Parrot"
+  },
+  {
+    "id": 218,
+    "name": "Terror Bird"
+  },
+  {
+    "id": 219,
+    "name": "Tarantula"
+  },
+  {
+    "id": 220,
+    "name": "Serpent Spawn"
+  },
+  {
+    "id": 221,
+    "name": "Spit Nettle"
+  },
+  {
+    "id": 222,
+    "name": "Smuggler"
+  },
+  {
+    "id": 223,
+    "name": "Bandit"
+  },
+  {
+    "id": 224,
+    "name": "Assassin"
+  },
+  {
+    "id": 225,
+    "name": "Dark Monk"
+  },
+  {
+    "id": 227,
+    "name": "Blue Butterfly"
+  },
+  {
+    "id": 228,
+    "name": "Red Butterfly"
+  },
+  {
+    "id": 229,
+    "name": "Morgaroth"
+  },
+  {
+    "id": 230,
+    "name": "Bazir"
+  },
+  {
+    "id": 231,
+    "name": "Ferumbras"
+  },
+  {
+    "id": 232,
+    "name": "The Halloween Hare"
+  },
+  {
+    "id": 233,
+    "name": "Infernatil"
+  },
+  {
+    "id": 234,
+    "name": "Apocalypse"
+  },
+  {
+    "id": 235,
+    "name": "Yellow Butterfly"
+  },
+  {
+    "id": 236,
+    "name": "Water Elemental"
+  },
+  {
+    "id": 237,
+    "name": "Quara Predator"
+  },
+  {
+    "id": 238,
+    "name": "Quara Predator Scout"
+  },
+  {
+    "id": 239,
+    "name": "Quara Constrictor"
+  },
+  {
+    "id": 240,
+    "name": "Quara Constrictor Scout"
+  },
+  {
+    "id": 241,
+    "name": "Quara Mantassin"
+  },
+  {
+    "id": 242,
+    "name": "Quara Mantassin Scout"
+  },
+  {
+    "id": 243,
+    "name": "Quara Hydromancer"
+  },
+  {
+    "id": 244,
+    "name": "Quara Hydromancer Scout"
+  },
+  {
+    "id": 245,
+    "name": "Quara Pincher"
+  },
+  {
+    "id": 246,
+    "name": "Quara Pincher Scout"
+  },
+  {
+    "id": 247,
+    "name": "Pirate Marauder"
+  },
+  {
+    "id": 248,
+    "name": "Pirate Cutthroat"
+  },
+  {
+    "id": 249,
+    "name": "Pirate Buccaneer"
+  },
+  {
+    "id": 250,
+    "name": "Pirate Corsair"
+  },
+  {
+    "id": 251,
+    "name": "Carrion Worm"
+  },
+  {
+    "id": 252,
+    "name": "Enlightened of the Cult"
+  },
+  {
+    "id": 253,
+    "name": "Acolyte of the Cult"
+  },
+  {
+    "id": 254,
+    "name": "Adept of the Cult"
+  },
+  {
+    "id": 255,
+    "name": "Novice of the Cult"
+  },
+  {
+    "id": 256,
+    "name": "Pirate Skeleton"
+  },
+  {
+    "id": 257,
+    "name": "Pirate Ghost"
+  },
+  {
+    "id": 258,
+    "name": "Tortoise"
+  },
+  {
+    "id": 259,
+    "name": "Thornback Tortoise"
+  },
+  {
+    "id": 260,
+    "name": "Mammoth"
+  },
+  {
+    "id": 261,
+    "name": "Blood Crab"
+  },
+  {
+    "id": 262,
+    "name": "Toad"
+  },
+  {
+    "id": 264,
+    "name": "Seagull"
+  },
+  {
+    "id": 265,
+    "name": "Son of Verminor"
+  },
+  {
+    "id": 267,
+    "name": "Green Frog"
+  },
+  {
+    "id": 268,
+    "name": "Azure Frog"
+  },
+  {
+    "id": 269,
+    "name": "Coral Frog"
+  },
+  {
+    "id": 270,
+    "name": "Crimson Frog"
+  },
+  {
+    "id": 271,
+    "name": "Orchid Frog"
+  },
+  {
+    "id": 272,
+    "name": "Lethal Lissy"
+  },
+  {
+    "id": 273,
+    "name": "Ron the Ripper"
+  },
+  {
+    "id": 274,
+    "name": "Brutus Bloodbeard"
+  },
+  {
+    "id": 275,
+    "name": "Deadeye Devious"
+  },
+  {
+    "id": 276,
+    "name": "Tiquandas Revenge"
+  },
+  {
+    "id": 277,
+    "name": "Island Troll"
+  },
+  {
+    "id": 279,
+    "name": "Massive Water Elemental"
+  },
+  {
+    "id": 280,
+    "name": "Thul"
+  },
+  {
+    "id": 281,
+    "name": "Hand of Cursed Fate"
+  },
+  {
+    "id": 282,
+    "name": "Undead Dragon"
+  },
+  {
+    "id": 283,
+    "name": "Lost Soul"
+  },
+  {
+    "id": 284,
+    "name": "Betrayed Wraith"
+  },
+  {
+    "id": 285,
+    "name": "Dark Torturer"
+  },
+  {
+    "id": 286,
+    "name": "Spectre"
+  },
+  {
+    "id": 287,
+    "name": "Destroyer"
+  },
+  {
+    "id": 288,
+    "name": "Diabolic Imp"
+  },
+  {
+    "id": 289,
+    "name": "Defiler"
+  },
+  {
+    "id": 290,
+    "name": "Wyvern"
+  },
+  {
+    "id": 291,
+    "name": "Fury"
+  },
+  {
+    "id": 292,
+    "name": "Phantasm"
+  },
+  {
+    "id": 294,
+    "name": "Hellhound"
+  },
+  {
+    "id": 295,
+    "name": "Hellfire Fighter"
+  },
+  {
+    "id": 296,
+    "name": "Juggernaut"
+  },
+  {
+    "id": 298,
+    "name": "Blightwalker"
+  },
+  {
+    "id": 299,
+    "name": "Nightmare"
+  },
+  {
+    "id": 300,
+    "name": "The Plasmother"
+  },
+  {
+    "id": 301,
+    "name": "The Handmaiden"
+  },
+  {
+    "id": 302,
+    "name": "Dracola"
+  },
+  {
+    "id": 303,
+    "name": "Mr. Punish"
+  },
+  {
+    "id": 304,
+    "name": "The Imperor"
+  },
+  {
+    "id": 305,
+    "name": "Massacre"
+  },
+  {
+    "id": 306,
+    "name": "Countess Sorrow"
+  },
+  {
+    "id": 307,
+    "name": "Munster"
+  },
+  {
+    "id": 309,
+    "name": "Apprentice Sheng"
+  },
+  {
+    "id": 310,
+    "name": "Nomad"
+  },
+  {
+    "id": 311,
+    "name": "Arkhothep (Creature)"
+  },
+  {
+    "id": 312,
+    "name": "Ghazbaran"
+  },
+  {
+    "id": 313,
+    "name": "Massive Fire Elemental"
+  },
+  {
+    "id": 314,
+    "name": "Plaguesmith"
+  },
+  {
+    "id": 317,
+    "name": "Frost Dragon"
+  },
+  {
+    "id": 318,
+    "name": "Penguin"
+  },
+  {
+    "id": 319,
+    "name": "Chakoya Tribewarden"
+  },
+  {
+    "id": 321,
+    "name": "Braindeath"
+  },
+  {
+    "id": 322,
+    "name": "Barbarian Skullhunter"
+  },
+  {
+    "id": 323,
+    "name": "Barbarian Bloodwalker"
+  },
+  {
+    "id": 324,
+    "name": "Frost Giant"
+  },
+  {
+    "id": 325,
+    "name": "Husky"
+  },
+  {
+    "id": 326,
+    "name": "Ice Golem"
+  },
+  {
+    "id": 327,
+    "name": "Silver Rabbit"
+  },
+  {
+    "id": 328,
+    "name": "Chakoya Toolshaper"
+  },
+  {
+    "id": 329,
+    "name": "Chakoya Windcaller"
+  },
+  {
+    "id": 330,
+    "name": "Crystal Spider"
+  },
+  {
+    "id": 331,
+    "name": "Ice Witch"
+  },
+  {
+    "id": 332,
+    "name": "Barbarian Brutetamer"
+  },
+  {
+    "id": 333,
+    "name": "Barbarian Headsplitter"
+  },
+  {
+    "id": 334,
+    "name": "Frost Giantess"
+  },
+  {
+    "id": 335,
+    "name": "Dire Penguin"
+  },
+  {
+    "id": 336,
+    "name": "Yakchal"
+  },
+  {
+    "id": 338,
+    "name": "Man in the Cave"
+  },
+  {
+    "id": 340,
+    "name": "Frostfur"
+  },
+  {
+    "id": 341,
+    "name": "Bloodpaw"
+  },
+  {
+    "id": 342,
+    "name": "Bovinus"
+  },
+  {
+    "id": 343,
+    "name": "Achad"
+  },
+  {
+    "id": 344,
+    "name": "Colerian the Barbarian"
+  },
+  {
+    "id": 345,
+    "name": "The Hairy One"
+  },
+  {
+    "id": 346,
+    "name": "Axeitus Headbanger"
+  },
+  {
+    "id": 347,
+    "name": "Rocky"
+  },
+  {
+    "id": 348,
+    "name": "Cursed Gladiator"
+  },
+  {
+    "id": 349,
+    "name": "Orcus the Cruel"
+  },
+  {
+    "id": 350,
+    "name": "Avalanche (Creature)"
+  },
+  {
+    "id": 351,
+    "name": "Kreebosh the Exile"
+  },
+  {
+    "id": 352,
+    "name": "The Dark Dancer"
+  },
+  {
+    "id": 353,
+    "name": "The Hag"
+  },
+  {
+    "id": 354,
+    "name": "Slim"
+  },
+  {
+    "id": 355,
+    "name": "Grimgor Guteater"
+  },
+  {
+    "id": 356,
+    "name": "Drasilla"
+  },
+  {
+    "id": 357,
+    "name": "Spirit of Earth"
+  },
+  {
+    "id": 358,
+    "name": "Spirit of Water"
+  },
+  {
+    "id": 359,
+    "name": "Spirit of Fire"
+  },
+  {
+    "id": 360,
+    "name": "Webster"
+  },
+  {
+    "id": 361,
+    "name": "Darakan the Executioner"
+  },
+  {
+    "id": 362,
+    "name": "Norgle Glacierbeard"
+  },
+  {
+    "id": 363,
+    "name": "The Pit Lord"
+  },
+  {
+    "id": 364,
+    "name": "Svoren the Mad"
+  },
+  {
+    "id": 365,
+    "name": "The Masked Marauder"
+  },
+  {
+    "id": 366,
+    "name": "Gnorre Chyllson"
+  },
+  {
+    "id": 367,
+    "name": "Fallen Mooh'Tah Master Ghar"
+  },
+  {
+    "id": 368,
+    "name": "Deathbringer"
+  },
+  {
+    "id": 370,
+    "name": "The Obliverator"
+  },
+  {
+    "id": 371,
+    "name": "Dark Magician"
+  },
+  {
+    "id": 372,
+    "name": "Dark Apprentice"
+  },
+  {
+    "id": 373,
+    "name": "The Abomination"
+  },
+  {
+    "id": 374,
+    "name": "Thief (Creature)"
+  },
+  {
+    "id": 375,
+    "name": "Koshei the Deathless"
+  },
+  {
+    "id": 376,
+    "name": "Poacher"
+  },
+  {
+    "id": 377,
+    "name": "Goblin Leader"
+  },
+  {
+    "id": 378,
+    "name": "Kitty"
+  },
+  {
+    "id": 379,
+    "name": "Dwarf Henchman"
+  },
+  {
+    "id": 380,
+    "name": "Mad Technomancer"
+  },
+  {
+    "id": 383,
+    "name": "Dryad"
+  },
+  {
+    "id": 384,
+    "name": "Squirrel"
+  },
+  {
+    "id": 385,
+    "name": "Dragon Hatchling"
+  },
+  {
+    "id": 386,
+    "name": "Dragon Lord Hatchling"
+  },
+  {
+    "id": 387,
+    "name": "Cat"
+  },
+  {
+    "id": 389,
+    "name": "Cyclops Smith"
+  },
+  {
+    "id": 391,
+    "name": "Cyclops Drone"
+  },
+  {
+    "id": 392,
+    "name": "Troll Champion"
+  },
+  {
+    "id": 393,
+    "name": "Grynch Clan Goblin"
+  },
+  {
+    "id": 402,
+    "name": "Frost Dragon Hatchling"
+  },
+  {
+    "id": 403,
+    "name": "Hellgorak"
+  },
+  {
+    "id": 404,
+    "name": "Dreadbeast"
+  },
+  {
+    "id": 406,
+    "name": "Eye of the Seven"
+  },
+  {
+    "id": 414,
+    "name": "Madareth"
+  },
+  {
+    "id": 415,
+    "name": "Ushuriel"
+  },
+  {
+    "id": 416,
+    "name": "Golgordan"
+  },
+  {
+    "id": 417,
+    "name": "Latrivan"
+  },
+  {
+    "id": 418,
+    "name": "Annihilon"
+  },
+  {
+    "id": 419,
+    "name": "Warlord Ruzad"
+  },
+  {
+    "id": 420,
+    "name": "The Frog Prince"
+  },
+  {
+    "id": 421,
+    "name": "Zarabustor"
+  },
+  {
+    "id": 422,
+    "name": "The Old Whopper"
+  },
+  {
+    "id": 423,
+    "name": "The Big Bad One"
+  },
+  {
+    "id": 424,
+    "name": "Foreman Kneebiter"
+  },
+  {
+    "id": 425,
+    "name": "Hairman the Huge"
+  },
+  {
+    "id": 426,
+    "name": "Gravelord Oshuran"
+  },
+  {
+    "id": 427,
+    "name": "Yaga the Crone"
+  },
+  {
+    "id": 428,
+    "name": "Xenia"
+  },
+  {
+    "id": 429,
+    "name": "High Templar Cobrass"
+  },
+  {
+    "id": 430,
+    "name": "Captain Jones"
+  },
+  {
+    "id": 431,
+    "name": "Grandfather Tridian"
+  },
+  {
+    "id": 432,
+    "name": "Big Boss Trolliver"
+  },
+  {
+    "id": 434,
+    "name": "Zugurosh"
+  },
+  {
+    "id": 435,
+    "name": "Rukor Zad"
+  },
+  {
+    "id": 436,
+    "name": "Smuggler Baron Silvertoe"
+  },
+  {
+    "id": 437,
+    "name": "Deepsea Blood Crab"
+  },
+  {
+    "id": 438,
+    "name": "Sea Serpent"
+  },
+  {
+    "id": 439,
+    "name": "Young Sea Serpent"
+  },
+  {
+    "id": 440,
+    "name": "Barbaria"
+  },
+  {
+    "id": 441,
+    "name": "Stonecracker"
+  },
+  {
+    "id": 442,
+    "name": "Cockroach"
+  },
+  {
+    "id": 443,
+    "name": "The Count"
+  },
+  {
+    "id": 444,
+    "name": "The Weakened Count"
+  },
+  {
+    "id": 445,
+    "name": "Ungreez"
+  },
+  {
+    "id": 446,
+    "name": "Skeleton Warrior"
+  },
+  {
+    "id": 448,
+    "name": "Dwarf Miner"
+  },
+  {
+    "id": 449,
+    "name": "Fire Overlord"
+  },
+  {
+    "id": 450,
+    "name": "Ice Overlord"
+  },
+  {
+    "id": 451,
+    "name": "Earth Overlord"
+  },
+  {
+    "id": 452,
+    "name": "Energy Overlord"
+  },
+  {
+    "id": 454,
+    "name": "Lord of the Elements"
+  },
+  {
+    "id": 455,
+    "name": "Massive Earth Elemental"
+  },
+  {
+    "id": 456,
+    "name": "Massive Energy Elemental"
+  },
+  {
+    "id": 457,
+    "name": "Energy Elemental"
+  },
+  {
+    "id": 458,
+    "name": "Earth Elemental"
+  },
+  {
+    "id": 459,
+    "name": "Rotworm Queen"
+  },
+  {
+    "id": 460,
+    "name": "Bog Raider"
+  },
+  {
+    "id": 461,
+    "name": "Wyrm"
+  },
+  {
+    "id": 462,
+    "name": "Wisp"
+  },
+  {
+    "id": 463,
+    "name": "Goblin Assassin"
+  },
+  {
+    "id": 464,
+    "name": "Goblin Scavenger"
+  },
+  {
+    "id": 465,
+    "name": "Grim Reaper"
+  },
+  {
+    "id": 466,
+    "name": "The Mutated Pumpkin"
+  },
+  {
+    "id": 467,
+    "name": "Charged Energy Elemental"
+  },
+  {
+    "id": 468,
+    "name": "Overcharged Energy Element"
+  },
+  {
+    "id": 469,
+    "name": "Muddy Earth Elemental"
+  },
+  {
+    "id": 470,
+    "name": "Jagged Earth Elemental"
+  },
+  {
+    "id": 471,
+    "name": "Blazing Fire Elemental"
+  },
+  {
+    "id": 472,
+    "name": "Blistering Fire Elemental"
+  },
+  {
+    "id": 473,
+    "name": "Slick Water Elemental"
+  },
+  {
+    "id": 474,
+    "name": "Roaring Water Elemental"
+  },
+  {
+    "id": 475,
+    "name": "Zevelon Duskbringer"
+  },
+  {
+    "id": 476,
+    "name": "Sir Valorcrest"
+  },
+  {
+    "id": 477,
+    "name": "Diblis the Fair"
+  },
+  {
+    "id": 478,
+    "name": "Arachir the Ancient One"
+  },
+  {
+    "id": 479,
+    "name": "Boreth"
+  },
+  {
+    "id": 480,
+    "name": "Arthei"
+  },
+  {
+    "id": 481,
+    "name": "Marziel"
+  },
+  {
+    "id": 482,
+    "name": "Lersatio"
+  },
+  {
+    "id": 483,
+    "name": "Vampire Bride"
+  },
+  {
+    "id": 484,
+    "name": "Diseased Fred"
+  },
+  {
+    "id": 485,
+    "name": "Diseased Bill"
+  },
+  {
+    "id": 486,
+    "name": "Diseased Dan"
+  },
+  {
+    "id": 487,
+    "name": "Morik the Gladiator"
+  },
+  {
+    "id": 489,
+    "name": "Splasher"
+  },
+  {
+    "id": 490,
+    "name": "Inky"
+  },
+  {
+    "id": 491,
+    "name": "Sharptooth"
+  },
+  {
+    "id": 493,
+    "name": "Azerus"
+  },
+  {
+    "id": 502,
+    "name": "Mutated Rat"
+  },
+  {
+    "id": 503,
+    "name": "Worker Golem"
+  },
+  {
+    "id": 508,
+    "name": "Undead Gladiator"
+  },
+  {
+    "id": 509,
+    "name": "Mutated Bat"
+  },
+  {
+    "id": 510,
+    "name": "Werewolf"
+  },
+  {
+    "id": 511,
+    "name": "Haunted Treeling"
+  },
+  {
+    "id": 512,
+    "name": "Zombie"
+  },
+  {
+    "id": 513,
+    "name": "Acid Blob"
+  },
+  {
+    "id": 514,
+    "name": "Death Blob"
+  },
+  {
+    "id": 515,
+    "name": "Mercury Blob"
+  },
+  {
+    "id": 516,
+    "name": "Mutated Tiger"
+  },
+  {
+    "id": 518,
+    "name": "Nightmare Scion"
+  },
+  {
+    "id": 519,
+    "name": "Hellspawn"
+  },
+  {
+    "id": 520,
+    "name": "Nightstalker"
+  },
+  {
+    "id": 521,
+    "name": "Mutated Human"
+  },
+  {
+    "id": 522,
+    "name": "Armenius (Creature)"
+  },
+  {
+    "id": 523,
+    "name": "Gozzler"
+  },
+  {
+    "id": 524,
+    "name": "Damaged Worker Golem"
+  },
+  {
+    "id": 525,
+    "name": "Crazed Beggar"
+  },
+  {
+    "id": 526,
+    "name": "Gang Member"
+  },
+  {
+    "id": 527,
+    "name": "Gladiator"
+  },
+  {
+    "id": 528,
+    "name": "Mad Scientist"
+  },
+  {
+    "id": 529,
+    "name": "Infernalist"
+  },
+  {
+    "id": 530,
+    "name": "Shadow of Boreth"
+  },
+  {
+    "id": 531,
+    "name": "Shadow of Marziel"
+  },
+  {
+    "id": 532,
+    "name": "Shadow of Lersatio"
+  },
+  {
+    "id": 533,
+    "name": "War Golem"
+  },
+  {
+    "id": 534,
+    "name": "Pythius the Rotten (Creature)"
+  },
+  {
+    "id": 535,
+    "name": "Servant Golem"
+  },
+  {
+    "id": 537,
+    "name": "Samael"
+  },
+  {
+    "id": 538,
+    "name": "Amarie (Creature)"
+  },
+  {
+    "id": 539,
+    "name": "Grodrik (Creature)"
+  },
+  {
+    "id": 540,
+    "name": "Furious Troll"
+  },
+  {
+    "id": 541,
+    "name": "Troll Legionnaire"
+  },
+  {
+    "id": 545,
+    "name": "The Snapper"
+  },
+  {
+    "id": 546,
+    "name": "Hide"
+  },
+  {
+    "id": 547,
+    "name": "The Bloodtusk"
+  },
+  {
+    "id": 548,
+    "name": "Esmeralda"
+  },
+  {
+    "id": 549,
+    "name": "Shardhead"
+  },
+  {
+    "id": 550,
+    "name": "The Many"
+  },
+  {
+    "id": 551,
+    "name": "Leviathan"
+  },
+  {
+    "id": 552,
+    "name": "The Noxious Spawn"
+  },
+  {
+    "id": 553,
+    "name": "Merikh the Slaughterer"
+  },
+  {
+    "id": 554,
+    "name": "Fahim the Wise"
+  },
+  {
+    "id": 555,
+    "name": "Evil Sheep"
+  },
+  {
+    "id": 556,
+    "name": "Evil Sheep Lord"
+  },
+  {
+    "id": 557,
+    "name": "Hot Dog"
+  },
+  {
+    "id": 558,
+    "name": "Vampire Pig"
+  },
+  {
+    "id": 559,
+    "name": "Doom Deer"
+  },
+  {
+    "id": 560,
+    "name": "Killer Rabbit"
+  },
+  {
+    "id": 561,
+    "name": "Berserker Chicken"
+  },
+  {
+    "id": 562,
+    "name": "Demon Parrot"
+  },
+  {
+    "id": 563,
+    "name": "Infernal Frog"
+  },
+  {
+    "id": 564,
+    "name": "Doctor Perhaps"
+  },
+  {
+    "id": 565,
+    "name": "Dirtbeard"
+  },
+  {
+    "id": 566,
+    "name": "Mephiles"
+  },
+  {
+    "id": 567,
+    "name": "Boogey"
+  },
+  {
+    "id": 568,
+    "name": "Monstor"
+  },
+  {
+    "id": 569,
+    "name": "Evil Mastermind"
+  },
+  {
+    "id": 570,
+    "name": "Medusa"
+  },
+  {
+    "id": 571,
+    "name": "Gloombringer"
+  },
+  {
+    "id": 572,
+    "name": "Spawn of Despair"
+  },
+  {
+    "id": 573,
+    "name": "Eclipse Knight"
+  },
+  {
+    "id": 574,
+    "name": "Harbinger of Darkness"
+  },
+  {
+    "id": 575,
+    "name": "Spirit of Light"
+  },
+  {
+    "id": 576,
+    "name": "Essence of Darkness"
+  },
+  {
+    "id": 578,
+    "name": "Acolyte of Darkness"
+  },
+  {
+    "id": 579,
+    "name": "Nightslayer"
+  },
+  {
+    "id": 580,
+    "name": "Bane of Light"
+  },
+  {
+    "id": 581,
+    "name": "Duskbringer"
+  },
+  {
+    "id": 582,
+    "name": "Shadow Hound"
+  },
+  {
+    "id": 583,
+    "name": "Doomsday Cultist"
+  },
+  {
+    "id": 584,
+    "name": "Midnight Spawn"
+  },
+  {
+    "id": 585,
+    "name": "Midnight Warrior"
+  },
+  {
+    "id": 586,
+    "name": "Herald of Gloom"
+  },
+  {
+    "id": 587,
+    "name": "Bride of Night"
+  },
+  {
+    "id": 592,
+    "name": "Rottie the Rotworm"
+  },
+  {
+    "id": 593,
+    "name": "The Collector"
+  },
+  {
+    "id": 594,
+    "name": "Undead Mine Worker"
+  },
+  {
+    "id": 595,
+    "name": "Undead Prospector"
+  },
+  {
+    "id": 598,
+    "name": "Mooh'Tah Master"
+  },
+  {
+    "id": 599,
+    "name": "Shard of Corruption"
+  },
+  {
+    "id": 600,
+    "name": "Baron Brute"
+  },
+  {
+    "id": 601,
+    "name": "Fatality"
+  },
+  {
+    "id": 602,
+    "name": "Incineron"
+  },
+  {
+    "id": 603,
+    "name": "Doomhowl"
+  },
+  {
+    "id": 604,
+    "name": "The Dreadorian"
+  },
+  {
+    "id": 605,
+    "name": "Tremorak"
+  },
+  {
+    "id": 606,
+    "name": "The Axeorcist"
+  },
+  {
+    "id": 607,
+    "name": "Dreadwing"
+  },
+  {
+    "id": 608,
+    "name": "Coldheart"
+  },
+  {
+    "id": 609,
+    "name": "Rocko"
+  },
+  {
+    "id": 611,
+    "name": "Menace"
+  },
+  {
+    "id": 612,
+    "name": "Haunter"
+  },
+  {
+    "id": 613,
+    "name": "Tirecz"
+  },
+  {
+    "id": 614,
+    "name": "Orc Marauder"
+  },
+  {
+    "id": 615,
+    "name": "Eternal Guardian"
+  },
+  {
+    "id": 616,
+    "name": "Lizard Zaogun"
+  },
+  {
+    "id": 617,
+    "name": "Draken Warmaster"
+  },
+  {
+    "id": 618,
+    "name": "Draken Spellweaver"
+  },
+  {
+    "id": 620,
+    "name": "Lizard Chosen"
+  },
+  {
+    "id": 621,
+    "name": "Insect Swarm"
+  },
+  {
+    "id": 622,
+    "name": "Renegade Orc"
+  },
+  {
+    "id": 623,
+    "name": "Lizard Dragon Priest"
+  },
+  {
+    "id": 624,
+    "name": "Lizard Legionnaire"
+  },
+  {
+    "id": 625,
+    "name": "Lizard High Guard"
+  },
+  {
+    "id": 626,
+    "name": "Lizard Gate Guardian"
+  },
+  {
+    "id": 627,
+    "name": "Killer Caiman"
+  },
+  {
+    "id": 628,
+    "name": "Zulazza the Corruptor"
+  },
+  {
+    "id": 629,
+    "name": "Chizzoron the Distorter"
+  },
+  {
+    "id": 630,
+    "name": "Gnarlhound"
+  },
+  {
+    "id": 631,
+    "name": "Terramite"
+  },
+  {
+    "id": 632,
+    "name": "Wailing Widow"
+  },
+  {
+    "id": 633,
+    "name": "Lancer Beetle"
+  },
+  {
+    "id": 634,
+    "name": "Cublarc the Plunderer"
+  },
+  {
+    "id": 635,
+    "name": "Battlemaster Zunzu"
+  },
+  {
+    "id": 636,
+    "name": "The Voice of Ruin"
+  },
+  {
+    "id": 637,
+    "name": "Flamecaller Zazrak"
+  },
+  {
+    "id": 638,
+    "name": "The Blightfather"
+  },
+  {
+    "id": 639,
+    "name": "Dreadmaw"
+  },
+  {
+    "id": 640,
+    "name": "Fleabringer"
+  },
+  {
+    "id": 641,
+    "name": "Sandcrawler"
+  },
+  {
+    "id": 642,
+    "name": "Grand Mother Foulscale"
+  },
+  {
+    "id": 643,
+    "name": "Ghastly Dragon"
+  },
+  {
+    "id": 646,
+    "name": "Anmothra"
+  },
+  {
+    "id": 647,
+    "name": "Chikhaton"
+  },
+  {
+    "id": 648,
+    "name": "Phrodomo"
+  },
+  {
+    "id": 649,
+    "name": "Teneshpar"
+  },
+  {
+    "id": 650,
+    "name": "Irahsae"
+  },
+  {
+    "id": 655,
+    "name": "Lizard Magistratus"
+  },
+  {
+    "id": 656,
+    "name": "Lizard Noble"
+  },
+  {
+    "id": 657,
+    "name": "The Keeper"
+  },
+  {
+    "id": 666,
+    "name": "Snake Thing"
+  },
+  {
+    "id": 667,
+    "name": "Lizard Abomination"
+  },
+  {
+    "id": 668,
+    "name": "Mutated Zalamon"
+  },
+  {
+    "id": 669,
+    "name": "Teleskor"
+  },
+  {
+    "id": 670,
+    "name": "Glitterscale"
+  },
+  {
+    "id": 671,
+    "name": "Heoni"
+  },
+  {
+    "id": 672,
+    "name": "Draken Elite"
+  },
+  {
+    "id": 673,
+    "name": "Draken Abomination"
+  },
+  {
+    "id": 674,
+    "name": "Brimstone Bug"
+  },
+  {
+    "id": 675,
+    "name": "Souleater"
+  },
+  {
+    "id": 677,
+    "name": "Devovorga"
+  },
+  {
+    "id": 678,
+    "name": "Hatebreeder"
+  },
+  {
+    "id": 679,
+    "name": "Bane Bringer"
+  },
+  {
+    "id": 680,
+    "name": "Cake Golem"
+  },
+  {
+    "id": 681,
+    "name": "Travelling Merchant"
+  },
+  {
+    "id": 691,
+    "name": "Berrypest"
+  },
+  {
+    "id": 693,
+    "name": "Boar"
+  },
+  {
+    "id": 694,
+    "name": "Stampor"
+  },
+  {
+    "id": 695,
+    "name": "Draptor"
+  },
+  {
+    "id": 696,
+    "name": "Undead Cavebear"
+  },
+  {
+    "id": 697,
+    "name": "Crustacea Gigantica"
+  },
+  {
+    "id": 698,
+    "name": "Midnight Panther"
+  },
+  {
+    "id": 700,
+    "name": "Iron Servant"
+  },
+  {
+    "id": 701,
+    "name": "Golden Servant"
+  },
+  {
+    "id": 702,
+    "name": "Diamond Servant"
+  },
+  {
+    "id": 703,
+    "name": "Mad Mage"
+  },
+  {
+    "id": 704,
+    "name": "Ghoulish Hyaena"
+  },
+  {
+    "id": 705,
+    "name": "Sandstone Scorpion"
+  },
+  {
+    "id": 706,
+    "name": "Clay Guardian"
+  },
+  {
+    "id": 707,
+    "name": "Grave Guard"
+  },
+  {
+    "id": 708,
+    "name": "Tomb Servant"
+  },
+  {
+    "id": 709,
+    "name": "Sacred Spider"
+  },
+  {
+    "id": 710,
+    "name": "Death Priest"
+  },
+  {
+    "id": 711,
+    "name": "Elder Mummy"
+  },
+  {
+    "id": 712,
+    "name": "Honour Guard"
+  },
+  {
+    "id": 713,
+    "name": "Horestis"
+  },
+  {
+    "id": 714,
+    "name": "Kraknaknork"
+  },
+  {
+    "id": 717,
+    "name": "Yielothax"
+  },
+  {
+    "id": 718,
+    "name": "Raging Mage"
+  },
+  {
+    "id": 719,
+    "name": "Feverish Citizen"
+  },
+  {
+    "id": 720,
+    "name": "White Deer"
+  },
+  {
+    "id": 723,
+    "name": "Starving Wolf"
+  },
+  {
+    "id": 724,
+    "name": "Shaburak Demon"
+  },
+  {
+    "id": 725,
+    "name": "Shaburak Lord"
+  },
+  {
+    "id": 726,
+    "name": "Shaburak Prince"
+  },
+  {
+    "id": 727,
+    "name": "Askarak Demon"
+  },
+  {
+    "id": 728,
+    "name": "Askarak Lord"
+  },
+  {
+    "id": 729,
+    "name": "Askarak Prince"
+  },
+  {
+    "id": 730,
+    "name": "Wild Horse"
+  },
+  {
+    "id": 731,
+    "name": "Slug"
+  },
+  {
+    "id": 732,
+    "name": "Insectoid Scout"
+  },
+  {
+    "id": 733,
+    "name": "Dromedary"
+  },
+  {
+    "id": 734,
+    "name": "Deepling Scout"
+  },
+  {
+    "id": 735,
+    "name": "Filth Toad"
+  },
+  {
+    "id": 736,
+    "name": "Groam"
+  },
+  {
+    "id": 737,
+    "name": "Firestarter"
+  },
+  {
+    "id": 738,
+    "name": "Bog Frog"
+  },
+  {
+    "id": 739,
+    "name": "Thornfire Wolf"
+  },
+  {
+    "id": 740,
+    "name": "Crystal Wolf"
+  },
+  {
+    "id": 741,
+    "name": "Elf Overseer"
+  },
+  {
+    "id": 744,
+    "name": "Energized Raging Mage"
+  },
+  {
+    "id": 745,
+    "name": "Troll Guard"
+  },
+  {
+    "id": 750,
+    "name": "Horse"
+  },
+  {
+    "id": 751,
+    "name": "Grey Horse"
+  },
+  {
+    "id": 752,
+    "name": "Brown Horse"
+  },
+  {
+    "id": 753,
+    "name": "Deathbine"
+  },
+  {
+    "id": 754,
+    "name": "Fleshcrawler"
+  },
+  {
+    "id": 755,
+    "name": "Ribstride"
+  },
+  {
+    "id": 756,
+    "name": "The Bloodweb"
+  },
+  {
+    "id": 757,
+    "name": "Flameborn"
+  },
+  {
+    "id": 758,
+    "name": "Sulphur Scuttler"
+  },
+  {
+    "id": 759,
+    "name": "Gorgo"
+  },
+  {
+    "id": 760,
+    "name": "Ethershreck"
+  },
+  {
+    "id": 761,
+    "name": "Kerberos"
+  },
+  {
+    "id": 763,
+    "name": "Jesse the Wicked"
+  },
+  {
+    "id": 764,
+    "name": "Robby the Reckless"
+  },
+  {
+    "id": 765,
+    "name": "Mornenion"
+  },
+  {
+    "id": 766,
+    "name": "Elvira Hammerthrust"
+  },
+  {
+    "id": 768,
+    "name": "Bane Lord"
+  },
+  {
+    "id": 769,
+    "name": "Deepling Warrior"
+  },
+  {
+    "id": 770,
+    "name": "Deepling Guard"
+  },
+  {
+    "id": 771,
+    "name": "Terrified Elephant"
+  },
+  {
+    "id": 772,
+    "name": "Deepling Spellsinger"
+  },
+  {
+    "id": 773,
+    "name": "Jaul"
+  },
+  {
+    "id": 774,
+    "name": "Obujos"
+  },
+  {
+    "id": 776,
+    "name": "Nomad Blue"
+  },
+  {
+    "id": 777,
+    "name": "Nomad Female"
+  },
+  {
+    "id": 778,
+    "name": "Ladybug"
+  },
+  {
+    "id": 779,
+    "name": "Manta Ray"
+  },
+  {
+    "id": 780,
+    "name": "Calamary"
+  },
+  {
+    "id": 781,
+    "name": "Jellyfish"
+  },
+  {
+    "id": 782,
+    "name": "Shark"
+  },
+  {
+    "id": 783,
+    "name": "Northern Pike"
+  },
+  {
+    "id": 784,
+    "name": "Fish"
+  },
+  {
+    "id": 786,
+    "name": "Crawler"
+  },
+  {
+    "id": 787,
+    "name": "Spidris"
+  },
+  {
+    "id": 788,
+    "name": "Kollos"
+  },
+  {
+    "id": 790,
+    "name": "Swarmer"
+  },
+  {
+    "id": 791,
+    "name": "Spitter"
+  },
+  {
+    "id": 792,
+    "name": "Waspoid"
+  },
+  {
+    "id": 795,
+    "name": "Deepling Worker"
+  },
+  {
+    "id": 796,
+    "name": "Insectoid Worker"
+  },
+  {
+    "id": 797,
+    "name": "Spidris Elite"
+  },
+  {
+    "id": 801,
+    "name": "Hive Overseer"
+  },
+  {
+    "id": 803,
+    "name": "Swarmer Hatchling"
+  },
+  {
+    "id": 804,
+    "name": "Lesser Swarmer"
+  },
+  {
+    "id": 844,
+    "name": "Hemming"
+  },
+  {
+    "id": 845,
+    "name": "Tormentor"
+  },
+  {
+    "id": 846,
+    "name": "Fazzrah"
+  },
+  {
+    "id": 847,
+    "name": "Tromphonyte"
+  },
+  {
+    "id": 848,
+    "name": "Bruise Payne"
+  },
+  {
+    "id": 849,
+    "name": "Zanakeph"
+  },
+  {
+    "id": 850,
+    "name": "Paiz the Pauperizer"
+  },
+  {
+    "id": 851,
+    "name": "Bretzecutioner"
+  },
+  {
+    "id": 852,
+    "name": "Chopper"
+  },
+  {
+    "id": 853,
+    "name": "Shadowstalker"
+  },
+  {
+    "id": 854,
+    "name": "Rotspit"
+  },
+  {
+    "id": 855,
+    "name": "Mindmasher"
+  },
+  {
+    "id": 857,
+    "name": "Maw"
+  },
+  {
+    "id": 858,
+    "name": "Fleshslicer"
+  },
+  {
+    "id": 859,
+    "name": "Deepling Brawler"
+  },
+  {
+    "id": 860,
+    "name": "Deepling Master Librarian"
+  },
+  {
+    "id": 861,
+    "name": "Deepling Tyrant"
+  },
+  {
+    "id": 862,
+    "name": "Deepling Elite"
+  },
+  {
+    "id": 867,
+    "name": "Grave Robber"
+  },
+  {
+    "id": 868,
+    "name": "Crypt Defiler"
+  },
+  {
+    "id": 869,
+    "name": "Crystalcrusher"
+  },
+  {
+    "id": 870,
+    "name": "Mushroom Sniffer"
+  },
+  {
+    "id": 872,
+    "name": "Water Buffalo"
+  },
+  {
+    "id": 873,
+    "name": "Enraged Crystal Golem"
+  },
+  {
+    "id": 874,
+    "name": "Damaged Crystal Golem"
+  },
+  {
+    "id": 877,
+    "name": "Modified Gnarlhound"
+  },
+  {
+    "id": 878,
+    "name": "Drillworm"
+  },
+  {
+    "id": 879,
+    "name": "Stone Devourer"
+  },
+  {
+    "id": 880,
+    "name": "Armadile"
+  },
+  {
+    "id": 881,
+    "name": "Humongous Fungus"
+  },
+  {
+    "id": 882,
+    "name": "Weeper"
+  },
+  {
+    "id": 883,
+    "name": "Orewalker"
+  },
+  {
+    "id": 884,
+    "name": "Lava Golem"
+  },
+  {
+    "id": 885,
+    "name": "Magma Crawler"
+  },
+  {
+    "id": 886,
+    "name": "Enslaved Dwarf"
+  },
+  {
+    "id": 887,
+    "name": "Abyssador"
+  },
+  {
+    "id": 888,
+    "name": "Lost Berserker"
+  },
+  {
+    "id": 889,
+    "name": "Cliff Strider"
+  },
+  {
+    "id": 890,
+    "name": "Ironblight"
+  },
+  {
+    "id": 891,
+    "name": "Hideous Fungus"
+  },
+  {
+    "id": 892,
+    "name": "Deathstrike"
+  },
+  {
+    "id": 893,
+    "name": "Gnomevil"
+  },
+  {
+    "id": 894,
+    "name": "Dragonling"
+  },
+  {
+    "id": 896,
+    "name": "Versperoth"
+  },
+  {
+    "id": 897,
+    "name": "Infected Weeper"
+  },
+  {
+    "id": 898,
+    "name": "Vulcongra"
+  },
+  {
+    "id": 899,
+    "name": "Wiggler"
+  },
+  {
+    "id": 900,
+    "name": "Bibby Bloodbath"
+  },
+  {
+    "id": 901,
+    "name": "Mamma Longlegs"
+  },
+  {
+    "id": 903,
+    "name": "Minion of Versperoth"
+  },
+  {
+    "id": 904,
+    "name": "Young Troll"
+  },
+  {
+    "id": 912,
+    "name": "Emerald Damselfly"
+  },
+  {
+    "id": 913,
+    "name": "Salamander"
+  },
+  {
+    "id": 914,
+    "name": "Marsh Stalker"
+  },
+  {
+    "id": 915,
+    "name": "Pigeon"
+  },
+  {
+    "id": 916,
+    "name": "Corym Charlatan"
+  },
+  {
+    "id": 917,
+    "name": "Corym Skirmisher"
+  },
+  {
+    "id": 918,
+    "name": "Corym Vanguard"
+  },
+  {
+    "id": 919,
+    "name": "Swampling"
+  },
+  {
+    "id": 920,
+    "name": "Little Corym Charlatan"
+  },
+  {
+    "id": 922,
+    "name": "Adventurer"
+  },
+  {
+    "id": 924,
+    "name": "Lost Husher"
+  },
+  {
+    "id": 925,
+    "name": "Lost Basher"
+  },
+  {
+    "id": 926,
+    "name": "Lost Thrower"
+  },
+  {
+    "id": 955,
+    "name": "Willi Wasp"
+  },
+  {
+    "id": 956,
+    "name": "Zomba"
+  },
+  {
+    "id": 958,
+    "name": "Vampire Viscount"
+  },
+  {
+    "id": 959,
+    "name": "Vicious Manbat"
+  },
+  {
+    "id": 960,
+    "name": "Shadow Pupil"
+  },
+  {
+    "id": 961,
+    "name": "Blood Priest"
+  },
+  {
+    "id": 962,
+    "name": "White Shade"
+  },
+  {
+    "id": 963,
+    "name": "Elder Wyrm"
+  },
+  {
+    "id": 964,
+    "name": "The Welter"
+  },
+  {
+    "id": 965,
+    "name": "White Pale"
+  },
+  {
+    "id": 966,
+    "name": "Tyrn"
+  },
+  {
+    "id": 967,
+    "name": "Hirintror"
+  },
+  {
+    "id": 969,
+    "name": "Zushuka"
+  },
+  {
+    "id": 970,
+    "name": "Ocyakao"
+  },
+  {
+    "id": 971,
+    "name": "Shlorg"
+  },
+  {
+    "id": 972,
+    "name": "The Pale Count"
+  },
+  {
+    "id": 973,
+    "name": "Nightfiend"
+  },
+  {
+    "id": 974,
+    "name": "Blood Hand"
+  },
+  {
+    "id": 975,
+    "name": "Gravedigger"
+  },
+  {
+    "id": 976,
+    "name": "Tarnished Spirit"
+  },
+  {
+    "id": 978,
+    "name": "Rorc"
+  },
+  {
+    "id": 979,
+    "name": "Leaf Golem"
+  },
+  {
+    "id": 980,
+    "name": "Forest Fury"
+  },
+  {
+    "id": 981,
+    "name": "Roaring Lion"
+  },
+  {
+    "id": 982,
+    "name": "Wilting Leaf Golem"
+  },
+  {
+    "id": 987,
+    "name": "Furyosa"
+  },
+  {
+    "id": 988,
+    "name": "Necromancer Servant"
+  },
+  {
+    "id": 992,
+    "name": "Weakened Shlorg"
+  },
+  {
+    "id": 1000,
+    "name": "Furious Fire Elemental"
+  },
+  {
+    "id": 1003,
+    "name": "Gaz'haragoth"
+  },
+  {
+    "id": 1004,
+    "name": "Shock Head"
+  },
+  {
+    "id": 1011,
+    "name": "Omrafir"
+  },
+  {
+    "id": 1012,
+    "name": "Sight of Surrender"
+  },
+  {
+    "id": 1013,
+    "name": "Guzzlemaw"
+  },
+  {
+    "id": 1014,
+    "name": "Silencer"
+  },
+  {
+    "id": 1015,
+    "name": "Choking Fear"
+  },
+  {
+    "id": 1016,
+    "name": "Terrorsleep"
+  },
+  {
+    "id": 1017,
+    "name": "Bad Dream"
+  },
+  {
+    "id": 1018,
+    "name": "Retching Horror"
+  },
+  {
+    "id": 1019,
+    "name": "Demon Outcast"
+  },
+  {
+    "id": 1021,
+    "name": "Feversleep"
+  },
+  {
+    "id": 1022,
+    "name": "Frazzlemaw"
+  },
+  {
+    "id": 1023,
+    "name": "Horadron"
+  },
+  {
+    "id": 1024,
+    "name": "Zavarash"
+  },
+  {
+    "id": 1025,
+    "name": "Terofar"
+  },
+  {
+    "id": 1028,
+    "name": "Mawhawk"
+  },
+  {
+    "id": 1029,
+    "name": "Prince Drazzak"
+  },
+  {
+    "id": 1035,
+    "name": "The Ravager"
+  },
+  {
+    "id": 1038,
+    "name": "Glooth Golem"
+  },
+  {
+    "id": 1039,
+    "name": "Metal Gargoyle"
+  },
+  {
+    "id": 1040,
+    "name": "Blood Beast"
+  },
+  {
+    "id": 1041,
+    "name": "Rustheap Golem"
+  },
+  {
+    "id": 1042,
+    "name": "Glooth Anemone"
+  },
+  {
+    "id": 1043,
+    "name": "Walker"
+  },
+  {
+    "id": 1044,
+    "name": "Moohtant"
+  },
+  {
+    "id": 1045,
+    "name": "Minotaur Amazon"
+  },
+  {
+    "id": 1046,
+    "name": "Execowtioner"
+  },
+  {
+    "id": 1047,
+    "name": "Death Priest Shargon"
+  },
+  {
+    "id": 1051,
+    "name": "Mooh'Tah Warrior"
+  },
+  {
+    "id": 1052,
+    "name": "Minotaur Hunter"
+  },
+  {
+    "id": 1053,
+    "name": "Worm Priestess"
+  },
+  {
+    "id": 1054,
+    "name": "Glooth Blob"
+  },
+  {
+    "id": 1055,
+    "name": "Rot Elemental"
+  },
+  {
+    "id": 1056,
+    "name": "Devourer"
+  },
+  {
+    "id": 1057,
+    "name": "Murderous Ghost"
+  },
+  {
+    "id": 1058,
+    "name": "Glooth Fairy"
+  },
+  {
+    "id": 1059,
+    "name": "Lisa"
+  },
+  {
+    "id": 1060,
+    "name": "Bullwark"
+  },
+  {
+    "id": 1062,
+    "name": "Death Reaper"
+  },
+  {
+    "id": 1064,
+    "name": "Mountain Troll"
+  },
+  {
+    "id": 1065,
+    "name": "Troll-Trained Salamander"
+  },
+  {
+    "id": 1066,
+    "name": "Minotaur Bruiser"
+  },
+  {
+    "id": 1067,
+    "name": "Muglex Clan Footman"
+  },
+  {
+    "id": 1068,
+    "name": "Woodling"
+  },
+  {
+    "id": 1069,
+    "name": "Meadow Strider"
+  },
+  {
+    "id": 1070,
+    "name": "Dawnfly"
+  },
+  {
+    "id": 1071,
+    "name": "Salamander Trainer"
+  },
+  {
+    "id": 1072,
+    "name": "Scar Tribe Shaman"
+  },
+  {
+    "id": 1073,
+    "name": "Scar Tribe Warrior"
+  },
+  {
+    "id": 1074,
+    "name": "Brittle Skeleton"
+  },
+  {
+    "id": 1075,
+    "name": "Minotaur Poacher"
+  },
+  {
+    "id": 1076,
+    "name": "Dawn Scorpion"
+  },
+  {
+    "id": 1077,
+    "name": "Juvenile Cyclops"
+  },
+  {
+    "id": 1078,
+    "name": "Muglex Clan Assassin"
+  },
+  {
+    "id": 1079,
+    "name": "Muglex Clan Scavenger"
+  },
+  {
+    "id": 1080,
+    "name": "Minotaur Occultist"
+  },
+  {
+    "id": 1081,
+    "name": "Crazed Dwarf"
+  },
+  {
+    "id": 1082,
+    "name": "Lesser Fire Devil"
+  },
+  {
+    "id": 1083,
+    "name": "Troll Marauder"
+  },
+  {
+    "id": 1084,
+    "name": "Sacred Snake"
+  },
+  {
+    "id": 1087,
+    "name": "Deep Terror"
+  },
+  {
+    "id": 1093,
+    "name": "Professor Maxxen"
+  },
+  {
+    "id": 1096,
+    "name": "Seacrest Serpent"
+  },
+  {
+    "id": 1097,
+    "name": "Renegade Quara Constrictor"
+  },
+  {
+    "id": 1098,
+    "name": "Renegade Quara Hydromancer"
+  },
+  {
+    "id": 1099,
+    "name": "Renegade Quara Mantassin"
+  },
+  {
+    "id": 1100,
+    "name": "Renegade Quara Pincher"
+  },
+  {
+    "id": 1101,
+    "name": "Renegade Quara Predator"
+  },
+  {
+    "id": 1105,
+    "name": "Abyssal Calamary"
+  },
+  {
+    "id": 1109,
+    "name": "Minotaur Invader"
+  },
+  {
+    "id": 1116,
+    "name": "High Voltage Elemental"
+  },
+  {
+    "id": 1118,
+    "name": "Noble Lion"
+  },
+  {
+    "id": 1119,
+    "name": "Glooth Bandit"
+  },
+  {
+    "id": 1120,
+    "name": "Glooth Brigand"
+  },
+  {
+    "id": 1121,
+    "name": "Raging Fire"
+  },
+  {
+    "id": 1125,
+    "name": "The Hungerer"
+  },
+  {
+    "id": 1126,
+    "name": "The Manhunter"
+  },
+  {
+    "id": 1127,
+    "name": "The Mean Masher"
+  },
+  {
+    "id": 1128,
+    "name": "Arthom the Hunter"
+  },
+  {
+    "id": 1129,
+    "name": "Oodok Witchmaster"
+  },
+  {
+    "id": 1133,
+    "name": "Mahatheb"
+  },
+  {
+    "id": 1134,
+    "name": "Dawnfire Asura"
+  },
+  {
+    "id": 1135,
+    "name": "Midnight Asura"
+  },
+  {
+    "id": 1136,
+    "name": "The Flaming Orchid"
+  },
+  {
+    "id": 1137,
+    "name": "Tainted Soul"
+  },
+  {
+    "id": 1138,
+    "name": "Redeemed Soul"
+  },
+  {
+    "id": 1139,
+    "name": "Gloom Wolf"
+  },
+  {
+    "id": 1140,
+    "name": "Ekatrix"
+  },
+  {
+    "id": 1141,
+    "name": "Omnivora"
+  },
+  {
+    "id": 1142,
+    "name": "Werebear"
+  },
+  {
+    "id": 1143,
+    "name": "Wereboar"
+  },
+  {
+    "id": 1144,
+    "name": "Werebadger"
+  },
+  {
+    "id": 1145,
+    "name": "Vicious Squire"
+  },
+  {
+    "id": 1146,
+    "name": "Renegade Knight"
+  },
+  {
+    "id": 1147,
+    "name": "Vile Grandmaster"
+  },
+  {
+    "id": 1148,
+    "name": "Ghost Wolf"
+  },
+  {
+    "id": 1149,
+    "name": "Feroxa"
+  },
+  {
+    "id": 1154,
+    "name": "Tzumrah the Dazzler"
+  },
+  {
+    "id": 1156,
+    "name": "Owin (Creature)"
+  },
+  {
+    "id": 1157,
+    "name": "Elder Forest Fury"
+  },
+  {
+    "id": 1161,
+    "name": "Ogre Brute"
+  },
+  {
+    "id": 1162,
+    "name": "Ogre Savage"
+  },
+  {
+    "id": 1163,
+    "name": "Ogre Shaman"
+  },
+  {
+    "id": 1164,
+    "name": "The Fettered Shatterer"
+  },
+  {
+    "id": 1165,
+    "name": "The Shatterer"
+  },
+  {
+    "id": 1174,
+    "name": "Clomp"
+  },
+  {
+    "id": 1177,
+    "name": "Razzagorn"
+  },
+  {
+    "id": 1179,
+    "name": "The Lord of the Lice"
+  },
+  {
+    "id": 1180,
+    "name": "Ragiaz"
+  },
+  {
+    "id": 1181,
+    "name": "Zamulosh"
+  },
+  {
+    "id": 1186,
+    "name": "Mazoran"
+  },
+  {
+    "id": 1188,
+    "name": "Tarbaz"
+  },
+  {
+    "id": 1191,
+    "name": "Shulgrax"
+  },
+  {
+    "id": 1196,
+    "name": "Grimeleech"
+  },
+  {
+    "id": 1197,
+    "name": "Vexclaw"
+  },
+  {
+    "id": 1198,
+    "name": "Hellflayer"
+  },
+  {
+    "id": 1199,
+    "name": "Plagirath"
+  },
+  {
+    "id": 1204,
+    "name": "Ascending Ferumbras"
+  },
+  {
+    "id": 1206,
+    "name": "Ferumbras Mortal Shell"
+  },
+  {
+    "id": 1207,
+    "name": "Destabilized Ferumbras"
+  },
+  {
+    "id": 1216,
+    "name": "Foreshock"
+  },
+  {
+    "id": 1217,
+    "name": "Aftershock"
+  },
+  {
+    "id": 1218,
+    "name": "Realityquake"
+  },
+  {
+    "id": 1219,
+    "name": "Anomaly"
+  },
+  {
+    "id": 1220,
+    "name": "Charged Anomaly"
+  },
+  {
+    "id": 1221,
+    "name": "The Hunger"
+  },
+  {
+    "id": 1222,
+    "name": "The Rage"
+  },
+  {
+    "id": 1223,
+    "name": "The Destruction"
+  },
+  {
+    "id": 1224,
+    "name": "Reality Reaver"
+  },
+  {
+    "id": 1225,
+    "name": "Rupture"
+  },
+  {
+    "id": 1226,
+    "name": "Eradicator"
+  },
+  {
+    "id": 1227,
+    "name": "Outburst"
+  },
+  {
+    "id": 1228,
+    "name": "World Devourer"
+  },
+  {
+    "id": 1233,
+    "name": "Charging Outburst"
+  },
+  {
+    "id": 1234,
+    "name": "Sparkion"
+  },
+  {
+    "id": 1235,
+    "name": "Breach Brood"
+  },
+  {
+    "id": 1243,
+    "name": "Depolarized Crackler"
+  },
+  {
+    "id": 1244,
+    "name": "Unstable Spark"
+  },
+  {
+    "id": 1260,
+    "name": "Dread Intruder"
+  },
+  {
+    "id": 1261,
+    "name": "Charger"
+  },
+  {
+    "id": 1262,
+    "name": "Overcharge"
+  },
+  {
+    "id": 1263,
+    "name": "Vortex Spawn"
+  },
+  {
+    "id": 1264,
+    "name": "Instable Sparkion"
+  },
+  {
+    "id": 1265,
+    "name": "Instable Breach Brood"
+  },
+  {
+    "id": 1266,
+    "name": "Stabilizing Reality Reaver"
+  },
+  {
+    "id": 1267,
+    "name": "Stabilizing Dread Intruder"
+  },
+  {
+    "id": 1278,
+    "name": "Burster"
+  },
+  {
+    "id": 1279,
+    "name": "Dreadful Disruptor"
+  },
+  {
+    "id": 1280,
+    "name": "Spark of Destruction"
+  },
+  {
+    "id": 1285,
+    "name": "Dawn Bat"
+  },
+  {
+    "id": 1286,
+    "name": "Dragonking Zyrtarch"
+  },
+  {
+    "id": 1289,
+    "name": "Soul of Dragonking Zyrtarch"
+  },
+  {
+    "id": 1290,
+    "name": "The Time Guardian"
+  },
+  {
+    "id": 1293,
+    "name": "The Blazing Time Guardian"
+  },
+  {
+    "id": 1294,
+    "name": "The Freezing Time Guardian"
+  },
+  {
+    "id": 1295,
+    "name": "Mounted Thorn Knight"
+  },
+  {
+    "id": 1297,
+    "name": "The Enraged Thorn Knight"
+  },
+  {
+    "id": 1303,
+    "name": "The Shielded Thorn Knight"
+  },
+  {
+    "id": 1304,
+    "name": "The Last Lore Keeper"
+  },
+  {
+    "id": 1307,
+    "name": "Cave Parrot"
+  },
+  {
+    "id": 1309,
+    "name": "The Astral Source"
+  },
+  {
+    "id": 1310,
+    "name": "The Distorted Astral Source"
+  },
+  {
+    "id": 1313,
+    "name": "Thorn Minion"
+  },
+  {
+    "id": 1314,
+    "name": "Orclops Doomhauler"
+  },
+  {
+    "id": 1315,
+    "name": "Lady Tenebris"
+  },
+  {
+    "id": 1320,
+    "name": "Orclops Ravager"
+  },
+  {
+    "id": 1321,
+    "name": "Broken Shaper"
+  },
+  {
+    "id": 1322,
+    "name": "Twisted Shaper"
+  },
+  {
+    "id": 1325,
+    "name": "Iron Servant Replica"
+  },
+  {
+    "id": 1326,
+    "name": "Diamond Servant Replica"
+  },
+  {
+    "id": 1327,
+    "name": "Golden Servant Replica"
+  },
+  {
+    "id": 1329,
+    "name": "Lloyd"
+  },
+  {
+    "id": 1368,
+    "name": "The First Dragon"
+  },
+  {
+    "id": 1375,
+    "name": "Zorvorax"
+  },
+  {
+    "id": 1376,
+    "name": "Haunted Dragon"
+  },
+  {
+    "id": 1379,
+    "name": "Gelidrazah the Frozen"
+  },
+  {
+    "id": 1380,
+    "name": "Ice Dragon"
+  },
+  {
+    "id": 1389,
+    "name": "Kalyassa"
+  },
+  {
+    "id": 1390,
+    "name": "Tazhadur"
+  },
+  {
+    "id": 1392,
+    "name": "An Observer Eye"
+  },
+  {
+    "id": 1394,
+    "name": "Shaper Matriarch"
+  },
+  {
+    "id": 1395,
+    "name": "Stone Rhino"
+  },
+  {
+    "id": 1403,
+    "name": "The Armored Voidborn"
+  },
+  {
+    "id": 1406,
+    "name": "The Unarmored Voidborn"
+  },
+  {
+    "id": 1409,
+    "name": "The False God"
+  },
+  {
+    "id": 1412,
+    "name": "Misguided Bully"
+  },
+  {
+    "id": 1413,
+    "name": "Misguided Thief"
+  },
+  {
+    "id": 1415,
+    "name": "Putrid Mummy"
+  },
+  {
+    "id": 1419,
+    "name": "The Sinister Hermit (Yellow)"
+  },
+  {
+    "id": 1420,
+    "name": "The Sinister Hermit (Blue)"
+  },
+  {
+    "id": 1422,
+    "name": "The Souldespoiler"
+  },
+  {
+    "id": 1424,
+    "name": "Leiden"
+  },
+  {
+    "id": 1427,
+    "name": "Ravenous Hunger"
+  },
+  {
+    "id": 1434,
+    "name": "Faun"
+  },
+  {
+    "id": 1435,
+    "name": "Pooka"
+  },
+  {
+    "id": 1436,
+    "name": "Twisted Pooka"
+  },
+  {
+    "id": 1437,
+    "name": "Swan Maiden"
+  },
+  {
+    "id": 1438,
+    "name": "Pixie"
+  },
+  {
+    "id": 1439,
+    "name": "Boogy"
+  },
+  {
+    "id": 1442,
+    "name": "Weakened Frazzlemaw"
+  },
+  {
+    "id": 1443,
+    "name": "Enfeebled Silencer"
+  },
+  {
+    "id": 1444,
+    "name": "The Sandking"
+  },
+  {
+    "id": 1454,
+    "name": "Mezlon the Defiler"
+  },
+  {
+    "id": 1481,
+    "name": "Goldhanded Cultist"
+  },
+  {
+    "id": 1482,
+    "name": "Goldhanded Cultist Bride"
+  },
+  {
+    "id": 1485,
+    "name": "Nymph"
+  },
+  {
+    "id": 1486,
+    "name": "Barkless Devotee"
+  },
+  {
+    "id": 1487,
+    "name": "Essence of Malice"
+  },
+  {
+    "id": 1488,
+    "name": "Barkless Fanatic"
+  },
+  {
+    "id": 1490,
+    "name": "The Corruptor of Souls"
+  },
+  {
+    "id": 1494,
+    "name": "Zarcorix of Yalahar"
+  },
+  {
+    "id": 1496,
+    "name": "Dark Faun"
+  },
+  {
+    "id": 1497,
+    "name": "The Remorseless Corruptor"
+  },
+  {
+    "id": 1500,
+    "name": "The Source of Corruption"
+  },
+  {
+    "id": 1503,
+    "name": "Orc Cultist"
+  },
+  {
+    "id": 1504,
+    "name": "Orc Cult Priest"
+  },
+  {
+    "id": 1505,
+    "name": "Orc Cult Inquisitor"
+  },
+  {
+    "id": 1506,
+    "name": "Orc Cult Fanatic"
+  },
+  {
+    "id": 1507,
+    "name": "Orc Cult Minion"
+  },
+  {
+    "id": 1508,
+    "name": "Minotaur Cult Follower"
+  },
+  {
+    "id": 1509,
+    "name": "Minotaur Cult Prophet"
+  },
+  {
+    "id": 1510,
+    "name": "Minotaur Cult Zealot"
+  },
+  {
+    "id": 1512,
+    "name": "Cult Believer"
+  },
+  {
+    "id": 1513,
+    "name": "Cult Enforcer"
+  },
+  {
+    "id": 1514,
+    "name": "Cult Scholar"
+  },
+  {
+    "id": 1515,
+    "name": "Kroazur"
+  },
+  {
+    "id": 1518,
+    "name": "The Baron from Below"
+  },
+  {
+    "id": 1519,
+    "name": "The Count of the Core"
+  },
+  {
+    "id": 1520,
+    "name": "The Duke of the Depths"
+  },
+  {
+    "id": 1521,
+    "name": "The Hungry Baron from Below"
+  },
+  {
+    "id": 1525,
+    "name": "Stonerefiner"
+  },
+  {
+    "id": 1526,
+    "name": "Cave Spider"
+  },
+  {
+    "id": 1529,
+    "name": "Lost Exile"
+  },
+  {
+    "id": 1531,
+    "name": "Deepworm"
+  },
+  {
+    "id": 1532,
+    "name": "Diremaw"
+  },
+  {
+    "id": 1536,
+    "name": "The Fire Empowered Duke"
+  },
+  {
+    "id": 1544,
+    "name": "Cave Devourer"
+  },
+  {
+    "id": 1545,
+    "name": "Tunnel Tyrant"
+  },
+  {
+    "id": 1546,
+    "name": "Chasm Spawn"
+  },
+  {
+    "id": 1548,
+    "name": "Fox"
+  },
+  {
+    "id": 1549,
+    "name": "Werefox"
+  },
+  {
+    "id": 1551,
+    "name": "Ancient Spawn of Morgathla"
+  },
+  {
+    "id": 1558,
+    "name": "Darkfang"
+  },
+  {
+    "id": 1559,
+    "name": "Black Vixen"
+  },
+  {
+    "id": 1560,
+    "name": "Bloodback"
+  },
+  {
+    "id": 1561,
+    "name": "Shadowpelt"
+  },
+  {
+    "id": 1562,
+    "name": "Sharpclaw"
+  },
+  {
+    "id": 1563,
+    "name": "Lava Lurker"
+  },
+  {
+    "id": 1564,
+    "name": "Ghost of a Planegazer"
+  },
+  {
+    "id": 1565,
+    "name": "Last Planegazer"
+  },
+  {
+    "id": 1569,
+    "name": "Ravenous Lava Lurker"
+  },
+  {
+    "id": 1570,
+    "name": "Mole"
+  },
+  {
+    "id": 1574,
+    "name": "Lokathmor"
+  },
+  {
+    "id": 1576,
+    "name": "Grand Master Oberon"
+  },
+  {
+    "id": 1577,
+    "name": "Jailer"
+  },
+  {
+    "id": 1578,
+    "name": "Dazed Leaf Golem"
+  },
+  {
+    "id": 1579,
+    "name": "Grand Chaplain Gaunder"
+  },
+  {
+    "id": 1582,
+    "name": "Grand Commander Soeren"
+  },
+  {
+    "id": 1583,
+    "name": "Preceptor Lazare"
+  },
+  {
+    "id": 1584,
+    "name": "Grand Canon Dominus"
+  },
+  {
+    "id": 1585,
+    "name": "Thawing Dragon Lord"
+  },
+  {
+    "id": 1591,
+    "name": "Gorzindel"
+  },
+  {
+    "id": 1598,
+    "name": "The Diamond Blossom"
+  },
+  {
+    "id": 1600,
+    "name": "The Blazing Rose"
+  },
+  {
+    "id": 1602,
+    "name": "The Lily of Night"
+  },
+  {
+    "id": 1605,
+    "name": "Mazzinor"
+  },
+  {
+    "id": 1606,
+    "name": "Supercharged Mazzinor"
+  },
+  {
+    "id": 1608,
+    "name": "Ghulosh"
+  },
+  {
+    "id": 1619,
+    "name": "Frost Flower Asura"
+  },
+  {
+    "id": 1620,
+    "name": "True Dawnfire Asura"
+  },
+  {
+    "id": 1621,
+    "name": "True Midnight Asura"
+  },
+  {
+    "id": 1622,
+    "name": "True Frost Flower Asura"
+  },
+  {
+    "id": 1624,
+    "name": "Raxias"
+  },
+  {
+    "id": 1625,
+    "name": "Furious Scorpion"
+  },
+  {
+    "id": 1626,
+    "name": "Arctic Faun"
+  },
+  {
+    "id": 1627,
+    "name": "The Spellstealer"
+  },
+  {
+    "id": 1630,
+    "name": "The Scion of Havoc"
+  },
+  {
+    "id": 1635,
+    "name": "The Devourer of Secrets"
+  },
+  {
+    "id": 1637,
+    "name": "Floating Savant"
+  },
+  {
+    "id": 1642,
+    "name": "The Scourge of Oblivion"
+  },
+  {
+    "id": 1645,
+    "name": "Brokul"
+  },
+  {
+    "id": 1646,
+    "name": "Falcon Knight"
+  },
+  {
+    "id": 1647,
+    "name": "Falcon Paladin"
+  },
+  {
+    "id": 1653,
+    "name": "Brain Squid"
+  },
+  {
+    "id": 1654,
+    "name": "Flying Book"
+  },
+  {
+    "id": 1655,
+    "name": "Cursed Book"
+  },
+  {
+    "id": 1656,
+    "name": "Biting Book"
+  },
+  {
+    "id": 1658,
+    "name": "Ink Blob"
+  },
+  {
+    "id": 1659,
+    "name": "Guardian of Tales"
+  },
+  {
+    "id": 1663,
+    "name": "Burning Book"
+  },
+  {
+    "id": 1664,
+    "name": "Icecold Book"
+  },
+  {
+    "id": 1665,
+    "name": "Energetic Book"
+  },
+  {
+    "id": 1666,
+    "name": "Energuardian of Tales"
+  },
+  {
+    "id": 1667,
+    "name": "Deathling Scout"
+  },
+  {
+    "id": 1668,
+    "name": "Rage Squid"
+  },
+  {
+    "id": 1669,
+    "name": "Squid Warden"
+  },
+  {
+    "id": 1670,
+    "name": "Knowledge Elemental"
+  },
+  {
+    "id": 1671,
+    "name": "Animated Feather"
+  },
+  {
+    "id": 1674,
+    "name": "Skeleton Elite Warrior"
+  },
+  {
+    "id": 1675,
+    "name": "Undead Elite Gladiator"
+  },
+  {
+    "id": 1677,
+    "name": "Deathling Spellsinger"
+  },
+  {
+    "id": 1693,
+    "name": "Malicious Minion"
+  },
+  {
+    "id": 1695,
+    "name": "Plagueroot"
+  },
+  {
+    "id": 1696,
+    "name": "Malofur Mangrinder"
+  },
+  {
+    "id": 1697,
+    "name": "Maxxenius"
+  },
+  {
+    "id": 1698,
+    "name": "Alptramun"
+  },
+  {
+    "id": 1699,
+    "name": "Izcandar the Banished"
+  },
+  {
+    "id": 1700,
+    "name": "Izcandar Champion of Summer"
+  },
+  {
+    "id": 1701,
+    "name": "Izcandar Champion of Winter"
+  },
+  {
+    "id": 1718,
+    "name": "The Nightmare Beast"
+  },
+  {
+    "id": 1720,
+    "name": "Mystic Jaguar"
+  },
+  {
+    "id": 1721,
+    "name": "Lumbering Carnivor"
+  },
+  {
+    "id": 1722,
+    "name": "Spiky Carnivor"
+  },
+  {
+    "id": 1723,
+    "name": "Menacing Carnivor"
+  },
+  {
+    "id": 1724,
+    "name": "Ripper Spectre"
+  },
+  {
+    "id": 1725,
+    "name": "Gazer Spectre"
+  },
+  {
+    "id": 1726,
+    "name": "Burster Spectre"
+  },
+  {
+    "id": 1727,
+    "name": "Faceless Bane"
+  },
+  {
+    "id": 1728,
+    "name": "Thanatursus"
+  },
+  {
+    "id": 1729,
+    "name": "Arachnophobica"
+  },
+  {
+    "id": 1730,
+    "name": "Crazed Winter Vanguard"
+  },
+  {
+    "id": 1731,
+    "name": "Crazed Winter Rearguard"
+  },
+  {
+    "id": 1732,
+    "name": "Crazed Summer Vanguard"
+  },
+  {
+    "id": 1733,
+    "name": "Crazed Summer Rearguard"
+  },
+  {
+    "id": 1734,
+    "name": "Soul-Broken Harbinger"
+  },
+  {
+    "id": 1735,
+    "name": "Insane Siren"
+  },
+  {
+    "id": 1736,
+    "name": "Lacewing Moth"
+  },
+  {
+    "id": 1737,
+    "name": "Hibernal Moth"
+  },
+  {
+    "id": 1740,
+    "name": "Percht"
+  },
+  {
+    "id": 1741,
+    "name": "Schiach"
+  },
+  {
+    "id": 1742,
+    "name": "Baleful Bunny"
+  },
+  {
+    "id": 1744,
+    "name": "The Percht Queen"
+  },
+  {
+    "id": 1751,
+    "name": "Animated Snowman"
+  },
+  {
+    "id": 1753,
+    "name": "Count Vlarkorth"
+  },
+  {
+    "id": 1754,
+    "name": "Sir Nictros"
+  },
+  {
+    "id": 1755,
+    "name": "Sir Baeloc"
+  },
+  {
+    "id": 1756,
+    "name": "Lord Azaram"
+  },
+  {
+    "id": 1757,
+    "name": "Earl Osam"
+  },
+  {
+    "id": 1758,
+    "name": "Duke Krule"
+  },
+  {
+    "id": 1763,
+    "name": "Rootthing Bug Tracker"
+  },
+  {
+    "id": 1769,
+    "name": "Cart Packed with Gold"
+  },
+  {
+    "id": 1770,
+    "name": "Custodian"
+  },
+  {
+    "id": 1774,
+    "name": "Channeling Earl Osam"
+  },
+  {
+    "id": 1775,
+    "name": "Cobra Assassin"
+  },
+  {
+    "id": 1776,
+    "name": "Cobra Scout"
+  },
+  {
+    "id": 1778,
+    "name": "Gaffir"
+  },
+  {
+    "id": 1784,
+    "name": "King Zelos"
+  },
+  {
+    "id": 1791,
+    "name": "Guard Captain Quaid"
+  },
+  {
+    "id": 1798,
+    "name": "Burning Gladiator"
+  },
+  {
+    "id": 1799,
+    "name": "Priestess of the Wild Sun"
+  },
+  {
+    "id": 1800,
+    "name": "Black Sphinx Acolyte"
+  },
+  {
+    "id": 1804,
+    "name": "Scarlett Etzel"
+  },
+  {
+    "id": 1805,
+    "name": "Crypt Warden"
+  },
+  {
+    "id": 1806,
+    "name": "Lamassu"
+  },
+  {
+    "id": 1807,
+    "name": "Feral Sphinx"
+  },
+  {
+    "id": 1808,
+    "name": "Sphinx"
+  },
+  {
+    "id": 1809,
+    "name": "Urmahlullu the Immaculate"
+  },
+  {
+    "id": 1810,
+    "name": "Urmahlullu the Tamed"
+  },
+  {
+    "id": 1811,
+    "name": "Urmahlullu the Weakened"
+  },
+  {
+    "id": 1816,
+    "name": "Manticore"
+  },
+  {
+    "id": 1817,
+    "name": "Young Goanna"
+  },
+  {
+    "id": 1818,
+    "name": "Adult Goanna"
+  },
+  {
+    "id": 1819,
+    "name": "Gryphon"
+  },
+  {
+    "id": 1820,
+    "name": "Ogre Ruffian"
+  },
+  {
+    "id": 1821,
+    "name": "Ogre Rowdy"
+  },
+  {
+    "id": 1822,
+    "name": "Ogre Sage"
+  },
+  {
+    "id": 1824,
+    "name": "Cobra Vizier"
+  },
+  {
+    "id": 1827,
+    "name": "Xogixath"
+  },
+  {
+    "id": 1828,
+    "name": "Bragrumol"
+  },
+  {
+    "id": 1829,
+    "name": "Mozradek"
+  },
+  {
+    "id": 1838,
+    "name": "King Chuck"
+  },
+  {
+    "id": 1841,
+    "name": "Orger"
+  },
+  {
+    "id": 1846,
+    "name": "Angry King Chuck"
+  },
+  {
+    "id": 1847,
+    "name": "Orger Treasure"
+  },
+  {
+    "id": 1852,
+    "name": "The Great Schnitzel"
+  },
+  {
+    "id": 1855,
+    "name": "Roast Pork"
+  },
+  {
+    "id": 1856,
+    "name": "Cow"
+  },
+  {
+    "id": 1857,
+    "name": "Loricate Orger"
+  },
+  {
+    "id": 1858,
+    "name": "Bellicose Orger"
+  },
+  {
+    "id": 1862,
+    "name": "Brain Head"
+  },
+  {
+    "id": 1864,
+    "name": "Flimsy Lost Soul"
+  },
+  {
+    "id": 1865,
+    "name": "Mean Lost Soul"
+  },
+  {
+    "id": 1866,
+    "name": "Freakish Lost Soul"
+  },
+  {
+    "id": 1867,
+    "name": "Brother Worm"
+  },
+  {
+    "id": 1868,
+    "name": "The Unwelcome"
+  },
+  {
+    "id": 1872,
+    "name": "The Dread Maiden"
+  },
+  {
+    "id": 1873,
+    "name": "The Fear Feaster"
+  },
+  {
+    "id": 1880,
+    "name": "Cursed Prospector"
+  },
+  {
+    "id": 1881,
+    "name": "The Pale Worm"
+  },
+  {
+    "id": 1883,
+    "name": "A Weak Spot"
+  },
+  {
+    "id": 1885,
+    "name": "Evil Prospector"
+  },
+  {
+    "id": 1890,
+    "name": "Irgix the Flimsy"
+  },
+  {
+    "id": 1891,
+    "name": "Unaz the Mean"
+  },
+  {
+    "id": 1892,
+    "name": "Vok the Freakish"
+  },
+  {
+    "id": 1893,
+    "name": "Thaian"
+  },
+  {
+    "id": 1898,
+    "name": "Planestrider"
+  },
+  {
+    "id": 1901,
+    "name": "Goshnar's Malice"
+  },
+  {
+    "id": 1902,
+    "name": "Goshnar's Cruelty"
+  },
+  {
+    "id": 1903,
+    "name": "Goshnar's Spite"
+  },
+  {
+    "id": 1904,
+    "name": "Goshnar's Hatred"
+  },
+  {
+    "id": 1905,
+    "name": "Goshnar's Greed"
+  },
+  {
+    "id": 1906,
+    "name": "Goshnar's Megalomania"
+  },
+  {
+    "id": 1926,
+    "name": "Bony Sea Devil"
+  },
+  {
+    "id": 1927,
+    "name": "Many Faces"
+  },
+  {
+    "id": 1928,
+    "name": "Cloak of Terror"
+  },
+  {
+    "id": 1929,
+    "name": "Vibrant Phantom"
+  },
+  {
+    "id": 1930,
+    "name": "Brachiodemon"
+  },
+  {
+    "id": 1931,
+    "name": "Branchy Crawler"
+  },
+  {
+    "id": 1932,
+    "name": "Capricious Phantom"
+  },
+  {
+    "id": 1933,
+    "name": "Infernal Phantom"
+  },
+  {
+    "id": 1938,
+    "name": "Infernal Demon"
+  },
+  {
+    "id": 1939,
+    "name": "Rotten Golem"
+  },
+  {
+    "id": 1940,
+    "name": "Turbulent Elemental"
+  },
+  {
+    "id": 1941,
+    "name": "Courage Leech"
+  },
+  {
+    "id": 1945,
+    "name": "Mould Phantom"
+  },
+  {
+    "id": 1946,
+    "name": "Druid's Apparition"
+  },
+  {
+    "id": 1947,
+    "name": "Knight's Apparition"
+  },
+  {
+    "id": 1948,
+    "name": "Paladin's Apparition"
+  },
+  {
+    "id": 1949,
+    "name": "Sorcerer's Apparition"
+  },
+  {
+    "id": 1957,
+    "name": "Drume"
+  },
+  {
+    "id": 1958,
+    "name": "Fugue"
+  },
+  {
+    "id": 1962,
+    "name": "Distorted Phantom"
+  },
+  {
+    "id": 1963,
+    "name": "Werehyaena"
+  },
+  {
+    "id": 1964,
+    "name": "Werehyaena Shaman"
+  },
+  {
+    "id": 1965,
+    "name": "Werelion"
+  },
+  {
+    "id": 1966,
+    "name": "Werelioness"
+  },
+  {
+    "id": 1967,
+    "name": "White Lion"
+  },
+  {
+    "id": 1972,
+    "name": "Usurper Knight"
+  },
+  {
+    "id": 1973,
+    "name": "Usurper Archer"
+  },
+  {
+    "id": 1974,
+    "name": "Usurper Warlock"
+  },
+  {
+    "id": 1979,
+    "name": "Agrestic Chicken"
+  },
+  {
+    "id": 1981,
+    "name": "Katex Blood Tongue"
+  },
+  {
+    "id": 1982,
+    "name": "Yirkas Blue Scales"
+  },
+  {
+    "id": 1983,
+    "name": "Srezz Yellow Eyes"
+  },
+  {
+    "id": 1984,
+    "name": "Utua Stone Sting"
+  },
+  {
+    "id": 2006,
+    "name": "Ratmiral Blackwhiskers"
+  },
+  {
+    "id": 2024,
+    "name": "Exotic Cave Spider"
+  },
+  {
+    "id": 2036,
+    "name": "Pirat Cutthroat"
+  },
+  {
+    "id": 2037,
+    "name": "Pirat Scoundrel"
+  },
+  {
+    "id": 2038,
+    "name": "Pirat Bombardier"
+  },
+  {
+    "id": 2039,
+    "name": "Pirat Mate"
+  },
+  {
+    "id": 2048,
+    "name": "Tentugly's Head"
+  },
+  {
+    "id": 2051,
+    "name": "Exotic Bat"
+  },
+  {
+    "id": 2055,
+    "name": "The Brainstealer"
+  },
+  {
+    "id": 2060,
+    "name": "The Mega Magmaoid"
+  },
+  {
+    "id": 2088,
+    "name": "Lavaworm"
+  },
+  {
+    "id": 2089,
+    "name": "Tremendous Tyrant"
+  },
+  {
+    "id": 2090,
+    "name": "Varnished Diremaw"
+  },
+  {
+    "id": 2091,
+    "name": "Streaked Devourer"
+  },
+  {
+    "id": 2092,
+    "name": "Eyeless Devourer"
+  },
+  {
+    "id": 2093,
+    "name": "Blemished Spawn"
+  },
+  {
+    "id": 2094,
+    "name": "Afflicted Strider"
+  },
+  {
+    "id": 2095,
+    "name": "Lavafungus"
+  },
+  {
+    "id": 2096,
+    "name": "Cave Chimera"
+  },
+  {
+    "id": 2098,
+    "name": "Venerable Girtablilu"
+  },
+  {
+    "id": 2099,
+    "name": "Girtablilu Warrior"
+  },
+  {
+    "id": 2100,
+    "name": "Bashmu"
+  },
+  {
+    "id": 2101,
+    "name": "Juvenile Bashmu"
+  },
+  {
+    "id": 2103,
+    "name": "Amenef the Burning"
+  },
+  {
+    "id": 2104,
+    "name": "Sister Hetai"
+  },
+  {
+    "id": 2105,
+    "name": "Neferi the Spy"
+  },
+  {
+    "id": 2106,
+    "name": "Enusat the Onyx Wing"
+  },
+  {
+    "id": 2107,
+    "name": "Hulking Carnisylvan"
+  },
+  {
+    "id": 2108,
+    "name": "Poisonous Carnisylvan"
+  },
+  {
+    "id": 2109,
+    "name": "Dark Carnisylvan"
+  },
+  {
+    "id": 2110,
+    "name": "Carnisylvan Sapling"
+  },
+  {
+    "id": 2114,
+    "name": "Megasylvan Yselda"
+  },
+  {
+    "id": 2118,
+    "name": "Morshabaal"
+  },
+  {
+    "id": 2119,
+    "name": "Enraged Morshabaal"
+  },
+  {
+    "id": 2120,
+    "name": "Furious Morshabaal"
+  },
+  {
+    "id": 2141,
+    "name": "Lord Retro"
+  },
+  {
+    "id": 2161,
+    "name": "Lucky Dragon"
+  },
+  {
+    "id": 2162,
+    "name": "Time Travelling Tourist"
+  },
+  {
+    "id": 2165,
+    "name": "Memory of a Dwarf"
+  },
+  {
+    "id": 2166,
+    "name": "Memory of an Elf"
+  },
+  {
+    "id": 2167,
+    "name": "Memory of a Hero"
+  },
+  {
+    "id": 2168,
+    "name": "Memory of a Vampire"
+  },
+  {
+    "id": 2169,
+    "name": "Memory of an Amazon"
+  },
+  {
+    "id": 2170,
+    "name": "Memory of a Banshee"
+  },
+  {
+    "id": 2171,
+    "name": "Memory of a Scarab"
+  },
+  {
+    "id": 2172,
+    "name": "Memory of a Hydra"
+  },
+  {
+    "id": 2173,
+    "name": "Memory of a Pirate"
+  },
+  {
+    "id": 2174,
+    "name": "Memory of a Mammoth"
+  },
+  {
+    "id": 2175,
+    "name": "Memory of a Yalahari"
+  },
+  {
+    "id": 2176,
+    "name": "Memory of a Lizard"
+  },
+  {
+    "id": 2177,
+    "name": "Memory of an Insectoid"
+  },
+  {
+    "id": 2178,
+    "name": "Memory of a Frazzlemaw"
+  },
+  {
+    "id": 2179,
+    "name": "Memory of a Golem"
+  },
+  {
+    "id": 2180,
+    "name": "Memory of an Ogre"
+  },
+  {
+    "id": 2181,
+    "name": "Memory of a Shaper"
+  },
+  {
+    "id": 2182,
+    "name": "Memory of a Faun"
+  },
+  {
+    "id": 2183,
+    "name": "Memory of a Book"
+  },
+  {
+    "id": 2184,
+    "name": "Memory of a Manticore"
+  },
+  {
+    "id": 2185,
+    "name": "Memory of a Werelion"
+  },
+  {
+    "id": 2236,
+    "name": "The Moonlight Aster"
+  },
+  {
+    "id": 2237,
+    "name": "The Winter Bloom"
+  },
+  {
+    "id": 2242,
+    "name": "Magma Bubble"
+  },
+  {
+    "id": 2247,
+    "name": "The Primal Menace"
+  },
+  {
+    "id": 2250,
+    "name": "Timira the Many-Headed"
+  },
+  {
+    "id": 2256,
+    "name": "Parder"
+  },
+  {
+    "id": 2257,
+    "name": "Jungle Moa"
+  },
+  {
+    "id": 2258,
+    "name": "Two-Headed Turtle"
+  },
+  {
+    "id": 2259,
+    "name": "Foam Stalker"
+  },
+  {
+    "id": 2260,
+    "name": "Naga Archer"
+  },
+  {
+    "id": 2261,
+    "name": "Naga Warrior"
+  },
+  {
+    "id": 2262,
+    "name": "Makara"
+  },
+  {
+    "id": 2264,
+    "name": "Sulphider"
+  },
+  {
+    "id": 2265,
+    "name": "Sulphur Spouter"
+  },
+  {
+    "id": 2266,
+    "name": "Gore Horn"
+  },
+  {
+    "id": 2267,
+    "name": "Sabretooth"
+  },
+  {
+    "id": 2268,
+    "name": "Emerald Tortoise"
+  },
+  {
+    "id": 2269,
+    "name": "Undertaker"
+  },
+  {
+    "id": 2270,
+    "name": "Nighthunter"
+  },
+  {
+    "id": 2271,
+    "name": "Hulking Prehemoth"
+  },
+  {
+    "id": 2272,
+    "name": "Stalking Stalk"
+  },
+  {
+    "id": 2274,
+    "name": "Mantosaurus"
+  },
+  {
+    "id": 2275,
+    "name": "Headpecker"
+  },
+  {
+    "id": 2276,
+    "name": "Noxious Ripptor"
+  },
+  {
+    "id": 2277,
+    "name": "Gorerilla"
+  },
+  {
+    "id": 2278,
+    "name": "Shrieking Cry-Stal"
+  },
+  {
+    "id": 2279,
+    "name": "Mercurial Menace"
+  },
+  {
+    "id": 2287,
+    "name": "Kusuma"
+  },
+  {
+    "id": 2299,
+    "name": "The Monster"
+  },
+  {
+    "id": 2337,
+    "name": "Crape Man"
+  },
+  {
+    "id": 2338,
+    "name": "Liodile"
+  },
+  {
+    "id": 2339,
+    "name": "Boar Man"
+  },
+  {
+    "id": 2340,
+    "name": "Harpy"
+  },
+  {
+    "id": 2341,
+    "name": "Carnivostrich"
+  },
+  {
+    "id": 2342,
+    "name": "Rhindeer"
+  },
+  {
+    "id": 2343,
+    "name": "Iks Pututu"
+  },
+  {
+    "id": 2344,
+    "name": "Iks Aucar"
+  },
+  {
+    "id": 2345,
+    "name": "Iks Chuka"
+  },
+  {
+    "id": 2346,
+    "name": "Ahau"
+  },
+  {
+    "id": 2347,
+    "name": "Cursed Ape"
+  },
+  {
+    "id": 2349,
+    "name": "Iks Ahpututu"
+  },
+  {
+    "id": 2350,
+    "name": "Iks Churrascan"
+  },
+  {
+    "id": 2362,
+    "name": "Murcion"
+  },
+  {
+    "id": 2364,
+    "name": "Ichgahal"
+  },
+  {
+    "id": 2365,
+    "name": "Vemiath"
+  },
+  {
+    "id": 2366,
+    "name": "Chagorz"
+  },
+  {
+    "id": 2367,
+    "name": "Bakragore"
+  },
+  {
+    "id": 2375,
+    "name": "Mycobiontic Beetle"
+  },
+  {
+    "id": 2376,
+    "name": "Meandering Mushroom"
+  },
+  {
+    "id": 2377,
+    "name": "Oozing Carcass"
+  },
+  {
+    "id": 2378,
+    "name": "Darklight Construct"
+  },
+  {
+    "id": 2379,
+    "name": "Converter"
+  },
+  {
+    "id": 2380,
+    "name": "Darklight Matter"
+  },
+  {
+    "id": 2381,
+    "name": "Oozing Corpus"
+  },
+  {
+    "id": 2382,
+    "name": "Darklight Emitter"
+  },
+  {
+    "id": 2386,
+    "name": "Weretiger"
+  },
+  {
+    "id": 2387,
+    "name": "White Weretiger"
+  },
+  {
+    "id": 2388,
+    "name": "Werecrocodile"
+  },
+  {
+    "id": 2389,
+    "name": "Feral Werecrocodile"
+  },
+  {
+    "id": 2390,
+    "name": "Werepanther"
+  },
+  {
+    "id": 2391,
+    "name": "White Tiger"
+  },
+  {
+    "id": 2392,
+    "name": "Bloated Man-Maggot"
+  },
+  {
+    "id": 2393,
+    "name": "Rotten Man-Maggot"
+  },
+  {
+    "id": 2394,
+    "name": "Walking Pillar"
+  },
+  {
+    "id": 2395,
+    "name": "Wandering Pillar"
+  },
+  {
+    "id": 2396,
+    "name": "Sopping Carcass"
+  },
+  {
+    "id": 2397,
+    "name": "Sopping Corpus"
+  },
+  {
+    "id": 2398,
+    "name": "Darklight Source"
+  },
+  {
+    "id": 2399,
+    "name": "Darklight Striker"
+  },
+  {
+    "id": 2403,
+    "name": "Cunning Werepanther"
+  },
+  {
+    "id": 2404,
+    "name": "Ayana the Crimson Curse"
+  },
+  {
+    "id": 2405,
+    "name": "Tamru the Black"
+  },
+  {
+    "id": 2416,
+    "name": "Albino Dragon"
+  },
+  {
+    "id": 2417,
+    "name": "Rabid Wolf"
+  },
+  {
+    "id": 2418,
+    "name": "Ragged Rabid Wolf"
+  },
+  {
+    "id": 2419,
+    "name": "Trollwut"
+  },
+  {
+    "id": 2422,
+    "name": "Titano Dragon"
+  },
+  {
+    "id": 2430,
+    "name": "Pirate Ship"
+  },
+  {
+    "id": 2437,
+    "name": "Iks Yapunac"
+  },
+  {
+    "id": 2438,
+    "name": "Atab"
+  },
+  {
+    "id": 2447,
+    "name": "Bulltaur Brute"
+  },
+  {
+    "id": 2448,
+    "name": "Bulltaur Alchemist"
+  },
+  {
+    "id": 2449,
+    "name": "Bulltaur Forgepriest"
+  },
+  {
+    "id": 2456,
+    "name": "Dragolisk"
+  },
+  {
+    "id": 2458,
+    "name": "Wardragon"
+  },
+  {
+    "id": 2459,
+    "name": "Mega Dragon"
+  },
+  {
+    "id": 2460,
+    "name": "Mitmah Scout"
+  },
+  {
+    "id": 2461,
+    "name": "Mitmah Seer"
+  },
+  {
+    "id": 2464,
+    "name": "Mitmah Vanguard"
+  },
+  {
+    "id": 2466,
+    "name": "Despor"
+  },
+  {
+    "id": 2528,
+    "name": "The Rootkraken"
+  },
+  {
+    "id": 2531,
+    "name": "Nibblemaw"
+  },
+  {
+    "id": 2533,
+    "name": "Candy Floss Elemental"
+  },
+  {
+    "id": 2534,
+    "name": "Goggle Cake"
+  },
+  {
+    "id": 2535,
+    "name": "Candy Horror"
+  },
+  {
+    "id": 2538,
+    "name": "Rootthing Bug Tracker"
+  },
+  {
+    "id": 2539,
+    "name": "Rootthing Amber Shaper"
+  },
+  {
+    "id": 2540,
+    "name": "Rootthing Nutshell"
+  },
+  {
+    "id": 2541,
+    "name": "Quara Raider"
+  },
+  {
+    "id": 2542,
+    "name": "Quara Plunderer"
+  },
+  {
+    "id": 2543,
+    "name": "Quara Looter"
+  },
+  {
+    "id": 2544,
+    "name": "Wafer Paper Butterfly"
+  },
+  {
+    "id": 2547,
+    "name": "Truffle"
+  },
+  {
+    "id": 2548,
+    "name": "Sugar Cube"
+  },
+  {
+    "id": 2549,
+    "name": "Gingerbread Man"
+  },
+  {
+    "id": 2550,
+    "name": "Chocolate Blob"
+  },
+  {
+    "id": 2551,
+    "name": "Honey Elemental"
+  },
+  {
+    "id": 2552,
+    "name": "Angry Sugar Fairy"
+  },
+  {
+    "id": 2561,
+    "name": "Gorga"
+  },
+  {
+    "id": 2562,
+    "name": "Sugar Daddy"
+  },
+  {
+    "id": 2563,
+    "name": "Truffle Cook"
+  },
+  {
+    "id": 2565,
+    "name": "Fruit Drop"
+  },
+  {
+    "id": 2567,
+    "name": "Sugar Cube Worker"
+  },
+  {
+    "id": 2568,
+    "name": "Cream Blob"
+  },
+  {
+    "id": 2580,
+    "name": "Sugar Mommy"
+  },
+  {
+    "id": 2598,
+    "name": "Arbaziloth"
+  },
+  {
+    "id": 2599,
+    "name": "Spellreaper Inferniarch"
+  },
+  {
+    "id": 2600,
+    "name": "Hellhunter Inferniarch"
+  },
+  {
+    "id": 2601,
+    "name": "Brinebrute Inferniarch"
+  },
+  {
+    "id": 2602,
+    "name": "Sineater Inferniarch"
+  },
+  {
+    "id": 2603,
+    "name": "Broodrider Inferniarch"
+  },
+  {
+    "id": 2604,
+    "name": "Gorger Inferniarch"
+  },
+  {
+    "id": 2605,
+    "name": "Twisterror"
+  },
+  {
+    "id": 2606,
+    "name": "Gralvalon"
+  },
+  {
+    "id": 2607,
+    "name": "Malvaroth"
+  },
+  {
+    "id": 2618,
+    "name": "Rotrender"
+  },
+  {
+    "id": 2632,
+    "name": "Rotrender Hexed Horror"
+  },
+  {
+    "id": 2633,
+    "name": "Rotrender Scourge of Azzilon"
+  },
+  {
+    "id": 2635,
+    "name": "Rotrender Hexed Scourge"
+  },
+  {
+    "id": 2636,
+    "name": "Monk's Apparition"
+  },
+  {
+    "id": 2642,
+    "name": "Vladrukh"
+  },
+  {
+    "id": 2659,
+    "name": "Spirit Overlord"
+  },
+  {
+    "id": 2665,
+    "name": "Varg"
+  },
+  {
+    "id": 2666,
+    "name": "Norcferatu Heartless"
+  },
+  {
+    "id": 2667,
+    "name": "Dworc Shadowstalker"
+  },
+  {
+    "id": 2668,
+    "name": "Orclops Bloodbreaker"
+  },
+  {
+    "id": 2669,
+    "name": "Gloom Maw"
+  },
+  {
+    "id": 2671,
+    "name": "Bramble Wyrmling"
+  },
+  {
+    "id": 2672,
+    "name": "Headwalker"
+  },
+  {
+    "id": 2673,
+    "name": "Bluebeak"
+  },
+  {
+    "id": 2674,
+    "name": "Hawk Hopper"
+  },
+  {
+    "id": 2677,
+    "name": "Crusader"
+  },
+  {
+    "id": 2678,
+    "name": "Lion Hydra"
+  },
+  {
+    "id": 2679,
+    "name": "Inkwing"
+  },
+  {
+    "id": 2680,
+    "name": "Sir Leonard"
+  },
+  {
+    "id": 2681,
+    "name": "Wrathful Archivist"
+  },
+  {
+    "id": 2682,
+    "name": "Blight Mariner"
+  },
+  {
+    "id": 2683,
+    "name": "Tropical Desolator"
+  },
+  {
+    "id": 2694,
+    "name": "Sir Leopold"
+  },
+  {
+    "id": 2708,
+    "name": "Corrupted Ghost"
+  },
+  {
+    "id": 2709,
+    "name": "Corrupted Skeleton"
+  },
+  {
+    "id": 2710,
+    "name": "The Corruptor"
+  },
+  {
+    "id": 2711,
+    "name": "Muglex Clan Chief"
+  },
+  {
+    "id": 2712,
+    "name": "Yorik Youngbook"
+  },
+  {
+    "id": 2713,
+    "name": "Percy Peacetinker"
+  },
+  {
+    "id": 2714,
+    "name": "Grendel Greenlunch"
+  },
+  {
+    "id": 2715,
+    "name": "Fiona Firstdream"
+  },
+  {
+    "id": 2716,
+    "name": "Nigel Neverguess"
+  },
+  {
+    "id": 2721,
+    "name": "The Gravedigger"
+  },
+  {
+    "id": 2733,
+    "name": "Ice Horror"
+  },
+  {
+    "id": 2739,
+    "name": "Eldritch Dragon Lord"
+  },
+  {
+    "id": 2741,
+    "name": "Court Warlock"
+  },
+  {
+    "id": 2753,
+    "name": "Michael the Stalwart"
+  },
+  {
+    "id": 2754,
+    "name": "Adlerauge"
+  },
+  {
+    "id": 2755,
+    "name": "Clavius"
+  },
+  {
+    "id": 2756,
+    "name": "Overseer Osverger"
+  },
+  {
+    "id": 2771,
+    "name": "Bone Overlord"
+  },
+  {
+    "id": 2773,
+    "name": "Adventurer Group"
+  },
+  {
+    "id": 2776,
+    "name": "Pirate Navigator"
+  },
+  {
+    "id": 2777,
+    "name": "Pirate Gunner"
+  },
+  {
+    "id": 2778,
+    "name": "Pirate Cook"
+  },
+  {
+    "id": 2779,
+    "name": "Pirate Quartermaster"
+  },
+  {
+    "id": 2780,
+    "name": "Sea Captain"
+  },
+  {
+    "id": 2781,
+    "name": "Lizard Henchman"
+  },
+  {
+    "id": 2782,
+    "name": "Lizard Magician"
+  },
+  {
+    "id": 2783,
+    "name": "Lizard Swordmaster"
+  },
+  {
+    "id": 2784,
+    "name": "Lizard Executioner"
+  },
+  {
+    "id": 2785,
+    "name": "Lizard Commander"
+  },
+  {
+    "id": 2786,
+    "name": "Infernoid Blob"
+  },
+  {
+    "id": 2787,
+    "name": "Infernoid Hound"
+  },
+  {
+    "id": 2788,
+    "name": "Infernoid Soul"
+  },
+  {
+    "id": 2789,
+    "name": "Infernoid Spiritual"
+  },
+  {
+    "id": 2790,
+    "name": "Herald of Fire"
+  },
+  {
+    "id": 2806,
+    "name": "The Moonsnow Magnolia"
+  },
+  {
+    "id": 2812,
+    "name": "Mimar Haffar"
+  },
+  {
+    "id": 2815,
+    "name": "Maior Domus"
+  },
+  {
+    "id": 2826,
+    "name": "Phosphorus"
+  },
+  {
+    "id": 2829,
+    "name": "Moonspawn Juggernaut"
+  },
+  {
+    "id": 2855,
+    "name": "Rakesh Moonfang"
+  }
+]

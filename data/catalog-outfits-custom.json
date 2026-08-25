@@ -1,0 +1,1129 @@
+[
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2501,
+    "name": "Angelical Kid",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2502,
+    "name": "Demonic Kid",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2503,
+    "name": "Gladiator",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2504,
+    "name": "Gladiator",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2505,
+    "name": "Queen",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2506,
+    "name": "King",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2512,
+    "name": "Dukoth's Physique",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2516,
+    "name": "Abyssal Archmage",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2517,
+    "name": "Nightshade Shaman",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2518,
+    "name": "Darkness Sentinel",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2519,
+    "name": "Darklight Guardian (Axe)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2520,
+    "name": "Darklight Guardian (Club)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2521,
+    "name": "Darklight Guardian (Sword)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2522,
+    "name": "Divine Dawn",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2523,
+    "name": "Celestial Protector",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2524,
+    "name": "Illuminated Witch",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2525,
+    "name": "Twilight Guardian (Axe)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2526,
+    "name": "Twilight Guardian (Club)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2527,
+    "name": "Twilight Guardian (Sword)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2536,
+    "name": "Buozzi",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2537,
+    "name": "Buozzi",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2538,
+    "name": "Dukoth's Physique",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2555,
+    "name": "Nordic Santa",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2556,
+    "name": "Nordic Santa",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2557,
+    "name": "Brino's Magician",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2560,
+    "name": "Flame Reaper",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2561,
+    "name": "Flame Reaper",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2564,
+    "name": "Special Citizen",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2565,
+    "name": "Special Citizen",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2566,
+    "name": "Special Citizen Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2567,
+    "name": "Special Citizen Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2568,
+    "name": "Special Citizen Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2569,
+    "name": "Special Citizen Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2570,
+    "name": "Special Citizen Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2571,
+    "name": "Special Citizen Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2572,
+    "name": "Special Citizen Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2573,
+    "name": "Special Citizen Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2574,
+    "name": "Special Citizen Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2575,
+    "name": "Special Citizen Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2576,
+    "name": "Special Citizen Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2577,
+    "name": "Special Citizen Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2578,
+    "name": "Special Warrior",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2579,
+    "name": "Special Warrior",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2580,
+    "name": "Special Warrior Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2581,
+    "name": "Special Warrior Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2582,
+    "name": "Special Warrior Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2583,
+    "name": "Special Warrior Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2584,
+    "name": "Special Warrior Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2585,
+    "name": "Special Warrior Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2586,
+    "name": "Special Warrior Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2587,
+    "name": "Special Warrior Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2588,
+    "name": "Special Warrior Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2589,
+    "name": "Special Warrior Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2590,
+    "name": "Special Warrior Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2591,
+    "name": "Special Warrior Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2604,
+    "name": "Frostbringer",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2605,
+    "name": "Frostbringer",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2606,
+    "name": "Flamebringer",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2607,
+    "name": "Flamebringer",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2608,
+    "name": "Draconic",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2609,
+    "name": "Draconic",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2610,
+    "name": "Special Wizard",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2611,
+    "name": "Special Wizard",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2612,
+    "name": "Special Wizard Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2613,
+    "name": "Special Wizard Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2614,
+    "name": "Special Wizard Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2615,
+    "name": "Special Wizard Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2616,
+    "name": "Special Wizard Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2617,
+    "name": "Special Wizard Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2618,
+    "name": "Special Wizard Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2619,
+    "name": "Special Wizard Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2620,
+    "name": "Special Wizard Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2621,
+    "name": "Special Wizard Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2622,
+    "name": "Special Wizard Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2623,
+    "name": "Special Wizard Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2624,
+    "name": "Special Hunter",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2625,
+    "name": "Special Hunter",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2626,
+    "name": "Special Hunter Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2627,
+    "name": "Special Hunter Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2628,
+    "name": "Special Hunter Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2629,
+    "name": "Special Hunter Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2630,
+    "name": "Special Hunter Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2631,
+    "name": "Special Hunter Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2632,
+    "name": "Special Hunter Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2633,
+    "name": "Special Hunter Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2634,
+    "name": "Special Hunter Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2635,
+    "name": "Special Hunter Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2636,
+    "name": "Special Hunter Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2637,
+    "name": "Special Hunter Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2638,
+    "name": "Bloodbreaker",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2639,
+    "name": "Bloodbreaker",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2665,
+    "name": "Saintblade",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2666,
+    "name": "Saintbloom",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2673,
+    "name": "Royal Vanguard",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2674,
+    "name": "Royal Vanguard",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2675,
+    "name": "King Highlord",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2676,
+    "name": "Queen Highlady",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2677,
+    "name": "Special Assassin",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2678,
+    "name": "Special Assassin",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2679,
+    "name": "Assassin Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2680,
+    "name": "Assassin Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2681,
+    "name": "Assassin Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2682,
+    "name": "Assassin Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2683,
+    "name": "Assassin Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2684,
+    "name": "Assassin Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2685,
+    "name": "Assassin Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2686,
+    "name": "Assassin Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2687,
+    "name": "Assassin Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2688,
+    "name": "Assassin Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2689,
+    "name": "Assassin Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2690,
+    "name": "Assassin Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2691,
+    "name": "Special Barbarian",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2692,
+    "name": "Special Barbarian",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2693,
+    "name": "Barbarian Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2694,
+    "name": "Barbarian Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2695,
+    "name": "Barbarian Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2696,
+    "name": "Barbarian Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2697,
+    "name": "Barbarian Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2698,
+    "name": "Barbarian Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2699,
+    "name": "Barbarian Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2700,
+    "name": "Barbarian Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2701,
+    "name": "Barbarian Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2702,
+    "name": "Barbarian Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2703,
+    "name": "Barbarian Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2704,
+    "name": "Barbarian Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2718,
+    "name": "Eclipse Priest (Paladin)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2719,
+    "name": "Eclipse Priestess (Paladin)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2720,
+    "name": "Eclipse Priest (Sorcerer/Druid)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2721,
+    "name": "Eclipse Priestess (Sorcerer/Druid)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2722,
+    "name": "Eclipse Priest (Knight)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2723,
+    "name": "Eclipse Priestess (Knight)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2724,
+    "name": "Eclipse Priest (Monk)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2725,
+    "name": "Eclipse Priestess (Monk)",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2737,
+    "name": "Special Knight",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2738,
+    "name": "Special Knight",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2739,
+    "name": "Knight Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2740,
+    "name": "Knight Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2741,
+    "name": "Knight Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2742,
+    "name": "Knight Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2743,
+    "name": "Knight Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2744,
+    "name": "Knight Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2745,
+    "name": "Knight Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2746,
+    "name": "Knight Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2747,
+    "name": "Knight Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2748,
+    "name": "Knight Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2749,
+    "name": "Knight Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2750,
+    "name": "Knight Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2751,
+    "name": "Special Oriental",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2752,
+    "name": "Special Oriental",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2753,
+    "name": "Oriental Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2754,
+    "name": "Oriental Death",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2755,
+    "name": "Oriental Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2756,
+    "name": "Oriental Energy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2757,
+    "name": "Oriental Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2758,
+    "name": "Oriental Holy",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2759,
+    "name": "Oriental Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2760,
+    "name": "Oriental Ice",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2761,
+    "name": "Oriental Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2762,
+    "name": "Oriental Earth",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "male",
+    "isCustom": true,
+    "looktype": 2763,
+    "name": "Oriental Fire",
+    "source": "wiki-custom"
+  },
+  {
+    "gender": "female",
+    "isCustom": true,
+    "looktype": 2764,
+    "name": "Oriental Fire",
+    "source": "wiki-custom"
+  }
+]

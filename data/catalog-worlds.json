@@ -1,0 +1,16 @@
+[
+  { "name": "Auroria", "pvpType": "Open PvP", "sortOrder": 1 },
+  { "name": "Belaria", "pvpType": "Open PvP", "sortOrder": 2 },
+  { "name": "Bellum", "pvpType": "Retro PvP", "sortOrder": 3 },
+  { "name": "Cellenium", "pvpType": "Retro PvP", "sortOrder": 4 },
+  { "name": "Drakaria", "pvpType": "Open PvP", "sortOrder": 5 },
+  { "name": "Eldrian", "pvpType": "Optional PvP", "sortOrder": 6 },
+  { "name": "Elysian", "pvpType": "Optional PvP", "sortOrder": 7 },
+  { "name": "Lunarian", "pvpType": "Optional PvP", "sortOrder": 8 },
+  { "name": "Malveria", "pvpType": "Open PvP", "sortOrder": 9 },
+  { "name": "Mystian", "pvpType": "Optional PvP", "sortOrder": 10 },
+  { "name": "Obsidian", "pvpType": "Optional PvP", "sortOrder": 11 },
+  { "name": "Solarian", "pvpType": "Optional PvP", "sortOrder": 12 },
+  { "name": "Tenebrium", "pvpType": "Retro PvP", "sortOrder": 13 },
+  { "name": "Vesperia", "pvpType": "Open PvP", "sortOrder": 14 }
+]

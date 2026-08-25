@@ -1,0 +1,3719 @@
+[
+  {
+    "looktype": 128,
+    "name": "Citizen",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=128&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 129,
+    "name": "Hunter",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=129&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 130,
+    "name": "Mage",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=130&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 131,
+    "name": "Knight",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=131&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 132,
+    "name": "Nobleman",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=132&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 133,
+    "name": "Summoner",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=133&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 134,
+    "name": "Warrior",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=134&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 136,
+    "name": "Citizen",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=136&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 137,
+    "name": "Hunter",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=137&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 138,
+    "name": "Mage",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=138&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 139,
+    "name": "Knight",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=139&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 140,
+    "name": "Noblewoman",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=140&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 141,
+    "name": "Summoner",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=141&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 142,
+    "name": "Warrior",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=142&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 143,
+    "name": "Barbarian",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=143&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 144,
+    "name": "Druid",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=144&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 145,
+    "name": "Wizard",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=145&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 146,
+    "name": "Oriental",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=146&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 147,
+    "name": "Barbarian",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=147&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 148,
+    "name": "Druid",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=148&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 149,
+    "name": "Wizard",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=149&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 150,
+    "name": "Oriental",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=150&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 151,
+    "name": "Pirate",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=151&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 152,
+    "name": "Assassin",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=152&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 153,
+    "name": "Beggar",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=153&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 154,
+    "name": "Shaman",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=154&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 155,
+    "name": "Pirate",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=155&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 156,
+    "name": "Assassin",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=156&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 157,
+    "name": "Beggar",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=157&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 158,
+    "name": "Shaman",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=158&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 251,
+    "name": "Norseman",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=251&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 252,
+    "name": "Norsewoman",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=252&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 268,
+    "name": "Nightmare",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=268&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 269,
+    "name": "Nightmare",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=269&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 270,
+    "name": "Jester",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=270&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 273,
+    "name": "Jester",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=273&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 278,
+    "name": "Brotherhood",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=278&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 279,
+    "name": "Brotherhood",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=279&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 288,
+    "name": "Demon Hunter",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=288&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 289,
+    "name": "Demon Hunter",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=289&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 324,
+    "name": "Yalaharian",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=324&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 325,
+    "name": "Yalaharian",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=325&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 328,
+    "name": "Newly Wed",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=328&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 329,
+    "name": "Newly Wed",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=329&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 335,
+    "name": "Warmaster",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=335&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 336,
+    "name": "Warmaster",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=336&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 366,
+    "name": "Wayfarer",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=366&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 367,
+    "name": "Wayfarer",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=367&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 430,
+    "name": "Afflicted",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=430&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 431,
+    "name": "Afflicted",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=431&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 432,
+    "name": "Elementalist",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=432&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 433,
+    "name": "Elementalist",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=433&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 463,
+    "name": "Deepling",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=463&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 464,
+    "name": "Deepling",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=464&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 465,
+    "name": "Insectoid",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=465&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 466,
+    "name": "Insectoid",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=466&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 471,
+    "name": "Entrepreneur",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=471&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 472,
+    "name": "Entrepreneur",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=472&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 512,
+    "name": "Crystal Warlord",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=512&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 513,
+    "name": "Crystal Warlord",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=513&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 514,
+    "name": "Soil Guardian",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=514&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 516,
+    "name": "Soil Guardian",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=516&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 541,
+    "name": "Demon",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=541&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 542,
+    "name": "Demon",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=542&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 574,
+    "name": "Cave Explorer",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=574&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 575,
+    "name": "Cave Explorer",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=575&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 577,
+    "name": "Dream Warden",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=577&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 578,
+    "name": "Dream Warden",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=578&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 610,
+    "name": "Glooth Engineer",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=610&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 618,
+    "name": "Glooth Engineer",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=618&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 619,
+    "name": "Jersey",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=619&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 620,
+    "name": "Jersey",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=620&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 632,
+    "name": "Champion",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=632&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 633,
+    "name": "Champion",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=633&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 634,
+    "name": "Conjurer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=634&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 635,
+    "name": "Conjurer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=635&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 636,
+    "name": "Beastmaster",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=636&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 637,
+    "name": "Beastmaster",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=637&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 664,
+    "name": "Chaos Acolyte",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=664&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 665,
+    "name": "Chaos Acolyte",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=665&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 666,
+    "name": "Death Herald",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=666&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 667,
+    "name": "Death Herald",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=667&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 683,
+    "name": "Ranger",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=683&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 684,
+    "name": "Ranger",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=684&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 694,
+    "name": "Ceremonial Garb",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=694&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 695,
+    "name": "Ceremonial Garb",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=695&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 696,
+    "name": "Puppeteer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=696&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 697,
+    "name": "Puppeteer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=697&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 698,
+    "name": "Spirit Caller",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=698&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 699,
+    "name": "Spirit Caller",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=699&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 724,
+    "name": "Evoker",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=724&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 725,
+    "name": "Evoker",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=725&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 732,
+    "name": "Seaweaver",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=732&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 733,
+    "name": "Seaweaver",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=733&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 745,
+    "name": "Recruiter",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=745&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 746,
+    "name": "Recruiter",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=746&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 749,
+    "name": "Sea Dog",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=749&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 750,
+    "name": "Sea Dog",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=750&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 759,
+    "name": "Royal Pumpkin",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=759&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 760,
+    "name": "Royal Pumpkin",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=760&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 845,
+    "name": "Rift Warrior",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=845&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 846,
+    "name": "Rift Warrior",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=846&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 852,
+    "name": "Winter Warden",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=852&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 853,
+    "name": "Winter Warden",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=853&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 873,
+    "name": "Philosopher",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=873&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 874,
+    "name": "Philosopher",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=874&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 884,
+    "name": "Arena Champion",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=884&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 885,
+    "name": "Arena Champion",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=885&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 899,
+    "name": "Lupine Warden",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=899&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 900,
+    "name": "Lupine Warden",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=900&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 908,
+    "name": "Grove Keeper",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=908&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 909,
+    "name": "Grove Keeper",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=909&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 929,
+    "name": "Festive",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=929&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 931,
+    "name": "Festive",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=931&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 955,
+    "name": "Pharaoh",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=955&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 956,
+    "name": "Pharaoh",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=956&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 957,
+    "name": "Trophy Hunter",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=957&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 958,
+    "name": "Trophy Hunter",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=958&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 962,
+    "name": "Retro Warrior",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=962&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 963,
+    "name": "Retro Warrior",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=963&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 964,
+    "name": "Retro Summoner",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=964&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 965,
+    "name": "Retro Summoner",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=965&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 966,
+    "name": "Retro Nobleman",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=966&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 967,
+    "name": "Retro Noblewoman",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=967&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 968,
+    "name": "Retro Mage",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=968&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 969,
+    "name": "Retro Mage",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=969&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 970,
+    "name": "Retro Knight",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=970&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 971,
+    "name": "Retro Knight",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=971&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 972,
+    "name": "Retro Hunter",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=972&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 973,
+    "name": "Retro Hunter",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=973&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 974,
+    "name": "Retro Citizen",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=974&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 975,
+    "name": "Retro Citizen",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=975&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1020,
+    "name": "Herbalist",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1020&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1021,
+    "name": "Herbalist",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1021&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1023,
+    "name": "Sun Priest",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1023&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1024,
+    "name": "Sun Priest",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1024&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1042,
+    "name": "Makeshift Warrior",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1042&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1043,
+    "name": "Makeshift Warrior",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1043&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1050,
+    "name": "Siege Master",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1050&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1051,
+    "name": "Siege Master",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1051&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1056,
+    "name": "Mercenary",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1056&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1057,
+    "name": "Mercenary",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1057&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1069,
+    "name": "Battle Mage",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1069&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1070,
+    "name": "Battle Mage",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1070&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1094,
+    "name": "Discoverer",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1094&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1095,
+    "name": "Discoverer",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1095&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1102,
+    "name": "Sinister Archer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1102&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1103,
+    "name": "Sinister Archer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1103&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1127,
+    "name": "Pumpkin Mummy",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1127&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1128,
+    "name": "Pumpkin Mummy",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1128&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1146,
+    "name": "Dream Warrior",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1146&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1147,
+    "name": "Dream Warrior",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1147&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1161,
+    "name": "Percht Raider",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1161&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1162,
+    "name": "Percht Raider",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1162&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1173,
+    "name": "Owl Keeper",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1173&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1174,
+    "name": "Owl Keeper",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1174&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1186,
+    "name": "Guidon Bearer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1186&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1187,
+    "name": "Guidon Bearer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1187&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1202,
+    "name": "Void Master",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1202&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1203,
+    "name": "Void Master",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1203&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1204,
+    "name": "Veteran Paladin",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1204&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1205,
+    "name": "Veteran Paladin",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1205&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1206,
+    "name": "Lion of War",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1206&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1207,
+    "name": "Lion of War",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1207&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1210,
+    "name": "Golden",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1210&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1211,
+    "name": "Golden",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1211&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1243,
+    "name": "Hand of the Inquisition",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1243&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1244,
+    "name": "Hand of the Inquisition",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1244&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1245,
+    "name": "Breezy Garb",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1245&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1246,
+    "name": "Breezy Garb",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1246&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1251,
+    "name": "Orcsoberfest Garb",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1251&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1252,
+    "name": "Orcsoberfest Garb",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1252&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1270,
+    "name": "Poltergeist",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1270&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1271,
+    "name": "Poltergeist",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1271&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1279,
+    "name": "Herder",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1279&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1280,
+    "name": "Herder",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1280&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1282,
+    "name": "Falconer",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1282&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1283,
+    "name": "Falconer",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1283&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1288,
+    "name": "Dragon Slayer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1288&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1289,
+    "name": "Dragon Slayer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1289&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1292,
+    "name": "Trailblazer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1292&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1293,
+    "name": "Trailblazer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1293&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1322,
+    "name": "Revenant",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1322&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1323,
+    "name": "Revenant",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1323&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1331,
+    "name": "Jouster",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1331&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1332,
+    "name": "Jouster",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1332&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1338,
+    "name": "Moth Cape",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1338&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1339,
+    "name": "Moth Cape",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1339&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1371,
+    "name": "Rascoohan",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1371&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1372,
+    "name": "Rascoohan",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1372&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1382,
+    "name": "Merry Garb",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1382&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1383,
+    "name": "Merry Garb",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1383&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1384,
+    "name": "Rune Master",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1384&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1385,
+    "name": "Rune Master",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1385&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1386,
+    "name": "Citizen of Issavi",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1386&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1387,
+    "name": "Citizen of Issavi",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1387&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1415,
+    "name": "Forest Warden",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1415&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1416,
+    "name": "Forest Warden",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1416&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1436,
+    "name": "Royal Bounacean Advisor",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1436&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1437,
+    "name": "Royal Bounacean Advisor",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1437&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1444,
+    "name": "Dragon Knight",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1444&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1445,
+    "name": "Dragon Knight",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1445&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1449,
+    "name": "Arbalester",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1449&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1450,
+    "name": "Arbalester",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1450&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1456,
+    "name": "Royal Costume",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1456&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1457,
+    "name": "Royal Costume",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1457&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1460,
+    "name": "Formal Dress",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1460&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1461,
+    "name": "Formal Dress",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1461&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1489,
+    "name": "Ghost Blade",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1489&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1490,
+    "name": "Ghost Blade",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1490&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1500,
+    "name": "Nordic Chieftain",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1500&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1501,
+    "name": "Nordic Chieftain",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1501&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1568,
+    "name": "Fire-Fighter",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1568&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1569,
+    "name": "Fire-Fighter",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1569&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1575,
+    "name": "Fencer",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1575&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1576,
+    "name": "Fencer",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1576&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1581,
+    "name": "Shadowlotus Disciple",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1581&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1582,
+    "name": "Shadowlotus Disciple",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1582&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1597,
+    "name": "Ancient Aucar",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1597&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1598,
+    "name": "Ancient Aucar",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1598&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1612,
+    "name": "Frost Tracer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1612&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1613,
+    "name": "Frost Tracer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1613&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1618,
+    "name": "Armoured Archer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1618&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1619,
+    "name": "Armoured Archer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1619&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1662,
+    "name": "Decaying Defender",
+    "gender": "male",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1662&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1663,
+    "name": "Decaying Defender",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1663&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1675,
+    "name": "Darklight Evoker",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1675&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1676,
+    "name": "Darklight Evoker",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1676&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1680,
+    "name": "Flamefury Mage",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1680&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1681,
+    "name": "Flamefury Mage",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1681&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1713,
+    "name": "Doom Knight",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1713&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1714,
+    "name": "Doom Knight",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1714&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1722,
+    "name": "Draccoon Herald",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1722&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1723,
+    "name": "Draccoon Herald",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1723&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1725,
+    "name": "Celestial Avenger",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1725&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1726,
+    "name": "Celestial Avenger",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1726&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1745,
+    "name": "Blade Dancer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1745&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1746,
+    "name": "Blade Dancer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1746&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1774,
+    "name": "Rootwalker",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1774&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1775,
+    "name": "Rootwalker",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1775&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1776,
+    "name": "Beekeeper",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1776&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1777,
+    "name": "Beekeeper",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1777&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1808,
+    "name": "Fiend Slayer",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1808&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1809,
+    "name": "Fiend Slayer",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1809&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1824,
+    "name": "Monk",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1824&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1825,
+    "name": "Monk",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1825&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1831,
+    "name": "Winged Druid",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1831&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1832,
+    "name": "Winged Druid",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1832&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1837,
+    "name": "Martial Artist",
+    "gender": "male",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1837&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1838,
+    "name": "Martial Artist",
+    "gender": "female",
+    "premium": false,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1838&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1860,
+    "name": "Illuminator",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1860&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 1861,
+    "name": "Illuminator",
+    "gender": "female",
+    "premium": true,
+    "source": "vanilla",
+    "isCustom": false,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=1861&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2501,
+    "name": "Angelical Kid",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2501&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2502,
+    "name": "Demonic Kid",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2502&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2503,
+    "name": "Gladiator",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2503&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2504,
+    "name": "Gladiator",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2504&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2505,
+    "name": "Queen",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2505&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2506,
+    "name": "King",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2506&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2512,
+    "name": "Dukoth's Physique",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2512&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2516,
+    "name": "Abyssal Archmage",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2516&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2517,
+    "name": "Nightshade Shaman",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2517&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2518,
+    "name": "Darkness Sentinel",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2518&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2519,
+    "name": "Darklight Guardian (Axe)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2519&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2520,
+    "name": "Darklight Guardian (Club)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2520&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2521,
+    "name": "Darklight Guardian (Sword)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2521&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2522,
+    "name": "Divine Dawn",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2522&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2523,
+    "name": "Celestial Protector",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2523&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2524,
+    "name": "Illuminated Witch",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2524&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2525,
+    "name": "Twilight Guardian (Axe)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2525&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2526,
+    "name": "Twilight Guardian (Club)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2526&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2527,
+    "name": "Twilight Guardian (Sword)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2527&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2536,
+    "name": "Buozzi",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2536&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2537,
+    "name": "Buozzi",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2537&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2538,
+    "name": "Dukoth's Physique",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2538&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2555,
+    "name": "Nordic Santa",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2555&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2556,
+    "name": "Nordic Santa",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2556&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2557,
+    "name": "Brino's Magician",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2557&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2560,
+    "name": "Flame Reaper",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2560&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2561,
+    "name": "Flame Reaper",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2561&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2564,
+    "name": "Special Citizen",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2564&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2565,
+    "name": "Special Citizen",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2565&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2566,
+    "name": "Special Citizen Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2566&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2567,
+    "name": "Special Citizen Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2567&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2568,
+    "name": "Special Citizen Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2568&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2569,
+    "name": "Special Citizen Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2569&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2570,
+    "name": "Special Citizen Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2570&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2571,
+    "name": "Special Citizen Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2571&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2572,
+    "name": "Special Citizen Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2572&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2573,
+    "name": "Special Citizen Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2573&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2574,
+    "name": "Special Citizen Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2574&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2575,
+    "name": "Special Citizen Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2575&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2576,
+    "name": "Special Citizen Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2576&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2577,
+    "name": "Special Citizen Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2577&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2578,
+    "name": "Special Warrior",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2578&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2579,
+    "name": "Special Warrior",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2579&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2580,
+    "name": "Special Warrior Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2580&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2581,
+    "name": "Special Warrior Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2581&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2582,
+    "name": "Special Warrior Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2582&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2583,
+    "name": "Special Warrior Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2583&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2584,
+    "name": "Special Warrior Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2584&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2585,
+    "name": "Special Warrior Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2585&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2586,
+    "name": "Special Warrior Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2586&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2587,
+    "name": "Special Warrior Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2587&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2588,
+    "name": "Special Warrior Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2588&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2589,
+    "name": "Special Warrior Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2589&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2590,
+    "name": "Special Warrior Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2590&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2591,
+    "name": "Special Warrior Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2591&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2604,
+    "name": "Frostbringer",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2604&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2605,
+    "name": "Frostbringer",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2605&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2606,
+    "name": "Flamebringer",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2606&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2607,
+    "name": "Flamebringer",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2607&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2608,
+    "name": "Draconic",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2608&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2609,
+    "name": "Draconic",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2609&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2610,
+    "name": "Special Wizard",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2610&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2611,
+    "name": "Special Wizard",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2611&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2612,
+    "name": "Special Wizard Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2612&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2613,
+    "name": "Special Wizard Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2613&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2614,
+    "name": "Special Wizard Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2614&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2615,
+    "name": "Special Wizard Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2615&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2616,
+    "name": "Special Wizard Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2616&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2617,
+    "name": "Special Wizard Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2617&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2618,
+    "name": "Special Wizard Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2618&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2619,
+    "name": "Special Wizard Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2619&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2620,
+    "name": "Special Wizard Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2620&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2621,
+    "name": "Special Wizard Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2621&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2622,
+    "name": "Special Wizard Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2622&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2623,
+    "name": "Special Wizard Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2623&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2624,
+    "name": "Special Hunter",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2624&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2625,
+    "name": "Special Hunter",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2625&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2626,
+    "name": "Special Hunter Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2626&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2627,
+    "name": "Special Hunter Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2627&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2628,
+    "name": "Special Hunter Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2628&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2629,
+    "name": "Special Hunter Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2629&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2630,
+    "name": "Special Hunter Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2630&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2631,
+    "name": "Special Hunter Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2631&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2632,
+    "name": "Special Hunter Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2632&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2633,
+    "name": "Special Hunter Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2633&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2634,
+    "name": "Special Hunter Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2634&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2635,
+    "name": "Special Hunter Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2635&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2636,
+    "name": "Special Hunter Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2636&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2637,
+    "name": "Special Hunter Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2637&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2638,
+    "name": "Bloodbreaker",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2638&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2639,
+    "name": "Bloodbreaker",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2639&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2665,
+    "name": "Saintblade",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2665&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2666,
+    "name": "Saintbloom",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2666&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2673,
+    "name": "Royal Vanguard",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2673&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2674,
+    "name": "Royal Vanguard",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2674&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2675,
+    "name": "King Highlord",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2675&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2676,
+    "name": "Queen Highlady",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2676&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2677,
+    "name": "Special Assassin",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2677&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2678,
+    "name": "Special Assassin",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2678&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2679,
+    "name": "Assassin Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2679&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2680,
+    "name": "Assassin Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2680&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2681,
+    "name": "Assassin Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2681&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2682,
+    "name": "Assassin Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2682&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2683,
+    "name": "Assassin Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2683&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2684,
+    "name": "Assassin Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2684&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2685,
+    "name": "Assassin Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2685&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2686,
+    "name": "Assassin Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2686&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2687,
+    "name": "Assassin Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2687&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2688,
+    "name": "Assassin Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2688&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2689,
+    "name": "Assassin Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2689&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2690,
+    "name": "Assassin Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2690&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2691,
+    "name": "Special Barbarian",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2691&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2692,
+    "name": "Special Barbarian",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2692&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2693,
+    "name": "Barbarian Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2693&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2694,
+    "name": "Barbarian Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2694&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2695,
+    "name": "Barbarian Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2695&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2696,
+    "name": "Barbarian Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2696&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2697,
+    "name": "Barbarian Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2697&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2698,
+    "name": "Barbarian Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2698&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2699,
+    "name": "Barbarian Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2699&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2700,
+    "name": "Barbarian Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2700&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2701,
+    "name": "Barbarian Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2701&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2702,
+    "name": "Barbarian Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2702&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2703,
+    "name": "Barbarian Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2703&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2704,
+    "name": "Barbarian Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2704&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2718,
+    "name": "Eclipse Priest (Paladin)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2718&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2719,
+    "name": "Eclipse Priestess (Paladin)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2719&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2720,
+    "name": "Eclipse Priest (Sorcerer/Druid)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2720&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2721,
+    "name": "Eclipse Priestess (Sorcerer/Druid)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2721&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2722,
+    "name": "Eclipse Priest (Knight)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2722&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2723,
+    "name": "Eclipse Priestess (Knight)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2723&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2724,
+    "name": "Eclipse Priest (Monk)",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2724&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2725,
+    "name": "Eclipse Priestess (Monk)",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2725&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2737,
+    "name": "Special Knight",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2737&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2738,
+    "name": "Special Knight",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2738&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2739,
+    "name": "Knight Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2739&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2740,
+    "name": "Knight Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2740&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2741,
+    "name": "Knight Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2741&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2742,
+    "name": "Knight Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2742&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2743,
+    "name": "Knight Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2743&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2744,
+    "name": "Knight Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2744&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2745,
+    "name": "Knight Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2745&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2746,
+    "name": "Knight Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2746&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2747,
+    "name": "Knight Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2747&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2748,
+    "name": "Knight Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2748&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2749,
+    "name": "Knight Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2749&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2750,
+    "name": "Knight Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2750&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2751,
+    "name": "Special Oriental",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2751&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2752,
+    "name": "Special Oriental",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2752&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2753,
+    "name": "Oriental Death",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2753&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2754,
+    "name": "Oriental Death",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2754&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2755,
+    "name": "Oriental Energy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2755&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2756,
+    "name": "Oriental Energy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2756&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2757,
+    "name": "Oriental Holy",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2757&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2758,
+    "name": "Oriental Holy",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2758&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2759,
+    "name": "Oriental Ice",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2759&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2760,
+    "name": "Oriental Ice",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2760&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2761,
+    "name": "Oriental Earth",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2761&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2762,
+    "name": "Oriental Earth",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2762&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2763,
+    "name": "Oriental Fire",
+    "gender": "male",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2763&addons=3&direction=3&animated=1&walk=1&size=0"
+  },
+  {
+    "looktype": 2764,
+    "name": "Oriental Fire",
+    "gender": "female",
+    "premium": true,
+    "source": "wiki-custom",
+    "isCustom": true,
+    "imageUrl": "https://rubinot.com.br/api/outfit?type=2764&addons=3&direction=3&animated=1&walk=1&size=0"
+  }
+]

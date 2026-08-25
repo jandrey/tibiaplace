@@ -1,0 +1,122 @@
+[
+  {
+    "looktype": 1107,
+    "name": "Citizen",
+    "gender": "female",
+    "group": "default"
+  },
+  {
+    "looktype": 1108,
+    "name": "Citizen",
+    "gender": "male",
+    "group": "default"
+  },
+  {
+    "looktype": 1109,
+    "name": "Banker Dress",
+    "gender": "female",
+    "group": "banker"
+  },
+  {
+    "looktype": 1110,
+    "name": "Banker Dress",
+    "gender": "male",
+    "group": "banker"
+  },
+  {
+    "looktype": 1111,
+    "name": "Trader Dress",
+    "gender": "female",
+    "group": "trader"
+  },
+  {
+    "looktype": 1112,
+    "name": "Trader Dress",
+    "gender": "male",
+    "group": "trader"
+  },
+  {
+    "looktype": 1113,
+    "name": "Cook Dress",
+    "gender": "female",
+    "group": "cook"
+  },
+  {
+    "looktype": 1114,
+    "name": "Cook Dress",
+    "gender": "male",
+    "group": "cook"
+  },
+  {
+    "looktype": 1115,
+    "name": "Stewart Dress",
+    "gender": "female",
+    "group": "stewart"
+  },
+  {
+    "looktype": 1116,
+    "name": "Stewart Dress",
+    "gender": "male",
+    "group": "stewart"
+  },
+  {
+    "looktype": 1117,
+    "name": "Servant Dress",
+    "gender": "female",
+    "group": "servant"
+  },
+  {
+    "looktype": 1118,
+    "name": "Servant Dress",
+    "gender": "male",
+    "group": "servant"
+  },
+  {
+    "looktype": 1123,
+    "name": "Bonelord Dress",
+    "gender": "female",
+    "group": "bonelord"
+  },
+  {
+    "looktype": 1124,
+    "name": "Bonelord Dress",
+    "gender": "male",
+    "group": "bonelord"
+  },
+  {
+    "looktype": 1125,
+    "name": "Dragon Dress",
+    "gender": "female",
+    "group": "dragon"
+  },
+  {
+    "looktype": 1126,
+    "name": "Dragon Dress",
+    "gender": "male",
+    "group": "dragon"
+  },
+  {
+    "looktype": 1129,
+    "name": "Hydra Dress",
+    "gender": "female",
+    "group": "hydra"
+  },
+  {
+    "looktype": 1130,
+    "name": "Hydra Dress",
+    "gender": "male",
+    "group": "hydra"
+  },
+  {
+    "looktype": 1131,
+    "name": "Ferumbras Dress",
+    "gender": "female",
+    "group": "ferumbras"
+  },
+  {
+    "looktype": 1132,
+    "name": "Ferumbras Dress",
+    "gender": "male",
+    "group": "ferumbras"
+  }
+]
