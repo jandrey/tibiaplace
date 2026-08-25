@@ -112,6 +112,19 @@ export function parseBazaarUrl(url: string): number | null {
   return match ? Number.parseInt(match[1], 10) : null;
 }
 
+export function assertBazaarData(data: unknown): asserts data is BazaarData {
+  if (!data || typeof data !== "object") {
+    throw new Error("JSON do bazaar inválido");
+  }
+  const record = data as Partial<BazaarData>;
+  if (!record.player?.name) {
+    throw new Error("JSON do bazaar incompleto (falta player)");
+  }
+  if (!record.auction?.id) {
+    throw new Error("JSON do bazaar incompleto (falta auction.id)");
+  }
+}
+
 export function buildOutfitImageUrl(
   lookType: number,
   addons = 0,
@@ -239,20 +252,4 @@ export function buildSlug(player: BazaarPlayer): string {
     .replace(/[^a-z0-9-]/g, "");
   const world = player.worldName.toLowerCase().replace(/\s+/g, "-");
   return `${voc}-${player.level}-${world}`;
-}
-
-export async function fetchBazaarData(bazaarId: number): Promise<BazaarData> {
-  const res = await fetch(`https://rubinot.com.br/api/bazaar/${bazaarId}`, {
-    headers: {
-      "User-Agent": "TibiaPlace/1.0",
-      Accept: "application/json",
-    },
-    next: { revalidate: 0 },
-  });
-
-  if (!res.ok) {
-    throw new Error(`Bazaar API retornou ${res.status}`);
-  }
-
-  return res.json() as Promise<BazaarData>;
 }

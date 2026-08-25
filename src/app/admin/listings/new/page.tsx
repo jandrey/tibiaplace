@@ -43,14 +43,17 @@ export default function NewListingPage() {
   const router = useRouter();
   const [tab, setTab] = useState<NewListingTab>("character");
   const [bazaarUrl, setBazaarUrl] = useState("");
+  const [bazaarJson, setBazaarJson] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [progress, setProgress] = useState(0);
   const [label, setLabel] = useState("");
   const [detail, setDetail] = useState<string>();
 
-  async function handleImport(e: React.FormEvent) {
-    e.preventDefault();
+  async function runImport(payload: {
+    bazaarUrl: string;
+    bazaarData?: unknown;
+  }) {
     setLoading(true);
     setError("");
     setProgress(0);
@@ -61,7 +64,7 @@ export default function NewListingPage() {
       const res = await fetch("/api/admin/bazaar/import", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ bazaarUrl }),
+        body: JSON.stringify(payload),
       });
 
       const result = await consumeImportStream(res, (event) => {
@@ -76,6 +79,21 @@ export default function NewListingPage() {
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao importar");
       setLoading(false);
+    }
+  }
+
+  async function handleImport(e: React.FormEvent) {
+    e.preventDefault();
+    await runImport({ bazaarUrl });
+  }
+
+  async function handleImportJson(e: React.FormEvent) {
+    e.preventDefault();
+    try {
+      const bazaarData = JSON.parse(bazaarJson) as unknown;
+      await runImport({ bazaarUrl, bazaarData });
+    } catch {
+      setError("JSON inválido. Cole a resposta completa de /api/bazaar/{id}");
     }
   }
 
@@ -195,6 +213,36 @@ export default function NewListingPage() {
               {loading ? "Importando…" : "Importar personagem"}
             </Button>
           </form>
+
+          <details className="mt-6 rounded-lg border border-[var(--color-card-border)] p-4">
+            <summary className="cursor-pointer text-sm font-medium text-zinc-300">
+              Importar via JSON (fallback Cloudflare)
+            </summary>
+            <p className="mt-3 text-xs leading-relaxed text-zinc-500">
+              Se o servidor da Vercel for bloqueado, abra{" "}
+              <code className="text-zinc-400">
+                https://rubinot.com.br/api/bazaar/ID
+              </code>{" "}
+              no navegador (logado no RubinOT), copie o JSON e cole abaixo.
+            </p>
+            <form onSubmit={handleImportJson} className="mt-4 space-y-3">
+              <textarea
+                value={bazaarJson}
+                onChange={(e) => setBazaarJson(e.target.value)}
+                disabled={loading}
+                rows={8}
+                placeholder='{"auction":{"id":270870}, "player":{...}}'
+                className="w-full rounded-lg border border-[var(--color-card-border)] bg-[var(--color-background)] px-3 py-2 font-mono text-xs text-zinc-300"
+              />
+              <Button
+                type="submit"
+                variant="secondary"
+                disabled={loading || !bazaarUrl.trim() || !bazaarJson.trim()}
+              >
+                Importar via JSON
+              </Button>
+            </form>
+          </details>
         </Card>
       )}
 

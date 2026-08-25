@@ -8,13 +8,15 @@ import {
   encodeImportEvent,
   type ImportProgressReporter,
 } from "@/lib/bazaar/import-progress";
-import { fetchBazaarData, parseBazaarUrl } from "@/lib/bazaar/types";
+import { fetchBazaarData } from "@/lib/bazaar/rubinot-fetch";
+import { assertBazaarData, parseBazaarUrl } from "@/lib/bazaar/types";
 import { requireAdminSession } from "@/lib/auth/session";
 import { listings } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 
 const bodySchema = z.object({
   bazaarUrl: z.string().url(),
+  bazaarData: z.unknown().optional(),
 });
 
 export async function POST(request: Request) {
@@ -59,7 +61,17 @@ export async function POST(request: Request) {
           progress: 8,
         });
 
-        const data = await fetchBazaarData(bazaarId);
+        const data = body.bazaarData
+          ? (() => {
+              assertBazaarData(body.bazaarData);
+              if (body.bazaarData.auction.id !== bazaarId) {
+                throw new Error(
+                  "O JSON colado não corresponde ao ID da URL do bazaar",
+                );
+              }
+              return body.bazaarData;
+            })()
+          : await fetchBazaarData(bazaarId);
 
         emit({
           step: "fetch",

@@ -4,7 +4,8 @@ import {
   encodeImportEvent,
   type ImportProgressReporter,
 } from "@/lib/bazaar/import-progress";
-import { fetchBazaarData, parseBazaarUrl } from "@/lib/bazaar/types";
+import { fetchBazaarData } from "@/lib/bazaar/rubinot-fetch";
+import { parseBazaarUrl } from "@/lib/bazaar/types";
 import { requireAdminSession } from "@/lib/auth/session";
 import { db } from "@/lib/db";
 import { listings } from "@/lib/db/schema";
