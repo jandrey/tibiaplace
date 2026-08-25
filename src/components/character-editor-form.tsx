@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  Coins,
   Megaphone,
   Palette,
   Settings2,
@@ -10,6 +11,7 @@ import {
 import { CatalogPicker } from "@/components/catalog-picker";
 import { OutfitAppearanceModal } from "@/components/outfit-appearance-modal";
 import { PrimaryOutfitPreviewCard } from "@/components/primary-outfit-preview-card";
+import { useToast } from "@/components/toast-provider";
 import { Button, Card, Input, Label, Select, Textarea } from "@/components/ui";
 import {
   VOCATION_OPTIONS,
@@ -45,7 +47,7 @@ const EDITOR_SECTIONS: Array<{
   {
     id: "anuncio",
     label: "Anúncio",
-    hint: "Preço, título e descrição comercial",
+    hint: "Título, identidade e descrição comercial",
     icon: Megaphone,
   },
   {
@@ -511,6 +513,11 @@ export function CharacterEditorForm({
   >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [pricingTouched, setPricingTouched] = useState(false);
+  const toast = useToast();
+
+  const pricingIncomplete =
+    !values.priceBrl.trim() && !values.priceCoins.trim();
 
   useEffect(() => {
     let cancelled = false;
@@ -640,8 +647,12 @@ export function CharacterEditorForm({
     setLoading(true);
     setError("");
     try {
-      if (!values.title.trim()) throw new Error("Informe o título");
-      if (!values.priceBrl.trim() && !values.priceCoins.trim()) {
+      if (!values.title.trim()) {
+        setPricingTouched(true);
+        throw new Error("Informe o título do anúncio");
+      }
+      if (pricingIncomplete) {
+        setPricingTouched(true);
         throw new Error("Informe preço em BRL ou Rubini Coins");
       }
       await onSubmit(
@@ -653,8 +664,11 @@ export function CharacterEditorForm({
           primaryLookAddons: primaryOutfit?.addons,
         }),
       );
+      toast.success("Personagem salvo com sucesso");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro ao salvar");
+      const message = err instanceof Error ? err.message : "Erro ao salvar";
+      setError(message);
+      toast.error(message);
     } finally {
       setLoading(false);
     }
@@ -664,6 +678,91 @@ export function CharacterEditorForm({
     <form onSubmit={handleSubmit} className="pb-24">
       <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
         <div className="min-w-0 space-y-6">
+          <EditorCard
+            className={cn(
+              "relative overflow-hidden border-2 transition-colors",
+              pricingTouched && pricingIncomplete
+                ? "border-amber-500/50 bg-amber-950/10"
+                : "border-[var(--color-primary)]/25 bg-gradient-to-br from-[var(--color-primary)]/8 to-transparent",
+            )}
+          >
+            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--color-card-border)]/80 pb-4">
+              <div className="flex items-start gap-3">
+                <div className="rounded-lg bg-[var(--color-primary)]/15 p-2">
+                  <Coins className="h-5 w-5 text-[var(--color-primary)]" />
+                </div>
+                <div>
+                  <h2 className="font-semibold text-zinc-100">
+                    Preço do anúncio
+                  </h2>
+                  <p className="mt-1 text-xs text-zinc-500">
+                    Obrigatório para publicar — informe BRL, Rubini Coins ou
+                    ambos.
+                  </p>
+                </div>
+              </div>
+              {pricingIncomplete && (
+                <span className="rounded-full border border-amber-500/40 bg-amber-500/10 px-2.5 py-1 text-[11px] font-medium text-amber-300">
+                  Pendente
+                </span>
+              )}
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <div>
+                <Label htmlFor="price-brl">
+                  Preço BRL{" "}
+                  <span className="text-[var(--color-primary)]">*</span>
+                </Label>
+                <Input
+                  id="price-brl"
+                  inputMode="decimal"
+                  placeholder="Ex: 450,00"
+                  value={values.priceBrl}
+                  onChange={(e) => {
+                    setPricingTouched(false);
+                    patch("priceBrl", e.target.value);
+                  }}
+                  className={cn(
+                    "mt-1.5",
+                    pricingTouched &&
+                      pricingIncomplete &&
+                      !values.priceBrl.trim() &&
+                      "border-amber-500/50 ring-1 ring-amber-500/20",
+                  )}
+                />
+              </div>
+              <div>
+                <Label htmlFor="price-coins">
+                  Rubini Coins{" "}
+                  <span className="text-[var(--color-primary)]">*</span>
+                </Label>
+                <Input
+                  id="price-coins"
+                  type="number"
+                  min={0}
+                  placeholder="Ex: 500"
+                  value={values.priceCoins}
+                  onChange={(e) => {
+                    setPricingTouched(false);
+                    patch("priceCoins", e.target.value);
+                  }}
+                  className={cn(
+                    "mt-1.5",
+                    pricingTouched &&
+                      pricingIncomplete &&
+                      !values.priceCoins.trim() &&
+                      "border-amber-500/50 ring-1 ring-amber-500/20",
+                  )}
+                />
+              </div>
+            </div>
+            <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
+              <span className="text-[var(--color-primary)]">*</span> Pelo
+              menos um valor é obrigatório. Deixe o outro em branco se não se
+              aplicar.
+            </p>
+          </EditorCard>
+
           <div className="sticky top-14 z-20 -mx-1 rounded-xl border border-[var(--color-card-border)] bg-[var(--color-background)]/95 p-1 backdrop-blur-md">
             <div className="app-scroll app-scroll-x scroll-fade-x overflow-x-auto">
               <div className="flex min-w-max gap-1">
@@ -753,17 +852,6 @@ export function CharacterEditorForm({
               onChange={(v) => patch("sex", v)}
               placeholder="—"
               options={[...PLAYER_SEX_OPTIONS]}
-            />
-            <Field
-              label="Preço BRL"
-              value={values.priceBrl}
-              onChange={(v) => patch("priceBrl", v)}
-            />
-            <Field
-              label="Rubini Coins"
-              type="number"
-              value={values.priceCoins}
-              onChange={(v) => patch("priceCoins", v)}
             />
           </div>
           <div className="space-y-3 border-t border-zinc-800 pt-4">
@@ -1025,9 +1113,17 @@ export function CharacterEditorForm({
 
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--color-card-border)] bg-[var(--color-background)]/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-          <p className="hidden text-sm text-zinc-500 sm:block">
-            {EDITOR_SECTIONS.find((s) => s.id === section)?.label}
-          </p>
+          <div className="hidden min-w-0 sm:block">
+            {pricingIncomplete ? (
+              <p className="truncate text-sm text-amber-400/90">
+                Defina preço BRL ou Rubini Coins para publicar
+              </p>
+            ) : (
+              <p className="truncate text-sm text-zinc-500">
+                {EDITOR_SECTIONS.find((s) => s.id === section)?.label}
+              </p>
+            )}
+          </div>
           <Button type="submit" disabled={loading} className="min-w-[160px]">
             {loading ? "Salvando…" : submitLabel}
           </Button>

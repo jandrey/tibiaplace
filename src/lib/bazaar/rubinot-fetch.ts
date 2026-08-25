@@ -44,9 +44,42 @@ export function bazaarApiUrlFromInput(url: string): string | null {
 
 export function bazaarFetchBlockedMessage(_bazaarId: number) {
   return (
-    "RubinOT bloqueou o servidor (403). Importe pelo JSON copiado no DevTools " +
-    "(logado no RubinOT) — veja instruções abaixo."
+    "RubinOT bloqueou o servidor (403). Use o userscript TibiaPlace no RubinOT " +
+    "e clique em «Colar JSON capturado» aqui."
   );
+}
+
+export type ParsedBazaarJson = {
+  bazaarData: BazaarData;
+  bazaarId: number;
+  bazaarUrl: string;
+  playerName: string;
+  playerLevel: number;
+  vocationName: string;
+};
+
+/** Parse JSON from userscript / clipboard; URL is derived from auction.id. */
+export function parseBazaarJsonFromText(raw: string): ParsedBazaarJson {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw.trim());
+  } catch {
+    throw new Error(
+      "JSON inválido. Copie pelo userscript «TP JSON» no RubinOT ou cole a resposta completa de /api/bazaar/{id}.",
+    );
+  }
+
+  assertBazaarData(parsed);
+  const bazaarId = parsed.auction.id;
+
+  return {
+    bazaarData: parsed,
+    bazaarId,
+    bazaarUrl: bazaarPageUrl(bazaarId),
+    playerName: parsed.player.name,
+    playerLevel: parsed.player.level,
+    vocationName: parsed.player.vocationName ?? "",
+  };
 }
 
 export async function fetchBazaarData(bazaarId: number): Promise<BazaarData> {

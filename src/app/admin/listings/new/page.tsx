@@ -1,9 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Download, ExternalLink, Package, User } from "lucide-react";
+import {
+  ClipboardPaste,
+  Download,
+  ExternalLink,
+  Package,
+  Sparkles,
+  User,
+} from "lucide-react";
 import {
   ItemEditorForm,
   emptyItemForm,
@@ -13,11 +20,13 @@ import {
   ImportProgressPanel,
   importEventLabel,
 } from "@/components/import-progress-panel";
+import { useToast } from "@/components/toast-provider";
 import { Button, Card, Input, Label } from "@/components/ui";
 import { consumeImportStream } from "@/lib/bazaar/import-progress";
 import {
-  bazaarApiUrlFromInput,
   bazaarPageUrlFromInput,
+  parseBazaarJsonFromText,
+  type ParsedBazaarJson,
 } from "@/lib/bazaar/rubinot-fetch";
 import { cn } from "@/lib/utils";
 
@@ -45,68 +54,96 @@ const TABS: Array<{
 
 export default function NewListingPage() {
   const router = useRouter();
+  const toast = useToast();
   const [tab, setTab] = useState<NewListingTab>("character");
   const [bazaarUrl, setBazaarUrl] = useState("");
-  const [bazaarJson, setBazaarJson] = useState("");
+  const [captured, setCaptured] = useState<ParsedBazaarJson | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const [progress, setProgress] = useState(0);
   const [label, setLabel] = useState("");
   const [detail, setDetail] = useState<string>();
 
-  const bazaarApiUrl = bazaarApiUrlFromInput(bazaarUrl.trim());
-  const bazaarPageUrl = bazaarPageUrlFromInput(bazaarUrl.trim());
+  const bazaarPageUrl =
+    captured?.bazaarUrl ?? bazaarPageUrlFromInput(bazaarUrl.trim());
 
-  async function runImport(payload: {
-    bazaarUrl: string;
-    bazaarData?: unknown;
-  }) {
-    setLoading(true);
-    setError("");
-    setProgress(0);
-    setLabel("Iniciando importação…");
-    setDetail(undefined);
+  const runImport = useCallback(
+    async (payload: { bazaarUrl: string; bazaarData?: unknown }) => {
+      setLoading(true);
+      setProgress(0);
+      setLabel("Iniciando importação…");
+      setDetail(undefined);
 
+      try {
+        const res = await fetch("/api/admin/bazaar/import", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await consumeImportStream(res, (event) => {
+          if (event.step === "error") return;
+          setProgress(event.progress);
+          setLabel(event.label);
+          setDetail(event.detail);
+        });
+
+        if (!result) throw new Error("Importação incompleta");
+        toast.success("Personagem importado — defina o preço para publicar");
+        router.push(`/admin/listings/${result.listingId}?imported=1`);
+      } catch (err) {
+        const message =
+          err instanceof Error ? err.message : "Erro ao importar";
+        toast.error(message);
+        setLoading(false);
+      }
+    },
+    [router, toast],
+  );
+
+  async function handlePasteJson() {
     try {
-      const res = await fetch("/api/admin/bazaar/import", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await consumeImportStream(res, (event) => {
-        if (event.step === "error") return;
-        setProgress(event.progress);
-        setLabel(event.label);
-        setDetail(event.detail);
-      });
-
-      if (!result) throw new Error("Importação incompleta");
-      router.push(`/admin/listings/${result.listingId}`);
+      const text = await navigator.clipboard.readText();
+      if (!text.trim()) {
+        toast.error("Área de transferência vazia");
+        return;
+      }
+      const parsed = parseBazaarJsonFromText(text);
+      setCaptured(parsed);
+      setBazaarUrl(parsed.bazaarUrl);
+      toast.success(
+        `${parsed.playerName} detectado — origem ${parsed.bazaarUrl.replace("https://", "")}`,
+      );
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro ao importar");
-      setLoading(false);
+      toast.error(
+        err instanceof Error ? err.message : "Não foi possível ler o JSON",
+      );
     }
   }
 
-  async function handleImport(e: React.FormEvent) {
+  async function handleImportCaptured(e: React.FormEvent) {
     e.preventDefault();
-    await runImport({ bazaarUrl });
+    if (!captured) {
+      toast.error("Cole o JSON capturado pelo userscript primeiro");
+      return;
+    }
+    await runImport({
+      bazaarUrl: captured.bazaarUrl,
+      bazaarData: captured.bazaarData,
+    });
   }
 
-  async function handleImportJson(e: React.FormEvent) {
+  async function handleDirectImport(e: React.FormEvent) {
     e.preventDefault();
-    try {
-      const bazaarData = JSON.parse(bazaarJson) as unknown;
-      await runImport({ bazaarUrl, bazaarData });
-    } catch {
-      setError("JSON inválido. Cole a resposta completa de /api/bazaar/{id}");
+    const url = bazaarPageUrlFromInput(bazaarUrl.trim());
+    if (!url) {
+      toast.error("URL inválida. Use …/bazaar/271119");
+      return;
     }
+    await runImport({ bazaarUrl: url });
   }
 
   async function createListing(payload: ItemFormPayload) {
     setLoading(true);
-    setError("");
     try {
       const res = await fetch("/api/admin/listings", {
         method: "POST",
@@ -115,9 +152,12 @@ export default function NewListingPage() {
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? "Erro ao criar anúncio");
+      toast.success("Anúncio de item criado");
       router.push(`/admin/listings/${body.listingId}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro ao criar anúncio");
+      toast.error(
+        err instanceof Error ? err.message : "Erro ao criar anúncio",
+      );
       setLoading(false);
     }
   }
@@ -152,7 +192,7 @@ export default function NewListingPage() {
               type="button"
               onClick={() => {
                 setTab(item.id);
-                setError("");
+                setCaptured(null);
               }}
               className={cn(
                 "rounded-xl border p-4 text-left transition",
@@ -176,139 +216,148 @@ export default function NewListingPage() {
         })}
       </div>
 
-      {error && (
-        <p className="mb-4 rounded-lg border border-red-900/50 bg-red-950/30 px-3 py-2 text-sm text-red-400">
-          {error}
-        </p>
-      )}
-
       {tab === "character" && (
-        <Card className="border-[var(--color-card-border)] bg-[var(--color-card)]/80">
-          <form onSubmit={handleImport} className="space-y-5">
-            <div>
-              <Label htmlFor="bazaarUrl">URL do Bazaar (RubinOT)</Label>
-              <Input
-                id="bazaarUrl"
-                placeholder="https://rubinot.com.br/bazaar/270418"
-                value={bazaarUrl}
-                onChange={(e) => setBazaarUrl(e.target.value)}
-                required
-                disabled={loading}
-                className="mt-1.5"
-              />
-              <p className="mt-2 text-xs leading-relaxed text-zinc-500">
-                A URL da página é HTML (
-                <code className="text-zinc-400">/bazaar/ID</code>). Os dados
-                vêm da API interna (
-                <code className="text-zinc-400">/api/bazaar/ID</code>), que só
-                responde com você logado no RubinOT.
-              </p>
-              {bazaarPageUrl && (
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <a
-                    href={bazaarPageUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-card-border)] px-3 py-1.5 text-xs text-[var(--color-primary)] transition hover:border-[var(--color-primary)]/50"
-                  >
-                    <ExternalLink className="h-3.5 w-3.5" />
-                    Abrir página do bazaar
-                  </a>
-                  {bazaarApiUrl && (
-                    <code className="break-all text-[11px] text-zinc-600">
-                      API: {bazaarApiUrl}
-                    </code>
-                  )}
+        <div className="space-y-4">
+          <Card className="overflow-hidden border-[var(--color-card-border)] bg-[var(--color-card)]/80">
+            <div className="border-b border-[var(--color-card-border)] bg-gradient-to-r from-[var(--color-primary)]/10 to-transparent px-5 py-4">
+              <div className="flex items-start gap-3">
+                <div className="rounded-lg bg-[var(--color-primary)]/15 p-2">
+                  <Sparkles className="h-5 w-5 text-[var(--color-primary)]" />
                 </div>
-              )}
+                <div>
+                  <h2 className="font-semibold text-zinc-100">
+                    Importar do RubinOT
+                  </h2>
+                  <p className="mt-1 text-sm leading-relaxed text-zinc-400">
+                    No site do RubinOT, use o botão{" "}
+                    <strong className="font-medium text-zinc-300">
+                      TP JSON
+                    </strong>{" "}
+                    (userscript) para capturar os dados. Volte aqui e cole — a
+                    URL do bazaar é detectada automaticamente.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {loading && (
-              <ImportProgressPanel
-                progress={progress}
-                label={importEventLabel({
-                  step: "fetch",
-                  label,
-                  progress,
-                  detail,
-                })}
-                detail={detail && label !== detail ? detail : undefined}
-              />
-            )}
+            <form onSubmit={handleImportCaptured} className="space-y-5 p-5">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  disabled={loading}
+                  onClick={handlePasteJson}
+                  className="shrink-0"
+                >
+                  <ClipboardPaste className="mr-2 h-4 w-4" />
+                  Colar JSON capturado
+                </Button>
+                <p className="text-xs leading-relaxed text-zinc-500">
+                  Copie no painel TP JSON no RubinOT, depois clique aqui. Não é
+                  necessário digitar a URL manualmente.
+                </p>
+              </div>
 
-            <Button
-              type="submit"
-              disabled={loading || !bazaarUrl.trim()}
-              className="w-full sm:w-auto"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              {loading ? "Importando…" : "Importar personagem"}
-            </Button>
-          </form>
+              {captured && (
+                <div className="rounded-xl border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/5 p-4">
+                  <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-primary)]">
+                    Personagem detectado
+                  </p>
+                  <p className="mt-2 text-lg font-semibold text-zinc-100">
+                    {captured.playerName}
+                  </p>
+                  <p className="mt-0.5 text-sm text-zinc-400">
+                    Level {captured.playerLevel}
+                    {captured.vocationName
+                      ? ` · ${captured.vocationName}`
+                      : ""}
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <a
+                      href={captured.bazaarUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-card-border)] bg-[var(--color-background)]/60 px-3 py-1.5 text-xs text-[var(--color-primary)] transition hover:border-[var(--color-primary)]/50"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      {captured.bazaarUrl.replace("https://", "")}
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setCaptured(null)}
+                      className="text-xs text-zinc-500 transition hover:text-zinc-300"
+                    >
+                      Limpar
+                    </button>
+                  </div>
+                </div>
+              )}
 
-          <details className="mt-6 rounded-lg border border-[var(--color-card-border)] p-4">
-            <summary className="cursor-pointer text-sm font-medium text-zinc-300">
-              Importar via JSON (403 ou Access denied)
+              {loading && (
+                <ImportProgressPanel
+                  progress={progress}
+                  label={importEventLabel({
+                    step: "fetch",
+                    label,
+                    progress,
+                    detail,
+                  })}
+                  detail={detail && label !== detail ? detail : undefined}
+                />
+              )}
+
+              <Button
+                type="submit"
+                disabled={loading || !captured}
+                className="w-full sm:w-auto"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                {loading ? "Importando…" : "Importar personagem"}
+              </Button>
+            </form>
+          </Card>
+
+          <details className="rounded-xl border border-[var(--color-card-border)] bg-[var(--color-card)]/40 p-4">
+            <summary className="cursor-pointer text-sm font-medium text-zinc-400 transition hover:text-zinc-200">
+              Importação direta pela URL (alternativa)
             </summary>
             <p className="mt-3 text-xs leading-relaxed text-zinc-500">
-              Abrir <code className="text-zinc-400">/api/bazaar/ID</code> direto
-              no navegador costuma retornar{" "}
-              <code className="text-zinc-400">Access denied</code> — o RubinOT
-              exige sessão. Copie o JSON pelo DevTools:
+              Tenta buscar a API no servidor. Se retornar 403, use o fluxo com
+              JSON acima.
             </p>
-            <ol className="mt-3 list-decimal space-y-2 pl-4 text-xs leading-relaxed text-zinc-500">
-              <li>
-                Faça login em{" "}
+            <form onSubmit={handleDirectImport} className="mt-4 space-y-3">
+              <div>
+                <Label htmlFor="bazaarUrl">URL do Bazaar</Label>
+                <Input
+                  id="bazaarUrl"
+                  placeholder="https://rubinot.com.br/bazaar/270418"
+                  value={bazaarUrl}
+                  onChange={(e) => setBazaarUrl(e.target.value)}
+                  disabled={loading}
+                  className="mt-1.5"
+                />
+              </div>
+              {bazaarPageUrl && !captured && (
                 <a
-                  href="https://rubinot.com.br"
+                  href={bazaarPageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--color-primary)] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs text-[var(--color-primary)] hover:underline"
                 >
-                  rubinot.com.br
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  Abrir página do bazaar
                 </a>
-                .
-              </li>
-              <li>
-                Abra a página do char (botão{" "}
-                <strong className="text-zinc-400">Abrir página do bazaar</strong>{" "}
-                acima).
-              </li>
-              <li>
-                Pressione <kbd className="rounded bg-zinc-800 px-1">F12</kbd> →
-                aba <strong className="text-zinc-400">Rede</strong> (Network) →
-                recarregue a página (
-                <kbd className="rounded bg-zinc-800 px-1">F5</kbd>).
-              </li>
-              <li>
-                Clique na requisição{" "}
-                <code className="text-zinc-400">bazaar/270870</code> (tipo fetch
-                ou xhr) → aba <strong className="text-zinc-400">Resposta</strong>{" "}
-                → copie todo o JSON (
-                <kbd className="rounded bg-zinc-800 px-1">Ctrl+A</kbd>,{" "}
-                <kbd className="rounded bg-zinc-800 px-1">Ctrl+C</kbd>).
-              </li>
-              <li>Cole abaixo e clique em Importar via JSON.</li>
-            </ol>
-            <form onSubmit={handleImportJson} className="mt-4 space-y-3">
-              <textarea
-                value={bazaarJson}
-                onChange={(e) => setBazaarJson(e.target.value)}
-                disabled={loading}
-                rows={8}
-                placeholder='{"auction":{"id":270870}, "player":{...}}'
-                className="w-full rounded-lg border border-[var(--color-card-border)] bg-[var(--color-background)] px-3 py-2 font-mono text-xs text-zinc-300"
-              />
+              )}
               <Button
                 type="submit"
                 variant="secondary"
-                disabled={loading || !bazaarUrl.trim() || !bazaarJson.trim()}
+                disabled={loading || !bazaarUrl.trim()}
               >
-                Importar via JSON
+                Tentar importação direta
               </Button>
             </form>
           </details>
-        </Card>
+        </div>
       )}
 
       {tab === "items" && (

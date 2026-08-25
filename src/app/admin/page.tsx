@@ -45,7 +45,7 @@ export default async function AdminDashboard() {
             href="/admin/listings/new"
             className="rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-black"
           >
-            Importar do Bazaar
+            Novo anúncio
           </Link>
           <Link
             href="/admin/listings"

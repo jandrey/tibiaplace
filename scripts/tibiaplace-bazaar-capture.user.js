@@ -147,7 +147,7 @@
       </div>
       <p class="tp-bc-status" aria-live="polite"></p>
       <textarea class="tp-bc-output" rows="12" placeholder="O JSON aparece aqui…" spellcheck="false"></textarea>
-      <p class="tp-bc-foot">Cole no admin TibiaPlace → Importar via JSON.</p>
+      <p class="tp-bc-foot">No TibiaPlace: Novo anúncio → Colar JSON capturado.</p>
     `;
 
     document.body.appendChild(wrap);

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ExternalLink, RefreshCw } from "lucide-react";
 import {
   CharacterEditorForm,
@@ -20,6 +21,7 @@ import {
   type ItemFormValues,
 } from "@/components/item-editor-form";
 import { ListingPublicationPanel } from "@/components/listing-publication-panel";
+import { useToast } from "@/components/toast-provider";
 import { Button, Card, Badge } from "@/components/ui";
 import {
   ImportProgressPanel,
@@ -145,8 +147,18 @@ export default function EditListingPage({
   const [syncLabel, setSyncLabel] = useState("");
   const [syncDetail, setSyncDetail] = useState<string>();
   const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
   const [formRevision, setFormRevision] = useState(0);
+  const toast = useToast();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("imported") !== "1") return;
+    toast.info(
+      "Importação concluída. Defina o preço acima e salve para publicar.",
+      7000,
+    );
+    window.history.replaceState(null, "", window.location.pathname);
+  }, [searchParams, toast]);
 
   const reloadListing = useCallback(
     async (id: string, options?: { silent?: boolean; remountForm?: boolean }) => {
@@ -239,9 +251,9 @@ export default function EditListingPage({
               JSON.stringify(listing.privacyToggles)
           ) {
             savePrivacyToggles(next.privacyToggles)
-              .then(() => setMessage("Privacidade atualizada"))
+              .then(() => toast.success("Privacidade atualizada"))
               .catch((err) =>
-                setError(
+                toast.error(
                   err instanceof Error
                     ? err.message
                     : "Erro ao salvar privacidade",
@@ -256,8 +268,6 @@ export default function EditListingPage({
   async function syncBazaar() {
     if (!data) return;
     setSyncing(true);
-    setError("");
-    setMessage("");
     setSyncProgress(0);
     setSyncLabel("Iniciando sincronização…");
     setSyncDetail(undefined);
@@ -274,10 +284,12 @@ export default function EditListingPage({
         setSyncDetail(event.detail);
       });
 
-      setMessage("Sincronizado com o bazaar");
+      toast.success("Sincronizado com o bazaar");
       await reloadListing(data.listing.id, { silent: true, remountForm: true });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro ao sincronizar");
+      toast.error(
+        err instanceof Error ? err.message : "Erro ao sincronizar",
+      );
     } finally {
       setSyncing(false);
     }
@@ -381,21 +393,6 @@ export default function EditListingPage({
         />
       )}
 
-      {(message || error) && (
-        <div className="space-y-2">
-          {message && (
-            <p className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-sm text-emerald-300">
-              {message}
-            </p>
-          )}
-          {error && (
-            <p className="rounded-lg border border-red-900/50 bg-red-950/30 px-4 py-2.5 text-sm text-red-400">
-              {error}
-            </p>
-          )}
-        </div>
-      )}
-
       {listing.type === "rubini_coins" && coinsInitial && (
         <CoinsEditorForm
           key={`${listing.id}-${formRevision}`}
@@ -417,7 +414,7 @@ export default function EditListingPage({
               const body = await res.json();
               throw new Error(body.error ?? "Erro ao salvar");
             }
-            setMessage("Anúncio salvo com sucesso");
+            toast.success("Anúncio salvo com sucesso");
             await reloadListing(listing.id, { silent: true });
           }}
         />
@@ -452,8 +449,7 @@ export default function EditListingPage({
               const body = await res.json();
               throw new Error(body.error ?? "Erro ao salvar");
             }
-            setError("");
-            setMessage("Anúncio salvo com sucesso");
+            toast.success("Anúncio salvo com sucesso");
             setData((prev) => (prev ? applyItemListingSave(prev, payload) : prev));
           }}
         />
@@ -495,7 +491,6 @@ export default function EditListingPage({
             const body = await res.json();
             throw new Error(body.error ?? "Erro ao salvar");
           }
-          setMessage("Personagem salvo com sucesso");
           await reloadListing(listing.id, { silent: true });
         }}
         sidebar={
