@@ -133,10 +133,10 @@ export function getListingBadges(
   if (charmSpent >= 1500) {
     badges.push({ id: "charms", label: "Muitos charms" });
   }
-  if (outfits >= 20) {
+  if (outfits > 30) {
     badges.push({ id: "outfits", label: "Muitos outfits" });
   }
-  if (mounts >= 5) {
+  if (mounts > 15) {
     badges.push({ id: "mounts", label: "Várias montarias" });
   }
   if (bossPoints >= 500) {

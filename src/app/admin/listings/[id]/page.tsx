@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ExternalLink, RefreshCw } from "lucide-react";
+import { ExternalLink, FileJson } from "lucide-react";
 import {
   CharacterEditorForm,
   formFromListingData,
@@ -21,20 +21,13 @@ import {
   type ItemFormValues,
 } from "@/components/item-editor-form";
 import { ListingPublicationPanel } from "@/components/listing-publication-panel";
+import { BazaarJsonImportPanel } from "@/components/bazaar-json-import-panel";
 import { useToast } from "@/components/toast-provider";
 import { Button, Card, Badge } from "@/components/ui";
-import {
-  ImportProgressPanel,
-  importEventLabel,
-} from "@/components/import-progress-panel";
-import { consumeImportStream } from "@/lib/bazaar/import-progress";
-import {
-  type PrivacyToggles,
-} from "@/lib/db/schema/listings";
+import { type PrivacyToggles } from "@/lib/db/schema/listings";
 import {
   LISTING_STATUS_COLORS,
   LISTING_STATUS_LABELS,
-  cn,
 } from "@/lib/utils";
 import {
   LISTING_TYPE_LABELS,
@@ -142,10 +135,7 @@ export default function EditListingPage({
 }) {
   const [data, setData] = useState<ListingData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [syncing, setSyncing] = useState(false);
-  const [syncProgress, setSyncProgress] = useState(0);
-  const [syncLabel, setSyncLabel] = useState("");
-  const [syncDetail, setSyncDetail] = useState<string>();
+  const [importOpen, setImportOpen] = useState(false);
   const [error, setError] = useState("");
   const [formRevision, setFormRevision] = useState(0);
   const toast = useToast();
@@ -265,36 +255,6 @@ export default function EditListingPage({
     );
   }
 
-  async function syncBazaar() {
-    if (!data) return;
-    setSyncing(true);
-    setSyncProgress(0);
-    setSyncLabel("Iniciando sincronização…");
-    setSyncDetail(undefined);
-
-    try {
-      const res = await fetch(`/api/admin/listings/${data.listing.id}/sync`, {
-        method: "POST",
-      });
-
-      await consumeImportStream(res, (event) => {
-        if (event.step === "error") return;
-        setSyncProgress(event.progress);
-        setSyncLabel(event.label);
-        setSyncDetail(event.detail);
-      });
-
-      toast.success("Sincronizado com o bazaar");
-      await reloadListing(data.listing.id, { silent: true, remountForm: true });
-    } catch (err) {
-      toast.error(
-        err instanceof Error ? err.message : "Erro ao sincronizar",
-      );
-    } finally {
-      setSyncing(false);
-    }
-  }
-
   if (loading) {
     return (
       <div className="mx-auto max-w-7xl space-y-6">
@@ -371,25 +331,28 @@ export default function EditListingPage({
               Ver público
             </Link>
           )}
-          {listing.bazaarUrl && listing.type === "character" && (
-            <Button variant="secondary" onClick={syncBazaar} disabled={syncing}>
-              <RefreshCw className={cn("mr-2 h-4 w-4", syncing && "animate-spin")} />
-              {syncing ? "Sincronizando…" : "Atualizar do bazaar"}
+          {listing.type === "character" && (
+            <Button
+              variant="secondary"
+              onClick={() => setImportOpen((open) => !open)}
+            >
+              <FileJson className="mr-2 h-4 w-4" />
+              {importOpen ? "Fechar importação" : "Importar JSON do bazaar"}
             </Button>
           )}
         </div>
       </div>
 
-      {syncing && (
-        <ImportProgressPanel
-          progress={syncProgress}
-          label={importEventLabel({
-            step: "fetch",
-            label: syncLabel,
-            progress: syncProgress,
-            detail: syncDetail,
-          })}
-          detail={syncDetail && syncLabel !== syncDetail ? syncDetail : undefined}
+      {importOpen && listing.type === "character" && (
+        <BazaarJsonImportPanel
+          title="Reimportar JSON do bazaar"
+          description="Cole um JSON atualizado do RubinOT. Level, skills e snapshot são atualizados; outfits, montarias e itens novos são adicionados sem alterar os que já existem. Preço, slug, título e privacidade são preservados."
+          submitLabel="Importar e mesclar"
+          importUrl={`/api/admin/listings/${listing.id}/import-json`}
+          onSuccess={async () => {
+            setImportOpen(false);
+            await reloadListing(listing.id, { silent: true, remountForm: true });
+          }}
         />
       )}
 

@@ -194,24 +194,24 @@ export function listingDisplayName(listing: {
   return listingDisplayNameForType({ ...listing, type: "character" });
 }
 
-export function vocationBadgeClass(vocation: string | null | undefined): string {
-  const v = (vocation ?? "").toLowerCase();
-  if (v.includes("knight")) {
-    return "bg-red-500/15 text-red-300 ring-1 ring-red-500/25";
-  }
-  if (v.includes("paladin")) {
-    return "bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/25";
-  }
-  if (v.includes("sorcerer")) {
-    return "bg-blue-500/15 text-blue-300 ring-1 ring-blue-500/25";
-  }
-  if (v.includes("druid")) {
-    return "bg-teal-500/15 text-teal-300 ring-1 ring-teal-500/25";
-  }
-  if (v.includes("monk")) {
-    return "bg-violet-500/15 text-violet-300 ring-1 ring-violet-500/25";
-  }
-  return "bg-[var(--color-primary)]/15 text-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/25";
+export { vocationBadgeClass } from "@/lib/vocation-colors";
+
+/** Compact label for listing cards (full name stays in title/tooltip). */
+export function vocationShortLabel(vocation: string | null | undefined): string {
+  const key = (vocation ?? "").trim().toLowerCase();
+  const map: Record<string, string> = {
+    "master sorcerer": "MS",
+    "elder druid": "ED",
+    "royal paladin": "RP",
+    "elite knight": "EK",
+    "exalted monk": "EM",
+    sorcerer: "Sorc",
+    druid: "Druid",
+    paladin: "Pal",
+    knight: "Knight",
+    monk: "Monk",
+  };
+  return map[key] ?? vocation?.trim() ?? "";
 }
 
 export const LISTING_STATUS_LABELS: Record<string, string> = {
@@ -223,9 +223,9 @@ export const LISTING_STATUS_LABELS: Record<string, string> = {
 };
 
 export const LISTING_STATUS_COLORS: Record<string, string> = {
-  draft: "bg-zinc-500/20 text-zinc-300",
-  available: "bg-emerald-500/20 text-emerald-300",
-  reserved: "bg-amber-500/20 text-amber-300",
-  sold: "bg-blue-500/20 text-blue-300",
-  archived: "bg-zinc-700/20 text-zinc-400",
+  draft: "bg-[var(--color-accent)] text-[var(--color-muted)] ring-1 ring-[var(--color-card-border)]",
+  available: "bg-[var(--color-success-muted)] text-[var(--color-success)] ring-1 ring-[var(--color-success)]/25",
+  reserved: "bg-[var(--color-primary-muted)] text-[var(--color-gold)] ring-1 ring-[var(--color-primary)]/25",
+  sold: "bg-[var(--color-secondary-muted)] text-[var(--color-mana)] ring-1 ring-[var(--color-mana)]/25",
+  archived: "bg-[var(--color-accent)] text-[var(--color-muted-foreground)] ring-1 ring-[var(--color-card-border)]",
 };

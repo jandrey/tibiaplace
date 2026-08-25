@@ -1,5 +1,6 @@
 import {
   boolean,
+  index,
   integer,
   pgTable,
   text,
@@ -18,13 +19,17 @@ export const catalogOutfits = pgTable("catalog_outfits", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
-export const catalogMounts = pgTable("catalog_mounts", {
-  id: integer("id").primaryKey(),
-  name: text("name").notNull(),
-  clientId: integer("client_id"),
-  imageUrl: text("image_url"),
-  createdAt: timestamp("created_at").notNull().defaultNow(),
-});
+export const catalogMounts = pgTable(
+  "catalog_mounts",
+  {
+    id: integer("id").primaryKey(),
+    name: text("name").notNull(),
+    clientId: integer("client_id"),
+    imageUrl: text("image_url"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [index("catalog_mounts_client_id_idx").on(table.clientId)],
+);
 
 export const catalogItems = pgTable(
   "catalog_items",

@@ -242,10 +242,10 @@ export function CharacterDetailsTabs({
       }
     >
       <header className="border-b border-[var(--cd-border)] px-4 py-4 sm:px-5">
-        <h2 className="text-base font-semibold text-zinc-100">
+        <h2 className="text-base font-semibold text-[var(--color-foreground)]">
           Detalhes do personagem
         </h2>
-        <p className="mt-0.5 text-xs text-zinc-500">
+        <p className="mt-0.5 text-xs text-[var(--color-muted-foreground)]">
           Dados importados do Bazaar · RubinOT
         </p>
       </header>
@@ -253,7 +253,7 @@ export function CharacterDetailsTabs({
       <div className="flex flex-col">
         <nav
           aria-label="Seções do personagem"
-          className="shrink-0 border-b border-[var(--cd-border)] bg-zinc-950/20"
+          className="shrink-0 border-b border-[var(--cd-border)] bg-[var(--color-surface)]/40"
         >
           <div
             className="grid grid-cols-2 gap-1 p-2 sm:grid-cols-4 sm:px-3 sm:pt-3"
@@ -273,7 +273,7 @@ export function CharacterDetailsTabs({
                     "rounded-lg px-3 py-2.5 text-left text-xs font-medium transition sm:text-sm",
                     isActive
                       ? "bg-[var(--color-primary)]/12 text-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/25"
-                      : "text-zinc-400 hover:bg-zinc-900/80 hover:text-zinc-200",
+                      : "text-[var(--color-muted)] hover:bg-[var(--color-accent)] hover:text-[var(--color-foreground)]",
                   )}
                 >
                   {group.label}
@@ -302,7 +302,7 @@ export function CharacterDetailsTabs({
                     "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm transition",
                     active
                       ? "bg-[var(--color-primary)] font-medium text-[var(--color-primary-foreground)] shadow-sm"
-                      : "text-zinc-400 hover:bg-zinc-800/80 hover:text-zinc-200",
+                      : "text-[var(--color-muted)] hover:bg-[var(--color-accent-hover)] hover:text-[var(--color-foreground)]",
                   )}
                 >
                   <Icon className="h-3.5 w-3.5 shrink-0 opacity-90" />
@@ -313,7 +313,7 @@ export function CharacterDetailsTabs({
                         "rounded-full px-1.5 py-px text-[10px] tabular-nums",
                         active
                           ? "bg-black/20 text-inherit"
-                          : "bg-zinc-800 text-zinc-400",
+                          : "bg-[var(--color-accent)] text-[var(--color-muted)]",
                       )}
                     >
                       {formatNumber(badge)}
@@ -326,7 +326,7 @@ export function CharacterDetailsTabs({
         </nav>
 
         <div className="w-full min-w-0 flex-1 bg-[var(--cd-bg)] p-4 sm:p-5">
-          <p className="mb-4 shrink-0 text-xs font-medium tracking-wide text-zinc-500 uppercase">
+          <p className="mb-4 shrink-0 text-xs font-medium tracking-wide text-[var(--color-muted-foreground)] uppercase">
             {activeGroup.label} · {activeTab.label}
           </p>
 

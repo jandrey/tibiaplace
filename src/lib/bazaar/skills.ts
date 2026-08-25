@@ -83,6 +83,20 @@ export type ParsedSkill = {
   percent: number | null;
 };
 
+export function parseLevelSkill(
+  level: number | null | undefined,
+  percent: number | null | undefined,
+): ParsedSkill | null {
+  if (level == null || !Number.isFinite(level)) return null;
+  return {
+    key: "level",
+    label: "Level",
+    shortLabel: "Level",
+    level,
+    percent: percent != null && Number.isFinite(percent) ? percent : null,
+  };
+}
+
 export function triesRequired(base: number, level: number, offset: number) {
   if (level <= offset) return 0;
   return base * SKILL_RATE ** (level - offset);

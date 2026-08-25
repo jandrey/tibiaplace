@@ -37,14 +37,14 @@ export function AdminNav({ email }: { email: string }) {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--color-card-border)] bg-[var(--color-background)]/90 backdrop-blur-md">
+    <header className="site-header sticky top-0 z-40">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4">
         <div className="flex min-w-0 flex-1 items-center gap-5">
           <Link
             href="/admin"
             className="group flex shrink-0 items-center gap-2"
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--color-primary)]/15 text-xs font-bold text-[var(--color-primary)] transition group-hover:bg-[var(--color-primary)]/25">
+            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--color-primary-muted)] text-xs font-bold text-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20 transition group-hover:bg-[var(--color-primary)]/22">
               TP
             </span>
             <span className="hidden text-lg font-semibold tracking-tight sm:inline">
@@ -67,8 +67,8 @@ export function AdminNav({ email }: { email: string }) {
                   className={cn(
                     "inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-sm font-medium transition sm:px-3",
                     active
-                      ? "bg-[var(--color-primary)]/15 text-[var(--color-primary)]"
-                      : "text-zinc-400 hover:bg-[var(--color-accent)] hover:text-zinc-100",
+                      ? "bg-[var(--color-primary-muted)] text-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20"
+                      : "text-[var(--color-muted)] hover:bg-[var(--color-accent)] hover:text-[var(--color-foreground)]",
                   )}
                 >
                   <Icon className="h-3.5 w-3.5 shrink-0 opacity-80" />
@@ -97,7 +97,7 @@ export function AdminNav({ email }: { email: string }) {
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-1 rounded-lg border border-[var(--color-card-border)] px-2.5 py-1.5 text-xs text-zinc-400 transition hover:border-zinc-600 hover:text-zinc-200 md:inline-flex"
+            className="hidden items-center gap-1 rounded-lg border border-[var(--color-card-border)] px-2.5 py-1.5 text-xs text-[var(--color-muted)] transition hover:border-[var(--color-primary)]/25 hover:text-[var(--color-foreground)] md:inline-flex"
             title="Abrir vitrine pública"
           >
             Vitrine
@@ -105,7 +105,7 @@ export function AdminNav({ email }: { email: string }) {
           </Link>
 
           <p
-            className="hidden max-w-[140px] truncate text-xs text-zinc-500 lg:block"
+            className="hidden max-w-[140px] truncate text-xs text-[var(--color-muted-foreground)] lg:block"
             title={email}
           >
             {email}

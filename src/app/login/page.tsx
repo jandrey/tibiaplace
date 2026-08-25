@@ -35,7 +35,7 @@ export default function LoginPage() {
       <main className="mx-auto flex max-w-md flex-col gap-6 px-4 py-16">
         <Card>
           <h1 className="text-2xl font-bold">Entrar</h1>
-          <p className="mt-2 text-sm text-zinc-400">
+          <p className="mt-2 text-sm text-[var(--color-muted)]">
             Acesso ao painel TibiaPlace
           </p>
 
@@ -62,7 +62,7 @@ export default function LoginPage() {
                 autoComplete="current-password"
               />
             </div>
-            {error && <p className="text-sm text-red-400">{error}</p>}
+            {error && <p className="text-sm text-[var(--color-danger)]">{error}</p>}
             <Button type="submit" disabled={loading} className="w-full">
               {loading ? "Carregando..." : "Entrar"}
             </Button>

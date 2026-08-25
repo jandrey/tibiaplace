@@ -1,17 +1,22 @@
 import { eq } from "drizzle-orm";
-import { syncListingFromBazaar } from "@/lib/bazaar/importer";
+import { z } from "zod";
+import { mergeListingFromBazaar } from "@/lib/bazaar/importer";
 import {
   encodeImportEvent,
   type ImportProgressReporter,
 } from "@/lib/bazaar/import-progress";
-import { fetchBazaarData } from "@/lib/bazaar/rubinot-fetch";
-import { parseBazaarUrl } from "@/lib/bazaar/types";
+import { assertBazaarData } from "@/lib/bazaar/types";
 import { requireAdminSession } from "@/lib/auth/session";
 import { db } from "@/lib/db";
 import { listings } from "@/lib/db/schema";
 
+const bodySchema = z.object({
+  bazaarUrl: z.string().url(),
+  bazaarData: z.unknown(),
+});
+
 export async function POST(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const session = await requireAdminSession();
@@ -31,17 +36,29 @@ export async function POST(
       };
 
       try {
+        const body = bodySchema.parse(await request.json());
+        assertBazaarData(body.bazaarData);
+        const data = body.bazaarData;
+
         const [listing] = await db
           .select()
           .from(listings)
           .where(eq(listings.id, id))
           .limit(1);
 
-        if (!listing?.bazaarUrl) {
+        if (!listing) {
+          controller.enqueue(
+            encodeImportEvent({ step: "error", error: "Anúncio não encontrado" }),
+          );
+          controller.close();
+          return;
+        }
+
+        if (listing.type !== "character") {
           controller.enqueue(
             encodeImportEvent({
               step: "error",
-              error: "Anúncio sem URL do bazaar",
+              error: "Importação JSON disponível apenas para personagens",
             }),
           );
           controller.close();
@@ -50,16 +67,15 @@ export async function POST(
 
         emit({
           step: "validate",
-          label: "Validando URL do bazaar",
+          label: "Validando JSON do bazaar",
           progress: 4,
         });
 
-        const bazaarId = parseBazaarUrl(listing.bazaarUrl);
-        if (!bazaarId) {
+        if (listing.bazaarId && listing.bazaarId !== data.auction.id) {
           controller.enqueue(
             encodeImportEvent({
               step: "error",
-              error: "URL do bazaar inválida",
+              error: `Este anúncio é do bazaar #${listing.bazaarId}, mas o JSON é do #${data.auction.id}.`,
             }),
           );
           controller.close();
@@ -68,34 +84,32 @@ export async function POST(
 
         emit({
           step: "fetch",
-          label: "Baixando dados do RubinOT",
-          progress: 8,
-        });
-
-        const data = await fetchBazaarData(bazaarId);
-
-        emit({
-          step: "fetch",
-          label: `Sincronizando ${data.player.name}`,
+          label: `Mesclando ${data.player.name}`,
           detail: `Level ${data.player.level} · ${data.player.vocationName}`,
           progress: 22,
         });
 
-        await syncListingFromBazaar(id, listing.bazaarUrl, data, {
-          slug: listing.slug,
-          title: listing.title,
-          description: listing.description,
-          priceBrl: listing.priceBrl,
-          priceCoins: listing.priceCoins,
-          privacyToggles: listing.privacyToggles,
-          featured: listing.featured,
-          status: listing.status,
-        }, emit);
+        await mergeListingFromBazaar(
+          id,
+          body.bazaarUrl,
+          data,
+          {
+            slug: listing.slug,
+            title: listing.title,
+            description: listing.description,
+            priceBrl: listing.priceBrl,
+            priceCoins: listing.priceCoins,
+            privacyToggles: listing.privacyToggles,
+            featured: listing.featured,
+            status: listing.status,
+          },
+          emit,
+        );
 
         controller.enqueue(
           encodeImportEvent({
             step: "done",
-            label: "Sincronização concluída",
+            label: "Importação concluída",
             progress: 100,
             listingId: id,
             slug: listing.slug,
@@ -103,7 +117,7 @@ export async function POST(
         );
       } catch (error) {
         const message =
-          error instanceof Error ? error.message : "Erro ao sincronizar";
+          error instanceof Error ? error.message : "Erro ao importar JSON";
         controller.enqueue(encodeImportEvent({ step: "error", error: message }));
       } finally {
         controller.close();

@@ -27,10 +27,10 @@ export const MARKETPLACE_SECTIONS: MarketplaceSection[] = [
     description:
       "Skills, itens, charms, outfits e montarias importados com dados reais.",
     icon: User,
-    glow: "bg-amber-500/20",
-    accent: "text-amber-300",
-    ring: "group-hover:shadow-amber-500/20",
-    chip: "bg-amber-500/15 text-amber-300 ring-amber-500/30",
+    glow: "bg-[var(--color-primary)]/18",
+    accent: "text-[var(--color-gold)]",
+    ring: "group-hover:shadow-[var(--color-primary)]/18",
+    chip: "bg-[var(--color-primary-muted)] text-[var(--color-gold)] ring-[var(--color-primary)]/28",
   },
   {
     id: "rubini_coins",
@@ -40,10 +40,10 @@ export const MARKETPLACE_SECTIONS: MarketplaceSection[] = [
     description:
       "Escolha a quantidade, veja descontos progressivos e finalize no WhatsApp.",
     icon: Coins,
-    glow: "bg-yellow-400/20",
-    accent: "text-yellow-200",
-    ring: "group-hover:shadow-yellow-400/20",
-    chip: "bg-yellow-500/15 text-yellow-200 ring-yellow-500/30",
+    glow: "bg-[var(--color-gold)]/16",
+    accent: "text-[var(--color-gold)]",
+    ring: "group-hover:shadow-[var(--color-gold)]/16",
+    chip: "bg-[var(--color-primary-muted)] text-[var(--color-gold)] ring-[var(--color-gold-dim)]/30",
   },
   {
     id: "items",
@@ -53,10 +53,10 @@ export const MARKETPLACE_SECTIONS: MarketplaceSection[] = [
     description:
       "Anúncios de itens específicos com tier, quantidade e preço transparente.",
     icon: Package,
-    glow: "bg-sky-500/20",
-    accent: "text-sky-300",
-    ring: "group-hover:shadow-sky-500/20",
-    chip: "bg-sky-500/15 text-sky-300 ring-sky-500/30",
+    glow: "bg-[var(--color-secondary)]/16",
+    accent: "text-[var(--color-secondary)]",
+    ring: "group-hover:shadow-[var(--color-secondary)]/16",
+    chip: "bg-[var(--color-secondary-muted)] text-[var(--color-secondary)] ring-[var(--color-secondary)]/28",
   },
   {
     id: "intermediario",
@@ -67,10 +67,10 @@ export const MARKETPLACE_SECTIONS: MarketplaceSection[] = [
       "Intermediação de item ou personagem com acompanhamento do vendedor na negociação.",
     ctaLabel: "Solicitar intermediação",
     icon: Handshake,
-    glow: "bg-emerald-500/20",
-    accent: "text-emerald-300",
-    ring: "group-hover:shadow-emerald-500/20",
-    chip: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
+    glow: "bg-[var(--color-success)]/16",
+    accent: "text-[var(--color-success)]",
+    ring: "group-hover:shadow-[var(--color-success)]/16",
+    chip: "bg-[var(--color-success-muted)] text-[var(--color-success)] ring-[var(--color-success)]/28",
   },
 ];
 

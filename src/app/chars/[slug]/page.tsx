@@ -109,8 +109,8 @@ export default async function CharPage({
                   className={cn(
                     "shrink-0",
                     listing.status === "available"
-                      ? "bg-emerald-500/15 text-emerald-300"
-                      : "bg-zinc-700/50 text-zinc-300",
+                      ? "bg-[var(--color-success-muted)] text-[var(--color-success)] ring-1 ring-[var(--color-success)]/25"
+                      : "bg-[var(--color-accent)] text-[var(--color-muted)] ring-1 ring-[var(--color-card-border)]",
                   )}
                 >
                   {listing.status === "available" ? "À venda" : "Vendido"}
@@ -118,10 +118,10 @@ export default async function CharPage({
               </div>
 
               <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-                <span className="text-zinc-300">
+                <span className="text-[var(--color-foreground)]">
                   Level {listing.level}
                   {levelPercent != null && (
-                    <span className="text-zinc-500">
+                    <span className="text-[var(--color-muted-foreground)]">
                       {" "}
                       ({levelPercent.toFixed(2)}%)
                     </span>
@@ -129,7 +129,7 @@ export default async function CharPage({
                 </span>
                 {listing.vocation && (
                   <>
-                    <span className="text-zinc-700" aria-hidden>
+                    <span className="text-[var(--color-card-border)]" aria-hidden>
                       ·
                     </span>
                     <Badge className={vocationBadgeClass(listing.vocation)}>
@@ -139,10 +139,10 @@ export default async function CharPage({
                 )}
                 {listing.worldName && (
                   <>
-                    <span className="text-zinc-700" aria-hidden>
+                    <span className="text-[var(--color-card-border)]" aria-hidden>
                       ·
                     </span>
-                    <span className="text-zinc-400">{listing.worldName}</span>
+                    <span className="text-[var(--color-muted)]">{listing.worldName}</span>
                   </>
                 )}
               </div>
@@ -153,20 +153,20 @@ export default async function CharPage({
               <div className="flex flex-wrap gap-3">
                 {listing.priceBrl && (
                   <div className="min-w-[140px] rounded-lg border border-[var(--color-card-border)] bg-[var(--color-card)] px-4 py-2.5">
-                    <p className="text-[10px] font-medium tracking-wider text-zinc-500 uppercase">
+                    <p className="text-[10px] font-medium tracking-wider text-[var(--color-muted-foreground)] uppercase">
                       Reais
                     </p>
-                    <p className="mt-0.5 text-lg font-bold tabular-nums text-emerald-400">
+                    <p className="mt-0.5 text-lg font-bold tabular-nums text-[var(--color-hp)]">
                       {formatBrl(listing.priceBrl)}
                     </p>
                   </div>
                 )}
                 {listing.priceCoins != null && listing.priceCoins > 0 && (
                   <div className="min-w-[140px] rounded-lg border border-[var(--color-card-border)] bg-[var(--color-card)] px-4 py-2.5">
-                    <p className="text-[10px] font-medium tracking-wider text-zinc-500 uppercase">
+                    <p className="text-[10px] font-medium tracking-wider text-[var(--color-muted-foreground)] uppercase">
                       Rubini Coins
                     </p>
-                    <p className="mt-0.5 text-lg font-bold tabular-nums text-amber-400">
+                    <p className="mt-0.5 text-lg font-bold tabular-nums text-[var(--color-gold)]">
                       {formatNumber(listing.priceCoins)}
                     </p>
                   </div>

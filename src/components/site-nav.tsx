@@ -22,10 +22,10 @@ export function SiteNav({ isAdmin }: { isAdmin: boolean }) {
             className={cn(
               "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition",
               active
-                ? "bg-[var(--color-primary)]/15 text-[var(--color-primary)]"
+                ? "bg-[var(--color-primary-muted)] text-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20"
                 : onHub
-                  ? "text-zinc-500 hover:bg-[var(--color-accent)] hover:text-zinc-200"
-                  : "text-[var(--color-muted)] hover:bg-[var(--color-accent)] hover:text-white",
+                  ? "text-[var(--color-muted-foreground)] hover:bg-[var(--color-accent)] hover:text-[var(--color-foreground)]"
+                  : "text-[var(--color-muted)] hover:bg-[var(--color-accent)] hover:text-[var(--color-foreground)]",
             )}
           >
             <Icon className="h-3.5 w-3.5" />
@@ -36,7 +36,7 @@ export function SiteNav({ isAdmin }: { isAdmin: boolean }) {
       <span className="mx-1 h-4 w-px bg-[var(--color-card-border)]" />
       <Link
         href={isAdmin ? "/admin" : "/login"}
-        className="rounded-lg px-3 py-1.5 text-[var(--color-muted)] transition hover:bg-[var(--color-accent)] hover:text-white"
+        className="rounded-lg px-3 py-1.5 text-[var(--color-muted)] transition hover:bg-[var(--color-accent)] hover:text-[var(--color-foreground)]"
       >
         Admin
       </Link>

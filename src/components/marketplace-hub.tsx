@@ -20,9 +20,9 @@ function MarketplaceHubCard({
     <Link
       href={section.href}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-card)]/80 transition duration-300",
-        "hover:-translate-y-0.5 hover:border-zinc-600 hover:bg-[var(--color-card)]",
-        "shadow-lg shadow-black/25 hover:shadow-xl",
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-card)]/90 transition duration-300",
+        "hover:-translate-y-0.5 hover:border-[var(--color-primary)]/25 hover:bg-[var(--color-card-elevated)]",
+        "shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/40",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]/40",
         section.ring,
       )}
@@ -48,8 +48,8 @@ function MarketplaceHubCard({
           </span>
           <span
             className={cn(
-              "inline-flex h-7 w-7 items-center justify-center rounded-lg border border-[var(--color-card-border)] bg-[var(--color-accent)]/60 text-zinc-500 transition",
-              "group-hover:border-zinc-600 group-hover:text-white",
+              "inline-flex h-7 w-7 items-center justify-center rounded-lg border border-[var(--color-card-border)] bg-[var(--color-accent)]/60 text-[var(--color-muted-foreground)] transition",
+              "group-hover:border-[var(--color-primary)]/25 group-hover:text-[var(--color-foreground)]",
             )}
           >
             <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -57,15 +57,15 @@ function MarketplaceHubCard({
         </div>
 
         <div className="mt-4">
-          <p className="text-[10px] font-semibold tracking-[0.16em] text-zinc-500 uppercase">
+          <p className="text-[10px] font-semibold tracking-[0.16em] text-[var(--color-muted-foreground)] uppercase">
             {section.label}
           </p>
 
-          <h2 className="mt-1.5 line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-white">
+          <h2 className="mt-1.5 line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-[var(--color-foreground)]">
             {section.headline}
           </h2>
 
-          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-zinc-400">
+          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--color-muted)]">
             {section.description}
           </p>
         </div>
@@ -90,10 +90,10 @@ export function MarketplaceHub() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-3xl" />
-        <div className="absolute right-[-10%] bottom-[-10%] h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
-        <div className="absolute bottom-0 left-[-5%] h-64 w-64 rounded-full bg-amber-500/10 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(9,9,11,0.45)_55%,rgba(9,9,11,0.95)_100%)]" />
+        <div className="absolute top-0 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-[var(--glow-primary)] blur-3xl" />
+        <div className="absolute right-[-10%] bottom-[-10%] h-72 w-72 rounded-full bg-[var(--glow-secondary)] blur-3xl" />
+        <div className="absolute bottom-0 left-[-5%] h-64 w-64 rounded-full bg-[var(--glow-arcane)] blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,14,23,0.45)_55%,rgba(10,14,23,0.95)_100%)]" />
       </div>
 
       <SiteHeader variant="hub" />
@@ -107,7 +107,7 @@ export function MarketplaceHub() {
             O que você quer
             <span className="block text-[var(--color-primary)]">comprar hoje?</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
             Escolha uma vitrine ou solicite intermediação para negociar com mais
             segurança.
           </p>
@@ -119,7 +119,7 @@ export function MarketplaceHub() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-xs text-zinc-600">
+        <p className="mt-10 text-center text-xs text-[var(--color-muted-foreground)]">
           TibiaPlace · compra segura via WhatsApp
         </p>
       </main>

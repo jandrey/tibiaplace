@@ -107,14 +107,22 @@ export async function getPublicListings(filters: ListingFilters = {}) {
   }
 
   if (filters.q) {
-    conditions.push(
-      or(
-        ilike(listings.title, `%${filters.q}%`),
-        ilike(listings.description, `%${filters.q}%`),
-        ilike(listings.vocation, `%${filters.q}%`),
-        ilike(listings.worldName, `%${filters.q}%`),
-      )!,
-    );
+    const q = filters.q.trim();
+    if (q) {
+      const pattern = `%${q}%`;
+      conditions.push(
+        or(
+          ilike(listings.title, pattern),
+          ilike(listings.description, pattern),
+          ilike(listings.vocation, pattern),
+          ilike(listings.worldName, pattern),
+          ilike(listings.characterName, pattern),
+          ilike(listings.slug, pattern),
+          sql`${listings.snapshotData}->'player'->>'name' ILIKE ${pattern}`,
+          sql`${listings.typeData}->>'name' ILIKE ${pattern}`,
+        )!,
+      );
+    }
   }
 
   if (filters.vocation) {

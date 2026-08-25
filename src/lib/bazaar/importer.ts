@@ -521,6 +521,364 @@ async function insertListingRelations(
   }
 }
 
+async function mergeListingRelations(
+  db: Db,
+  listingId: string,
+  data: BazaarData,
+  report?: ImportProgressReporter,
+) {
+  const highlightIds = new Set(
+    (data.highlightItems ?? []).map((item) => item.itemId),
+  );
+
+  const [
+    existingOutfits,
+    existingMounts,
+    existingItems,
+    existingCharms,
+    existingBlessings,
+    existingAchievements,
+    existingBosstiaries,
+    existingBestiary,
+    existingGems,
+    existingTitles,
+    existingWeaponProficiency,
+  ] = await Promise.all([
+    db
+      .select({
+        looktype: listingOutfits.looktype,
+        addons: listingOutfits.addons,
+      })
+      .from(listingOutfits)
+      .where(eq(listingOutfits.listingId, listingId)),
+    db
+      .select({ mountId: listingMounts.mountId })
+      .from(listingMounts)
+      .where(eq(listingMounts.listingId, listingId)),
+    db
+      .select({
+        itemId: listingItems.itemId,
+        slotId: listingItems.slotId,
+        isStoreItem: listingItems.isStoreItem,
+      })
+      .from(listingItems)
+      .where(eq(listingItems.listingId, listingId)),
+    db
+      .select({ charmId: listingCharms.charmId })
+      .from(listingCharms)
+      .where(eq(listingCharms.listingId, listingId)),
+    db
+      .select({ name: listingBlessings.name })
+      .from(listingBlessings)
+      .where(eq(listingBlessings.listingId, listingId)),
+    db
+      .select({ achievementId: listingAchievements.achievementId })
+      .from(listingAchievements)
+      .where(eq(listingAchievements.listingId, listingId)),
+    db
+      .select({ bossId: listingBosstiaries.bossId })
+      .from(listingBosstiaries)
+      .where(eq(listingBosstiaries.listingId, listingId)),
+    db
+      .select({ raceId: listingBestiary.raceId })
+      .from(listingBestiary)
+      .where(eq(listingBestiary.listingId, listingId)),
+    db
+      .select({ gemId: listingGems.gemId })
+      .from(listingGems)
+      .where(eq(listingGems.listingId, listingId)),
+    db
+      .select({ titleId: listingTitles.titleId })
+      .from(listingTitles)
+      .where(eq(listingTitles.listingId, listingId)),
+    db
+      .select({ itemId: listingWeaponProficiency.itemId })
+      .from(listingWeaponProficiency)
+      .where(eq(listingWeaponProficiency.listingId, listingId)),
+  ]);
+
+  const outfitKeys = new Set(
+    existingOutfits.map((row) => `${row.looktype}:${row.addons}`),
+  );
+  const mountIds = new Set(existingMounts.map((row) => row.mountId));
+  const itemKeys = new Set(
+    existingItems.map(
+      (row) => `${row.itemId}:${row.slotId ?? "null"}:${row.isStoreItem}`,
+    ),
+  );
+  const charmIds = new Set(existingCharms.map((row) => row.charmId));
+  const blessingNames = new Set(existingBlessings.map((row) => row.name));
+  const achievementIds = new Set(
+    existingAchievements.map((row) => row.achievementId),
+  );
+  const bossIds = new Set(existingBosstiaries.map((row) => row.bossId));
+  const bestiaryRaceIds = new Set(existingBestiary.map((row) => row.raceId));
+  const gemIds = new Set(existingGems.map((row) => row.gemId));
+  const titleIds = new Set(existingTitles.map((row) => row.titleId));
+  const weaponItemIds = new Set(
+    existingWeaponProficiency.map((row) => row.itemId),
+  );
+
+  const sections: Array<{ label: string; run: () => Promise<void> }> = [];
+
+  const newOutfits = (data.outfits ?? []).filter(
+    (outfit) => !outfitKeys.has(`${outfit.info.looktype}:${outfit.addons}`),
+  );
+  if (newOutfits.length) {
+    sections.push({
+      label: `${newOutfits.length} outfits novos`,
+      run: async () => {
+        await db.insert(listingOutfits).values(
+          newOutfits.map((outfit) => ({
+            id: nanoid(),
+            listingId,
+            looktype: outfit.info.looktype,
+            addons: outfit.addons,
+            outfitName: outfit.info.name,
+          })),
+        );
+      },
+    });
+  }
+
+  const newMounts = (data.mounts ?? []).filter((mount) => !mountIds.has(mount.id));
+  if (newMounts.length) {
+    sections.push({
+      label: `${newMounts.length} montarias novas`,
+      run: async () => {
+        for (const mount of newMounts) {
+          const mountId = await resolveCatalogMountId(db, mount);
+          await db.insert(listingMounts).values({
+            id: nanoid(),
+            listingId,
+            mountId,
+            mountName: mount.name,
+            clientId: mount.clientId,
+          });
+        }
+      },
+    });
+  }
+
+  const allItems = [
+    ...(data.items ?? []).map((item) => ({
+      ...item,
+      isStoreItem: false,
+      isHighlighted: highlightIds.has(item.itemId),
+    })),
+    ...(data.storeItems ?? []).map((item) => ({
+      ...item,
+      isStoreItem: true,
+      isHighlighted: highlightIds.has(item.itemId),
+    })),
+  ];
+  const newItems = allItems.filter(
+    (item) =>
+      !itemKeys.has(`${item.itemId}:${item.slotId ?? "null"}:${item.isStoreItem}`),
+  );
+  if (newItems.length) {
+    sections.push({
+      label: `${newItems.length} itens novos`,
+      run: async () => {
+        await db.insert(listingItems).values(
+          newItems.map((item) => ({
+            id: nanoid(),
+            listingId,
+            itemId: item.itemId,
+            clientId: item.clientId,
+            name: item.name,
+            count: item.count,
+            tier: item.tier,
+            slotId: item.slotId,
+            description: item.description,
+            isStoreItem: item.isStoreItem,
+            isHighlighted: item.isHighlighted,
+          })),
+        );
+      },
+    });
+  }
+
+  const newCharms = (data.charms ?? []).filter((charm) => !charmIds.has(charm.id));
+  if (newCharms.length) {
+    sections.push({
+      label: `${newCharms.length} charms novos`,
+      run: async () => {
+        await db.insert(listingCharms).values(
+          newCharms.map((charm) => ({
+            id: nanoid(),
+            listingId,
+            charmId: charm.id,
+            tier: charm.tier,
+            raceId: charm.raceId,
+            type: charm.type,
+          })),
+        );
+      },
+    });
+  }
+
+  const newBlessings = (data.blessings ?? []).filter(
+    (blessing) => !blessingNames.has(blessing.name),
+  );
+  if (newBlessings.length) {
+    sections.push({
+      label: `${newBlessings.length} bênçãos novas`,
+      run: async () => {
+        await db.insert(listingBlessings).values(
+          newBlessings.map((blessing) => ({
+            id: nanoid(),
+            listingId,
+            name: blessing.name,
+            count: blessing.count,
+          })),
+        );
+      },
+    });
+  }
+
+  const newAchievements = (data.achievements ?? []).filter(
+    (achievement) => !achievementIds.has(achievement.id),
+  );
+  if (newAchievements.length) {
+    sections.push({
+      label: `${newAchievements.length} conquistas novas`,
+      run: async () => {
+        await db.insert(listingAchievements).values(
+          newAchievements.map((achievement) => ({
+            id: nanoid(),
+            listingId,
+            achievementId: achievement.id,
+            unlockedAt: achievement.unlockedAt,
+          })),
+        );
+      },
+    });
+  }
+
+  const newBosstiaries = (data.bosstiaries ?? []).filter(
+    (boss) => !bossIds.has(boss.id),
+  );
+  if (newBosstiaries.length) {
+    sections.push({
+      label: `${newBosstiaries.length} bosstiary novos`,
+      run: async () => {
+        await db.insert(listingBosstiaries).values(
+          newBosstiaries.map((boss) => ({
+            id: nanoid(),
+            listingId,
+            bossId: boss.id,
+            name: boss.name,
+            kills: boss.kills,
+            gained1: boss.gained1,
+            gained2: boss.gained2,
+            gained3: boss.gained3,
+          })),
+        );
+      },
+    });
+  }
+
+  const newBestiary = (data.bestiaryCompleted ?? []).filter(
+    (entry) => !bestiaryRaceIds.has(entry.raceId),
+  );
+  if (newBestiary.length) {
+    sections.push({
+      label: `${newBestiary.length} entradas de bestiário novas`,
+      run: async () => {
+        await db.insert(listingBestiary).values(
+          newBestiary.map((entry) => ({
+            id: nanoid(),
+            listingId,
+            raceId: entry.raceId,
+            kills: entry.kills,
+            gained: entry.gained,
+          })),
+        );
+      },
+    });
+  }
+
+  const newGems = (data.gems ?? []).filter((gem) => !gemIds.has(gem.id));
+  if (newGems.length) {
+    sections.push({
+      label: `${newGems.length} gems novas`,
+      run: async () => {
+        await db.insert(listingGems).values(
+          newGems.map((gem) => ({
+            id: nanoid(),
+            listingId,
+            gemId: gem.id,
+            domain: typeof gem.domain === "number" ? gem.domain : null,
+            type: typeof gem.type === "number" ? gem.type : null,
+            data: gem,
+          })),
+        );
+      },
+    });
+  }
+
+  const newTitles = (data.titles ?? []).filter((titleId) => !titleIds.has(titleId));
+  if (newTitles.length) {
+    sections.push({
+      label: `${newTitles.length} títulos novos`,
+      run: async () => {
+        await db.insert(listingTitles).values(
+          newTitles.map((titleId) => ({
+            id: nanoid(),
+            listingId,
+            titleId,
+          })),
+        );
+      },
+    });
+  }
+
+  const newWeaponProficiency = (data.weaponProficiency ?? []).filter(
+    (wp) => !weaponItemIds.has(wp.itemId),
+  );
+  if (newWeaponProficiency.length) {
+    sections.push({
+      label: `${newWeaponProficiency.length} proficiências novas`,
+      run: async () => {
+        await db.insert(listingWeaponProficiency).values(
+          newWeaponProficiency.map((wp) => ({
+            id: nanoid(),
+            listingId,
+            itemId: wp.itemId,
+            experience: wp.experience,
+            weaponLevel: wp.weaponLevel,
+            masteryAchieved: wp.masteryAchieved,
+            activePerks: wp.activePerks,
+          })),
+        );
+      },
+    });
+  }
+
+  if (sections.length === 0) {
+    report?.({
+      step: "relations",
+      label: "Nenhum dado relacional novo",
+      detail: "Registros existentes preservados",
+      progress: 88,
+    });
+    return;
+  }
+
+  const total = sections.length;
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i]!;
+    report?.({
+      step: "relations",
+      label: "Mesclando dados do personagem",
+      detail: section.label,
+      progress: 58 + Math.round(((i + 1) / Math.max(total, 1)) * 32),
+    });
+    await section.run();
+  }
+}
+
 function listingFieldsFromBazaar(data: BazaarData, bazaarUrl: string) {
   const enriched = enrichBazaarSnapshot(data);
   const { player, general, auction } = enriched;
@@ -634,6 +992,72 @@ export async function syncListingFromBazaar(
 
   await clearListingRelations(db, listingId);
   await insertListingRelations(db, listingId, data, report);
+}
+
+export async function mergeListingFromBazaar(
+  listingId: string,
+  bazaarUrl: string,
+  data: BazaarData,
+  preserve: {
+    slug?: string;
+    title?: string | null;
+    description?: string | null;
+    priceBrl?: string | null;
+    priceCoins?: number | null;
+    privacyToggles?: typeof DEFAULT_PRIVACY_TOGGLES;
+    featured?: boolean;
+    status?: typeof listings.$inferSelect.status;
+  },
+  report?: ImportProgressReporter,
+) {
+  const db = getDb();
+  await upsertCatalogFromBazaar(db, data, report);
+
+  report?.({
+    step: "listing",
+    label: "Atualizando dados do personagem",
+    progress: 52,
+  });
+
+  const fields = listingFieldsFromBazaar(data, bazaarUrl);
+
+  await db
+    .update(listings)
+    .set({
+      bazaarId: fields.bazaarId,
+      bazaarUrl: fields.bazaarUrl,
+      characterName: fields.characterName,
+      level: fields.level,
+      vocation: fields.vocation,
+      vocationId: fields.vocationId,
+      worldName: fields.worldName,
+      sex: fields.sex,
+      lookType: fields.lookType,
+      lookHead: fields.lookHead,
+      lookBody: fields.lookBody,
+      lookLegs: fields.lookLegs,
+      lookFeet: fields.lookFeet,
+      lookAddons: fields.lookAddons,
+      experience: fields.experience,
+      gold: fields.gold,
+      achievementPoints: fields.achievementPoints,
+      mountsCount: fields.mountsCount,
+      outfitsCount: fields.outfitsCount,
+      snapshotData: fields.snapshotData,
+      lastSyncedAt: fields.lastSyncedAt,
+      slug: preserve.slug ?? fields.slug,
+      title: preserve.title ?? fields.title,
+      description: preserve.description,
+      priceBrl: preserve.priceBrl,
+      priceCoins: preserve.priceCoins,
+      privacyToggles: preserve.privacyToggles,
+      featured: preserve.featured,
+      status: preserve.status,
+      updatedAt: new Date(),
+    })
+    .where(eq(listings.id, listingId));
+
+  await mergeListingRelations(db, listingId, data, report);
 }
 
 export async function ensureUniqueSlug(baseSlug: string) {

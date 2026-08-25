@@ -13,15 +13,13 @@ export async function SiteHeader({
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 border-b backdrop-blur-md",
-        variant === "hub"
-          ? "border-transparent bg-[var(--color-background)]/60"
-          : "border-[var(--color-card-border)] bg-[var(--color-background)]/90",
+        "site-header sticky top-0 z-40",
+        variant === "hub" && "site-header--hub",
       )}
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-primary)]/15 text-sm font-bold text-[var(--color-primary)] transition group-hover:bg-[var(--color-primary)]/25">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-primary-muted)] text-sm font-bold text-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20 transition group-hover:bg-[var(--color-primary)]/22 group-hover:ring-[var(--color-primary)]/35">
             TP
           </span>
           <span className="text-lg font-semibold tracking-tight">

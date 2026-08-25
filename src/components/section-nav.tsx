@@ -15,11 +15,11 @@ export function SectionNav({
   return (
     <div
       className={cn(
-        "app-scroll app-scroll-x scroll-fade-x max-w-full overflow-x-auto",
+        "app-scroll app-scroll-x max-w-full overflow-x-auto",
         className,
       )}
     >
-      <div className="inline-flex min-w-max gap-1 rounded-xl border border-[var(--color-card-border)] bg-[var(--color-card)]/80 p-1 backdrop-blur-sm">
+      <div className="inline-flex min-w-max gap-1 rounded-xl border border-[var(--color-card-border)] bg-[var(--color-surface)] p-1 shadow-lg shadow-black/35 ring-1 ring-black/20">
         {MARKETPLACE_SECTIONS.map((section) => {
         const isActive = active === section.id;
         const Icon = section.icon;
@@ -31,7 +31,7 @@ export function SectionNav({
               "inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition",
               isActive
                 ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] shadow-sm"
-                : "text-zinc-400 hover:bg-[var(--color-accent)] hover:text-white",
+                : "text-[var(--color-foreground)]/85 hover:bg-[var(--color-accent)] hover:text-[var(--color-foreground)]",
             )}
           >
             <Icon className="h-4 w-4" />
