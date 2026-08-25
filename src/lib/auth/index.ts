@@ -14,13 +14,23 @@ function normalizeOrigin(url: string): string {
 
 /** Resolves the public app URL (Better Auth cookies, callbacks). */
 function resolveAppBaseUrl(): string | undefined {
-  const candidates = [
-    process.env.BETTER_AUTH_URL,
-    process.env.NEXT_PUBLIC_APP_URL,
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : undefined,
-  ];
+  const vercelUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : undefined;
+
+  const candidates =
+    process.env.NODE_ENV === "production"
+      ? [
+          process.env.BETTER_AUTH_URL,
+          process.env.NEXT_PUBLIC_APP_URL,
+          vercelUrl,
+        ].filter((url) => url?.trim() && !url.includes("localhost"))
+      : [
+          process.env.BETTER_AUTH_URL,
+          process.env.NEXT_PUBLIC_APP_URL,
+          vercelUrl,
+        ];
+
   for (const url of candidates) {
     if (url?.trim()) return normalizeOrigin(url.trim());
   }
@@ -30,17 +40,21 @@ function resolveAppBaseUrl(): string | undefined {
 function resolveTrustedOrigins(baseURL: string | undefined): string[] {
   if (process.env.NODE_ENV === "development") return devOrigins;
 
+  const vercelUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : undefined;
+
   const origins = new Set<string>();
   for (const url of [
     process.env.NEXT_PUBLIC_APP_URL,
     process.env.BETTER_AUTH_URL,
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : undefined,
+    vercelUrl,
     baseURL,
   ]) {
-    if (url?.trim()) origins.add(normalizeOrigin(url.trim()));
+    if (!url?.trim() || url.includes("localhost")) continue;
+    origins.add(normalizeOrigin(url.trim()));
   }
+  if (vercelUrl) origins.add(normalizeOrigin(vercelUrl));
   return [...origins];
 }
 
