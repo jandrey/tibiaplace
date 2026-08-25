@@ -11,9 +11,7 @@ function wikiMountImageUrl(name) {
     .replace(/\s*\((mount|montaria)\)\s*/gi, "")
     .trim();
   const underscored = base.replace(/ /g, "_");
-  const file = `${base} (Montaria).gif`;
-  const alt = `${underscored}_(Montaria).gif`;
-  return `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(file)}`;
+  return `https://www.tibiawiki.com.br/wiki/Especial:FilePath/${encodeURIComponent(`${underscored}.gif`)}`;
 }
 
 function rubinotMountImageUrl(clientId) {

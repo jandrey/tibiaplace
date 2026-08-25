@@ -197,7 +197,7 @@ function stripMountSuffix(name: string) {
     .trim();
 }
 
-/** GIF file name candidates — PT wiki uses (Montaria), EN uses (Mount). */
+/** GIF file name candidates — wiki BR uses plain name, (Montaria), or (Mount). */
 function mountGifFileNames(name: string): string[] {
   const trimmed = name.trim();
   const base = stripMountSuffix(trimmed);
@@ -206,13 +206,14 @@ function mountGifFileNames(name: string): string[] {
 
   return [
     ...new Set([
+      `${underscored}.gif`,
+      `${base}.gif`,
       `${base} (Montaria).gif`,
       `${underscored}_(Montaria).gif`,
       `${base} (Mount).gif`,
       `${underscored}_(Mount).gif`,
       `${compact}(Montaria).gif`,
       `${compact}(Mount).gif`,
-      `${underscored}.gif`,
       trimmed.endsWith(".gif") ? trimmed : `${trimmed}.gif`,
     ]),
   ];
@@ -238,12 +239,13 @@ export function isRubinotOutfitApiUrl(url: string) {
 
 function expandCatalogMountImageUrls(url: string): string[] {
   const out = [url];
-  if (/\(Mount\)/i.test(url)) {
+  if (/\((Mount|Montaria)\)/i.test(url)) {
     out.push(
       url
         .replace(/\(Mount\)/g, "(Montaria)")
         .replace(/\(mount\)/g, "(Montaria)"),
     );
+    out.push(url.replace(/_\((Mount|Montaria)\)(\.gif)$/i, "$2"));
   }
   return out;
 }
