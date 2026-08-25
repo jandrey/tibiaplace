@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Download, Package, User } from "lucide-react";
+import { Download, ExternalLink, Package, User } from "lucide-react";
 import {
   ItemEditorForm,
   emptyItemForm,
@@ -15,6 +15,7 @@ import {
 } from "@/components/import-progress-panel";
 import { Button, Card, Input, Label } from "@/components/ui";
 import { consumeImportStream } from "@/lib/bazaar/import-progress";
+import { bazaarApiUrlFromInput } from "@/lib/bazaar/rubinot-fetch";
 import { cn } from "@/lib/utils";
 
 type NewListingTab = "character" | "items";
@@ -49,6 +50,8 @@ export default function NewListingPage() {
   const [progress, setProgress] = useState(0);
   const [label, setLabel] = useState("");
   const [detail, setDetail] = useState<string>();
+
+  const bazaarApiUrl = bazaarApiUrlFromInput(bazaarUrl.trim());
 
   async function runImport(payload: {
     bazaarUrl: string;
@@ -189,6 +192,27 @@ export default function NewListingPage() {
                 disabled={loading}
                 className="mt-1.5"
               />
+              <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+                A página do bazaar é HTML. Os dados do personagem ficam na API:{" "}
+                <span className="text-zinc-400">/api/bazaar/ID</span> (com{" "}
+                <span className="text-zinc-400">api</span> no caminho).
+              </p>
+              {bazaarApiUrl && (
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <a
+                    href={bazaarApiUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-card-border)] px-3 py-1.5 text-xs text-[var(--color-primary)] transition hover:border-[var(--color-primary)]/50"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    Abrir JSON no RubinOT
+                  </a>
+                  <code className="break-all text-[11px] text-zinc-500">
+                    {bazaarApiUrl}
+                  </code>
+                </div>
+              )}
             </div>
 
             {loading && (
@@ -216,15 +240,25 @@ export default function NewListingPage() {
 
           <details className="mt-6 rounded-lg border border-[var(--color-card-border)] p-4">
             <summary className="cursor-pointer text-sm font-medium text-zinc-300">
-              Importar via JSON (fallback Cloudflare)
+              Importar via JSON (se der erro 403)
             </summary>
-            <p className="mt-3 text-xs leading-relaxed text-zinc-500">
-              Se o servidor da Vercel for bloqueado, abra{" "}
-              <code className="text-zinc-400">
-                https://rubinot.com.br/api/bazaar/ID
-              </code>{" "}
-              no navegador (logado no RubinOT), copie o JSON e cole abaixo.
-            </p>
+            <ol className="mt-3 list-decimal space-y-2 pl-4 text-xs leading-relaxed text-zinc-500">
+              <li>
+                Preencha a URL do bazaar acima (ex.{" "}
+                <code className="text-zinc-400">…/bazaar/270870</code>).
+              </li>
+              <li>
+                Clique em <strong className="text-zinc-400">Abrir JSON no RubinOT</strong>{" "}
+                — abre{" "}
+                <code className="text-zinc-400">…/api/bazaar/270870</code>, que é
+                JSON puro (não a página HTML).
+              </li>
+              <li>
+                Na aba nova: <kbd className="rounded bg-zinc-800 px-1">Ctrl+A</kbd>{" "}
+                → <kbd className="rounded bg-zinc-800 px-1">Ctrl+C</kbd>.
+              </li>
+              <li>Cole abaixo e clique em Importar via JSON.</li>
+            </ol>
             <form onSubmit={handleImportJson} className="mt-4 space-y-3">
               <textarea
                 value={bazaarJson}
