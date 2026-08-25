@@ -8,14 +8,19 @@ const devOrigins = Array.from({ length: 11 }, (_, i) => {
   return [`http://localhost:${port}`, `http://127.0.0.1:${port}`];
 }).flat();
 
-function normalizeOrigin(url: string): string {
-  return url.replace(/\/$/, "");
+function toOrigin(url: string | undefined): string | undefined {
+  if (!url?.trim()) return undefined;
+  try {
+    return new URL(url.trim()).origin;
+  } catch {
+    return undefined;
+  }
 }
 
-/** Resolves the public app URL (Better Auth cookies, callbacks). */
+/** Public app URL for cookies and callbacks. */
 function resolveAppBaseUrl(): string | undefined {
-  const vercelUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+  const vercelOrigin = process.env.VERCEL_URL
+    ? toOrigin(`https://${process.env.VERCEL_URL}`)
     : undefined;
 
   const candidates =
@@ -23,46 +28,60 @@ function resolveAppBaseUrl(): string | undefined {
       ? [
           process.env.BETTER_AUTH_URL,
           process.env.NEXT_PUBLIC_APP_URL,
-          vercelUrl,
+          vercelOrigin ? `https://${process.env.VERCEL_URL}` : undefined,
         ].filter((url) => url?.trim() && !url.includes("localhost"))
       : [
           process.env.BETTER_AUTH_URL,
           process.env.NEXT_PUBLIC_APP_URL,
-          vercelUrl,
+          vercelOrigin ? `https://${process.env.VERCEL_URL}` : undefined,
         ];
 
   for (const url of candidates) {
-    if (url?.trim()) return normalizeOrigin(url.trim());
+    const origin = toOrigin(url);
+    if (origin) return origin;
   }
   return undefined;
 }
 
-function resolveTrustedOrigins(baseURL: string | undefined): string[] {
-  if (process.env.NODE_ENV === "development") return devOrigins;
-
-  const vercelUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : undefined;
-
+function extraTrustedOrigins(): string[] {
   const origins = new Set<string>();
+
   for (const url of [
     process.env.NEXT_PUBLIC_APP_URL,
     process.env.BETTER_AUTH_URL,
-    vercelUrl,
-    baseURL,
   ]) {
-    if (!url?.trim() || url.includes("localhost")) continue;
-    origins.add(normalizeOrigin(url.trim()));
+    const origin = toOrigin(url);
+    if (origin && !origin.includes("localhost")) origins.add(origin);
   }
-  if (vercelUrl) origins.add(normalizeOrigin(vercelUrl));
+
+  if (process.env.VERCEL_URL) {
+    origins.add(`https://${process.env.VERCEL_URL}`);
+  }
+
+  // Preview/production Vercel URLs (e.g. tibiaplace.vercel.app)
+  origins.add("https://*.vercel.app");
+
+  const envExtra = process.env.BETTER_AUTH_TRUSTED_ORIGINS;
+  if (envExtra) {
+    for (const part of envExtra.split(",")) {
+      const origin = toOrigin(part);
+      if (origin) origins.add(origin);
+    }
+  }
+
   return [...origins];
 }
 
 const appBaseUrl = resolveAppBaseUrl();
+const isDev = process.env.NODE_ENV === "development";
 
 export const auth = betterAuth({
   baseURL: appBaseUrl,
-  trustedOrigins: resolveTrustedOrigins(appBaseUrl),
+  // Array replaces Better Auth's merged origins in CSRF checks — use a function in prod
+  // so baseURL + extras are all validated (fixes Invalid origin on Vercel).
+  ...(isDev
+    ? { trustedOrigins: devOrigins }
+    : { trustedOrigins: async () => extraTrustedOrigins() }),
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {
