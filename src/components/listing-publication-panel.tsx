@@ -71,7 +71,7 @@ export function ListingPublicationPanel({
     <div className="space-y-4">
       <PanelSection
         title="Publicação"
-        description="Status, URL e destaque na vitrine."
+        description="Status, URL e destaque na vitrine. Status e destaque salvam automaticamente."
       >
         <ListingStatusPicker
           value={listing.status}

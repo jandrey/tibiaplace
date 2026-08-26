@@ -1,13 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
-  buildFilterHref,
+  buildBrowseHref,
+  parseListingSort,
+  sortToQueryParams,
+} from "@/lib/listings/sort";
+import {
   useListingBrowseLoading,
 } from "@/components/listing-browse-loading";
 import { Button, Input, Select } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 type SearchParams = Record<string, string | undefined>;
 
@@ -115,27 +119,52 @@ export function CharacterFiltersForm({
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (submitDisabled) return;
-    filter(buildFilterHref("/chars", draft));
+    filter(
+      buildBrowseHref("/chars", {
+        ...draft,
+        ...sortToQueryParams(
+          parseListingSort(searchParams, "character"),
+          "character",
+        ),
+      }),
+    );
   }
 
+  const clearHref = buildBrowseHref(
+    "/chars",
+    sortToQueryParams(
+      parseListingSort(searchParams, "character"),
+      "character",
+    ),
+  );
+
   return (
-    <div className="mb-8 overflow-hidden rounded-xl border border-[var(--color-card-border)] bg-[var(--color-card)]">
+    <div
+      className={cn(
+        "mb-8 overflow-hidden rounded-xl border border-[var(--color-card-border)] bg-[var(--color-card)] transition",
+        isFiltering && "opacity-80",
+      )}
+    >
       <div className="flex items-center justify-between gap-3 border-b border-[var(--color-card-border)] px-4 py-3">
-        <p className="text-sm font-medium text-[var(--color-foreground)]">
-          Filtros
-        </p>
+        <div>
+          <p className="text-sm font-medium text-[var(--color-foreground)]">
+            Filtros
+          </p>
+          {isFiltering && (
+            <p className="mt-0.5 text-xs text-[var(--color-primary)]">
+              Atualizando lista…
+            </p>
+          )}
+        </div>
         {active ? (
-          <Link
-            href="/chars"
-            aria-disabled={isFiltering}
-            className={
-              isFiltering
-                ? "pointer-events-none text-xs text-[var(--color-muted-foreground)] opacity-50"
-                : "text-xs text-[var(--color-muted)] transition hover:text-[var(--color-foreground)]"
-            }
+          <button
+            type="button"
+            disabled={isFiltering}
+            onClick={() => filter(clearHref)}
+            className="text-xs text-[var(--color-muted)] transition hover:text-[var(--color-foreground)] disabled:cursor-wait disabled:opacity-50"
           >
             Limpar filtros
-          </Link>
+          </button>
         ) : (
           <span className="text-xs text-[var(--color-muted-foreground)]">
             Refine a vitrine abaixo
@@ -278,27 +307,49 @@ export function ItemsFiltersForm({
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (submitDisabled) return;
-    filter(buildFilterHref("/items", draft));
+    filter(
+      buildBrowseHref("/items", {
+        ...draft,
+        ...sortToQueryParams(
+          parseListingSort(searchParams, "items"),
+          "items",
+        ),
+      }),
+    );
   }
 
+  const clearHref = buildBrowseHref(
+    "/items",
+    sortToQueryParams(parseListingSort(searchParams, "items"), "items"),
+  );
+
   return (
-    <div className="mb-8 overflow-hidden rounded-xl border border-[var(--color-card-border)] bg-[var(--color-card)]">
+    <div
+      className={cn(
+        "mb-8 overflow-hidden rounded-xl border border-[var(--color-card-border)] bg-[var(--color-card)] transition",
+        isFiltering && "opacity-80",
+      )}
+    >
       <div className="flex items-center justify-between gap-3 border-b border-[var(--color-card-border)] px-4 py-3">
-        <p className="text-sm font-medium text-[var(--color-foreground)]">
-          Filtros
-        </p>
+        <div>
+          <p className="text-sm font-medium text-[var(--color-foreground)]">
+            Filtros
+          </p>
+          {isFiltering && (
+            <p className="mt-0.5 text-xs text-[var(--color-primary)]">
+              Atualizando lista…
+            </p>
+          )}
+        </div>
         {active ? (
-          <Link
-            href="/items"
-            aria-disabled={isFiltering}
-            className={
-              isFiltering
-                ? "pointer-events-none text-xs text-[var(--color-muted-foreground)] opacity-50"
-                : "text-xs text-[var(--color-muted)] transition hover:text-[var(--color-foreground)]"
-            }
+          <button
+            type="button"
+            disabled={isFiltering}
+            onClick={() => filter(clearHref)}
+            className="text-xs text-[var(--color-muted)] transition hover:text-[var(--color-foreground)] disabled:cursor-wait disabled:opacity-50"
           >
             Limpar filtros
-          </Link>
+          </button>
         ) : (
           <span className="text-xs text-[var(--color-muted-foreground)]">
             Refine a vitrine abaixo

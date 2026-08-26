@@ -22,6 +22,11 @@ import {
 } from "@/lib/db/schema";
 
 import type { ListingType } from "@/lib/listings/types";
+import {
+  buildPublicListingOrderBy,
+  parseListingSort,
+  type ListingSort,
+} from "@/lib/listings/sort";
 
 export type ListingFilters = {
   q?: string;
@@ -32,6 +37,8 @@ export type ListingFilters = {
   maxLevel?: number;
   minPrice?: number;
   maxPrice?: number;
+  sort?: ListingSort["field"];
+  dir?: ListingSort["dir"];
 };
 
 export type ListingMountView = typeof listingMounts.$inferSelect & {
@@ -149,11 +156,17 @@ export async function getPublicListings(filters: ListingFilters = {}) {
     conditions.push(sql`CAST(${listings.priceBrl} AS numeric) <= ${filters.maxPrice}`);
   }
 
+  const listingType = filters.type ?? "character";
+  const sort = parseListingSort(
+    { sort: filters.sort, dir: filters.dir },
+    listingType,
+  );
+
   const rows = await db
     .select()
     .from(listings)
     .where(and(...conditions))
-    .orderBy(desc(listings.featured), desc(listings.publishedAt), desc(listings.createdAt));
+    .orderBy(...buildPublicListingOrderBy(sort));
 
   return rows;
 }
@@ -194,14 +207,8 @@ export async function getListingBySlug(slug: string, type?: ListingType) {
   };
 }
 
-export async function getAdminListings(includeArchived = true) {
-  const rows = await db
-    .select()
-    .from(listings)
-    .orderBy(desc(listings.updatedAt));
-
-  if (includeArchived) return rows;
-  return rows.filter((row) => row.status !== "archived");
+export async function getAdminListings() {
+  return db.select().from(listings).orderBy(desc(listings.updatedAt));
 }
 
 export async function getListingById(id: string) {

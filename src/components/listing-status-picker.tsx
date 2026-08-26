@@ -1,53 +1,15 @@
 "use client";
 
-import {
-  Archive,
-  CheckCircle2,
-  Eye,
-  EyeOff,
-  Lock,
-  type LucideIcon,
-} from "lucide-react";
 import { Badge } from "@/components/ui";
+import {
+  LISTING_STATUS_META,
+  LISTING_STATUS_ORDER,
+} from "@/lib/listings/status-meta";
 import {
   LISTING_STATUS_COLORS,
   LISTING_STATUS_LABELS,
   cn,
 } from "@/lib/utils";
-
-const STATUS_ORDER = [
-  "draft",
-  "available",
-  "reserved",
-  "sold",
-  "archived",
-] as const;
-
-const STATUS_META: Record<
-  (typeof STATUS_ORDER)[number],
-  { hint: string; icon: LucideIcon }
-> = {
-  draft: {
-    hint: "Oculto da vitrine",
-    icon: EyeOff,
-  },
-  available: {
-    hint: "Visível na vitrine",
-    icon: Eye,
-  },
-  reserved: {
-    hint: "Em negociação",
-    icon: Lock,
-  },
-  sold: {
-    hint: "Marcado como vendido",
-    icon: CheckCircle2,
-  },
-  archived: {
-    hint: "Fora da vitrine",
-    icon: Archive,
-  },
-};
 
 export function ListingStatusPicker({
   value,
@@ -68,8 +30,8 @@ export function ListingStatusPicker({
       </div>
 
       <div className="flex min-w-0 flex-col gap-1.5">
-        {STATUS_ORDER.map((status) => {
-          const meta = STATUS_META[status];
+        {LISTING_STATUS_ORDER.map((status) => {
+          const meta = LISTING_STATUS_META[status];
           const Icon = meta.icon;
           const active = value === status;
 

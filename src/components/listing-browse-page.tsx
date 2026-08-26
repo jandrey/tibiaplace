@@ -5,7 +5,9 @@ import {
 } from "@/components/listing-filters-form";
 import { ListingBrowseLoadingProvider } from "@/components/listing-browse-loading";
 import { ListingBrowseResults } from "@/components/listing-browse-results";
+import { ListingSortBar } from "@/components/listing-sort-bar";
 import { SectionShell } from "@/components/section-shell";
+import { parseListingSort } from "@/lib/listings/sort";
 import { getFilterOptions, getPublicListings } from "@/lib/queries/listings";
 import { getWhatsAppNumber } from "@/lib/settings";
 import { cn } from "@/lib/utils";
@@ -27,6 +29,7 @@ export async function ListingBrowsePage({
   searchParams: Record<string, string | undefined>;
 }) {
   const copy = COPY[listingType];
+  const sort = parseListingSort(searchParams, listingType);
 
   const filters = {
     type: listingType,
@@ -43,6 +46,8 @@ export async function ListingBrowsePage({
         : undefined,
     minPrice: searchParams.minPrice ? Number(searchParams.minPrice) : undefined,
     maxPrice: searchParams.maxPrice ? Number(searchParams.maxPrice) : undefined,
+    sort: sort.field,
+    dir: sort.dir,
   };
 
   const [listings, options, whatsappPhone] = await Promise.all([
@@ -63,6 +68,13 @@ export async function ListingBrowsePage({
         ) : (
           <ItemsFiltersForm searchParams={searchParams} worlds={options.worlds} />
         )}
+
+        <ListingSortBar
+          basePath={listingType === "character" ? "/chars" : "/items"}
+          listingType={listingType}
+          searchParams={searchParams}
+          resultCount={listings.length}
+        />
 
         <ListingBrowseResults listingType={listingType}>
           {listings.length === 0 ? (

@@ -29,19 +29,22 @@ export function ItemListingImage({
   size = 48,
   className,
   frameClassName,
+  fitFrame = false,
 }: {
   item: ItemListingData | null;
   size?: number;
   className?: string;
   frameClassName?: string;
+  fitFrame?: boolean;
 }) {
   return (
     <div
       className={cn(
         "relative flex shrink-0 items-center justify-center overflow-hidden rounded-md bg-[var(--color-accent)]",
+        fitFrame && "h-full w-full",
         frameClassName,
       )}
-      style={{ width: size, height: size }}
+      style={fitFrame ? undefined : { width: size, height: size }}
     >
       {!item ? (
         <Package

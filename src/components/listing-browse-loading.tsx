@@ -1,39 +1,129 @@
 "use client";
 
 import {
+  Suspense,
   createContext,
   useContext,
+  useEffect,
+  useRef,
+  useState,
   useTransition,
   type ReactNode,
 } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import {
+  buildBrowseHref,
+  listingTypeFromBrowsePath,
+  parseListingSortFromHref,
+  type ListingSort,
+} from "@/lib/listings/sort";
 
 type ListingBrowseLoadingContextValue = {
   isFiltering: boolean;
+  pendingSort: ListingSort | null;
   filter: (href: string) => void;
 };
 
 const ListingBrowseLoadingContext =
   createContext<ListingBrowseLoadingContextValue | null>(null);
 
-export function ListingBrowseLoadingProvider({
+const FALLBACK_VALUE: ListingBrowseLoadingContextValue = {
+  isFiltering: true,
+  pendingSort: null,
+  filter: () => {},
+};
+
+function normalizeBrowseHref(href: string) {
+  if (href.startsWith("http://") || href.startsWith("https://")) {
+    const url = new URL(href);
+    return `${url.pathname}${url.search}`;
+  }
+  return href;
+}
+
+function currentBrowseHref(pathname: string, search: string) {
+  return search ? `${pathname}?${search}` : pathname;
+}
+
+function ListingBrowseLoadingProviderInner({
   children,
 }: {
   children: ReactNode;
 }) {
   const router = useRouter();
-  const [isFiltering, startTransition] = useTransition();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams.toString();
+  const [isPending, startTransition] = useTransition();
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [pendingSort, setPendingSort] = useState<ListingSort | null>(null);
+  const targetHrefRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const current = currentBrowseHref(pathname, search);
+    if (targetHrefRef.current === current) {
+      targetHrefRef.current = null;
+      setIsNavigating(false);
+      setPendingSort(null);
+    }
+  }, [pathname, search]);
+
+  useEffect(() => {
+    if (!isNavigating) return;
+    const timeout = window.setTimeout(() => {
+      targetHrefRef.current = null;
+      setIsNavigating(false);
+      setPendingSort(null);
+    }, 15000);
+    return () => window.clearTimeout(timeout);
+  }, [isNavigating]);
 
   function filter(href: string) {
+    const target = normalizeBrowseHref(href);
+    const current = currentBrowseHref(pathname, search);
+
+    if (target === current) return;
+
+    const browseType = listingTypeFromBrowsePath(pathname);
+    if (browseType) {
+      setPendingSort(parseListingSortFromHref(href, browseType));
+    }
+
+    targetHrefRef.current = target;
+    setIsNavigating(true);
     startTransition(() => {
       router.push(href);
     });
   }
 
+  const isFiltering = isPending || isNavigating;
+
   return (
-    <ListingBrowseLoadingContext.Provider value={{ isFiltering, filter }}>
+    <ListingBrowseLoadingContext.Provider
+      value={{ isFiltering, pendingSort, filter }}
+    >
       {children}
     </ListingBrowseLoadingContext.Provider>
+  );
+}
+
+export function ListingBrowseLoadingProvider({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <Suspense
+      fallback={
+        <ListingBrowseLoadingContext.Provider value={FALLBACK_VALUE}>
+          {children}
+        </ListingBrowseLoadingContext.Provider>
+      }
+    >
+      <ListingBrowseLoadingProviderInner>
+        {children}
+      </ListingBrowseLoadingProviderInner>
+    </Suspense>
   );
 }
 
@@ -51,11 +141,5 @@ export function buildFilterHref(
   basePath: string,
   values: Record<string, string>,
 ) {
-  const params = new URLSearchParams();
-  for (const [key, value] of Object.entries(values)) {
-    const trimmed = value.trim();
-    if (trimmed) params.set(key, trimmed);
-  }
-  const query = params.toString();
-  return query ? `${basePath}?${query}` : basePath;
+  return buildBrowseHref(basePath, values);
 }

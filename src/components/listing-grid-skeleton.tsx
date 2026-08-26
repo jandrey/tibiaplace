@@ -87,8 +87,9 @@ export function ListingGridSkeleton({
 
   return (
     <div aria-busy="true" aria-live="polite" className="space-y-4">
-      <p className="text-sm text-[var(--color-muted)]">
-        Buscando anúncios...
+      <p className="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+        <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-[var(--color-card-border)] border-t-[var(--color-primary)]" />
+        Buscando anúncios…
       </p>
       <div
         className={cn(

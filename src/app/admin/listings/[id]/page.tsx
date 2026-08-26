@@ -226,6 +226,22 @@ export default function EditListingPage({
     }
   }
 
+  async function savePublicationFields(next: {
+    status?: string;
+    featured?: boolean;
+  }) {
+    if (!data) return;
+    const res = await fetch(`/api/admin/listings/${data.listing.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(next),
+    });
+    if (!res.ok) {
+      const body = await res.json();
+      throw new Error(body.error ?? "Erro ao salvar publicação");
+    }
+  }
+
   function publicationPanel() {
     if (!data) return null;
     const { listing } = data;
@@ -234,7 +250,9 @@ export default function EditListingPage({
         listing={listing}
         showPrivacy={listing.type === "character"}
         onListingChange={(next) => {
+          const prev = listing;
           setData({ ...data, listing: { ...listing, ...next } });
+
           if (
             next.privacyToggles &&
             JSON.stringify(next.privacyToggles) !==
@@ -249,7 +267,44 @@ export default function EditListingPage({
                     : "Erro ao salvar privacidade",
                 ),
               );
+            return;
           }
+
+          const publicationPatch: {
+            status?: string;
+            featured?: boolean;
+          } = {};
+
+          if (next.status !== undefined && next.status !== prev.status) {
+            publicationPatch.status = next.status;
+          }
+          if (next.featured !== undefined && next.featured !== prev.featured) {
+            publicationPatch.featured = next.featured;
+          }
+
+          if (Object.keys(publicationPatch).length === 0) return;
+
+          savePublicationFields(publicationPatch)
+            .then(() => {
+              if (publicationPatch.status) {
+                toast.success(
+                  `Status atualizado: ${LISTING_STATUS_LABELS[publicationPatch.status] ?? publicationPatch.status}`,
+                );
+              } else if (publicationPatch.featured !== undefined) {
+                toast.success(
+                  publicationPatch.featured
+                    ? "Destaque ativado"
+                    : "Destaque removido",
+                );
+              } else {
+                toast.success("Publicação atualizada");
+              }
+            })
+            .catch((err) =>
+              toast.error(
+                err instanceof Error ? err.message : "Erro ao salvar publicação",
+              ),
+            );
         }}
       />
     );

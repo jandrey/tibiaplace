@@ -13,9 +13,13 @@ export function ListingBrowseResults({
 }) {
   const { isFiltering } = useListingBrowseLoading();
 
-  if (isFiltering) {
-    return <ListingGridSkeleton listingType={listingType} />;
-  }
-
-  return children;
+  return (
+    <div className="relative min-h-[320px]">
+      {isFiltering ? (
+        <ListingGridSkeleton listingType={listingType} />
+      ) : (
+        children
+      )}
+    </div>
+  );
 }
